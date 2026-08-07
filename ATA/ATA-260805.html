@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ATA-260805 设计 & AI 方向日报</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif; background: #f5f6f8; color: #1a1a2e; line-height: 1.6; }
+  .header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: #e8e8e8; padding: 40px 0; text-align: center; position: relative; overflow: hidden; }
+  .header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 30% 50%, rgba(83,144,217,0.15) 0%, transparent 60%); }
+  .header h1 { font-size: 2.2em; font-weight: 700; letter-spacing: 2px; position: relative; }
+  .header .subtitle { color: #8ab4f8; font-size: 1em; margin-top: 8px; position: relative; }
+  .header .date-badge { display: inline-block; background: rgba(138,180,248,0.15); border: 1px solid rgba(138,180,248,0.3); padding: 4px 16px; border-radius: 20px; font-size: 0.85em; margin-top: 12px; position: relative; }
+  .stats-bar { display: flex; justify-content: center; gap: 40px; padding: 20px; background: #fff; border-bottom: 1px solid #e8e8e8; }
+  .stat-item { text-align: center; }
+  .stat-num { font-size: 1.8em; font-weight: 700; color: #0f3460; }
+  .stat-label { font-size: 0.8em; color: #666; }
+  .container { max-width: 900px; margin: 0 auto; padding: 24px 20px; }
+  .section-title { font-size: 1.3em; font-weight: 600; color: #16213e; margin: 32px 0 16px; padding-left: 12px; border-left: 4px solid #0f3460; }
+  .article-card { background: #fff; border-radius: 10px; padding: 20px; margin-bottom: 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); transition: box-shadow 0.2s; border: 1px solid #edf2f7; }
+  .article-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+  .article-title { font-size: 1.05em; font-weight: 600; }
+  .article-title a { color: #1a1a2e; text-decoration: none; }
+  .article-title a:hover { color: #0f3460; text-decoration: underline; }
+  .article-abstract { font-size: 0.88em; color: #555; margin-top: 8px; line-height: 1.65; }
+  .article-meta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px; font-size: 0.78em; color: #888; }
+  .article-meta span { display: inline-flex; align-items: center; gap: 3px; }
+  .tag { display: inline-block; background: #eef4ff; color: #0f3460; padding: 2px 10px; border-radius: 12px; font-size: 0.75em; }
+  .tag-engineering { background: #e8f5e9; color: #2e7d32; }
+  .tag-model { background: #e3f2fd; color: #1565c0; }
+  .tag-industry { background: #fff3e0; color: #e65100; }
+  .tag-design { background: #fce4ec; color: #c62828; }
+  .tag-tool { background: #f3e5f5; color: #6a1b9a; }
+  .footer { text-align: center; padding: 30px; color: #999; font-size: 0.8em; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="date-badge">📅 2026-08-05 昨天</div>
+  <h1>🎨 ATA-260805 设计 & AI 日报</h1>
+  <p class="subtitle">设计实践 · AI 工程化 · 模型评测 · 业界动态</p>
+</div>
+
+<div class="stats-bar">
+  <div class="stat-item"><div class="stat-num">28</div><div class="stat-label">精选文章</div></div>
+  <div class="stat-item"><div class="stat-num">7</div><div class="stat-label">AI 工程化</div></div>
+  <div class="stat-item"><div class="stat-num">8</div><div class="stat-label">AI 模型/评测</div></div>
+  <div class="stat-item"><div class="stat-num">8</div><div class="stat-label">Agent 实践</div></div>
+  <div class="stat-item"><div class="stat-num">2</div><div class="stat-label">设计 + AI</div></div>
+  <div class="stat-item"><div class="stat-num">3</div><div class="stat-label">业界动态</div></div>
+</div>
+
+<div class="container">
+
+<!-- ============ Section 1: 热门精选 ============ -->
+<div class="section-title">🔥 今日热门 TOP 5</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/11020737232" target="_blank">在 Qoder CLI 上运行 Qwen3.8-Max：5 个硬核任务实测</a></div>
+  <div class="article-abstract">文章实测 Qwen3.8-Max 等模型在 Qoder CLI 上的五项硬核任务，浏览量高达 1423，获赞 74，成为昨日最热门文章。</div>
+  <div class="article-meta">
+    <span>👁 1423</span><span>👍 74</span><span>💬 1</span><span>📌 13 收藏</span>
+    <span class="tag tag-engineering">AI 工程化</span>
+  </div>
+</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/11020737619" target="_blank">Qwen3.8 Max 跑分全球第 10：一份值得冷静看待的成绩单</a></div>
+  <div class="article-abstract">Qwen3.8 Max 虽跻身全球前十，但性能仅对标竞品中档且存在高错误率与延迟短板，其性价比依赖缓存，商业表现尚待验证。</div>
+  <div class="article-meta">
+    <span>👁 131</span><span>👍 2</span>
+    <span class="tag tag-model">AI 模型</span>
+  </div>
+</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/11020738828" target="_blank">一个月，我们"多招"了 91 个不打卡的同事：基于 Multica 的 7×24 数字员工实践复盘</a></div>
+  <div class="article-abstract">团队基于 Multica 平台构建十大类 91 个数字员工，一月自动完成万余任务，将人力从重复劳动解放至核心判断与掌控。</div>
+  <div class="article-meta">
+    <span>👁 122</span><span>👍 3</span>
+    <span class="tag tag-engineering">AI 工程化</span>
+  </div>
+</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/12020739220" target="_blank">300 个 Skill 让 Agent 变蠢了，我们用"专家"给它做减法</a></div>
+  <div class="article-abstract">针对 AI 工具过载问题，专家中心通过隔离七类资源实现"减法"，让 Agent 一键切换专业身份，在保留项目规范的同时消除干扰，提升决策准确性。</div>
+  <div class="article-meta">
+    <span>👁 113</span><span>👍 6</span><span>💬 1</span>
+    <span class="tag tag-engineering">Agent</span>
+  </div>
+</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/11020737226" target="_blank">Anthropic 签百亿算力合同，苹果诉 OpenAI 窃密，本地大模型推理门槛持续突破</a></div>
+  <div class="article-abstract">Anthropic 签百亿算力合同，苹果诉 OpenAI 窃密，阿里发 2.4 万亿参数模型，AI Agent 现安全逃逸，行业聚焦算力锁定、法律纠纷及安全治理。</div>
+  <div class="article-meta">
+    <span>👁 113</span><span>👍 1</span>
+    <span class="tag tag-industry">业界动态</span>
+  </div>
+</div>
+
+<!-- ============ Section 2: AI 工程化与 Agent 实践 ============ -->
+<div class="section-title">⚙️ AI 工程化与 Agent 实践</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/11020738028" target="_blank">Qoder 在真实项目工程开发中的实践</a></div>
+  <div class="article-abstract">一篇 Qoder 在项目工程开发的实践总结，基于真实的大模型语音质检应用项目，介绍如何利用 qoder 优化代码结构、处理并发疑难、排查错误、提高测试效率等。</div>
+  <div class="article-meta">
+    <span>👁 102</span><span>👍 17</span><span>📌 4</span>
+    <span class="tag tag-engineering">AI 工程化</span>
+  </div>
+</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/11020735628" target="_blank">从个人经验到团队能力：我们的 AI Native 实践</a></div>
+  <div class="article-abstract">算法团队的 AI-native 实践，从高频跑数场景切入，通过设计语义层和业务经验层的基础设施，构建中心化的团队知识存储库，实现从个人 Agent 到团队 AI-Native 能力的升级。</div>
+  <div class="article-meta">
+    <span>👁 101</span><span>👍 7</span><span>💬 1</span><span>📌 3</span>
+    <span class="tag tag-engineering">AI 工程化</span>
+  </div>
+</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/11020737625" target="_blank">【Skill】拒绝"术语焦虑"：我开发了一个 AI 评审 Skill，帮你 10 秒看透技术文章含金量</a></div>
+  <div class="article-abstract">超级适合 ATAer 的 AI 评审 Skill "article-evaluator"，通过六维雷达扫描快速评估技术文章含金量，快速去伪存真，提取核心逻辑，助力高效筛选干货并缓解术语焦虑。</div>
+  <div class="article-meta">
+    <span>👁 93</span><span>👍 1</span>
+    <span class="tag tag-tool">AI 工具</span>
+  </div>
+</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/11020737231" target="_blank">跟 Claude Code 学 Harness 体系</a></div>
+  <div class="article-abstract">解析 Claude Code 的 Harness 体系，涵盖记忆、扩展、集成及编程四层架构，强调通过 Skill、SubAgents 等组件实现 LLM 的安全可控与高效落地。</div>
+  <div class="article-meta">
+    <span>👁 49</span><span>👍 14</span>
+    <span class="tag tag-engineering">AI 工程化</span>
+  </div>
+</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/11020736421" target="_blank">QoderWork × 机器人：给你的钉钉群配一个会干活的 AI 同事（手把手教程）</a></div>
+  <div class="article-abstract">详解如何通过自建阿里钉机器人将 QoderWork 接入钉钉群，实现定时汇报、群内答疑及自动数据分析，并涵盖配置步骤与安全规范。</div>
+  <div class="article-meta">
+    <span>👁 39</span>
+    <span class="tag tag-engineering">AI 工程化</span>
+  </div>
+</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/11020736426" target="_blank">【用商家分析 Agent 讲透 AI 基础概念｜Agent 架构】LLM + 工具 + 决策循环：如何设计 Agent 的核心工作流</a></div>
+  <div class="article-abstract">以商家分析 Agent 为例，详解由 LLM、工具及决策循环构成的核心架构与工作流，指导读者掌握从 Demo 到生产落地的关键设计。</div>
+  <div class="article-meta">
+    <span>👁 38</span><span>👍 1</span>
+    <span class="tag tag-engineering">Agent</span>
+  </div>
+</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/12020738033" target="_blank">一文读懂 AI Agent：架构·推理·记忆·工具全解析</a></div>
+  <div class="article-abstract">以 LilianWeng 的 LLM+规划+记忆+工具四模块架构为骨架，讲解 Agent 通过"记忆注入→规划→工具行动→观察反馈"闭环自主完成任务，延伸至七大推理范式与工具标准化演进。</div>
+  <div class="article-meta">
+    <span>👁 31</span>
+    <span class="tag tag-engineering">Agent</span>
+  </div>
+</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/11020738426" target="_blank">阿里妈妈联盟 - 数据 AI Agent "UFO" 实践分享</a></div>
+  <div class="article-abstract">UFO 通过自动化取数降低数据成本，强调人应聚焦问题拆解与结果解读，建议将高频分析场景模板化以提升团队效能。</div>
+  <div class="article-meta">
+    <span>👁 30</span><span>👍 2</span>
+    <span class="tag tag-engineering">Agent 实践</span>
+  </div>
+</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/11020735631" target="_blank">用 Qoder 给百亿补贴做的预算系统</a></div>
+  <div class="article-abstract">详解百亿补贴预算系统，基于 DDD 与策略模式实现多业务通用化，通过配置驱动动态扩展分配、统计及管控能力。</div>
+  <div class="article-meta">
+    <span>👁 37</span>
+    <span class="tag tag-engineering">AI 工程化</span>
+  </div>
+</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/11020735627" target="_blank">从 AI First 到 AI Native 实现自决策：高德通用机器人工程方案设计与实践</a></div>
+  <div class="article-abstract">基于事件与近线引擎的通用机器人值岗方案，通过多 Agent 协作实现 7×24 小时实时监测与人机协同决策。</div>
+  <div class="article-meta">
+    <span>👁 25</span><span>👍 6</span><span>📌 2</span>
+    <span class="tag tag-engineering">Agent</span>
+  </div>
+</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/11020736037" target="_blank">AI Agent 工作台的自动化测试实践</a></div>
+  <div class="article-abstract">分享 AI Agent 工作台自动化测试实践，构建组件、UI 及端到端三层体系以解决集成断裂问题，强调基于 PRD 设计用例、验证终态及沉淀检查清单。</div>
+  <div class="article-meta">
+    <span>👁 17</span>
+    <span class="tag tag-engineering">AI 测试</span>
+  </div>
+</div>
+
+<!-- ============ Section 3: AI 模型与评测 ============ -->
+<div class="section-title">🧠 AI 模型与评测</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/11020739219" target="_blank">AI 在 Bench 里开了一整年店，算不算 Coding 之外的 AGI</a></div>
+  <div class="article-abstract">1688 推出 MerchantBench，通过仿真环境验证 AI Agent 在电商长周期经营中的自主决策与自进化能力，探索 Coding 之外的 AGI 新路径。</div>
+  <div class="article-meta">
+    <span>👁 75</span><span>👍 3</span><span>📌 1</span>
+    <span class="tag tag-model">AI 评测</span>
+  </div>
+</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/11020736420" target="_blank">从零理解 Kimi Delta Attention</a></div>
+  <div class="article-abstract">详解 Kimi Delta Attention，通过写误差与逐通道遗忘门优化线性注意力，并利用分块并行实现高效训练与解码。</div>
+  <div class="article-meta">
+    <span>👁 61</span><span>👍 8</span><span>📌 4</span>
+    <span class="tag tag-model">AI 模型</span>
+  </div>
+</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/11020736831" target="_blank">AI 生成图像瑕疵检测 · 让每一张 AI 商品图都值得信赖</a></div>
+  <div class="article-abstract">该系统基于领域知识驱动 VLM，一次推理完成 AI 商品图图文一致性与异常检测双任务，实现自动化、可解释的质量审核。</div>
+  <div class="article-meta">
+    <span>👁 58</span><span>👍 2</span><span>📌 3</span>
+    <span class="tag tag-model">AI 模型</span>
+  </div>
+</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/12020738032" target="_blank">大模型智力评测网站汇总</a></div>
+  <div class="article-abstract">汇总大模型评测网站及 2026 年 8 月智力排名，显示 Claude Opus 5 居首，GPT-5.6 系列与 Kimi K3 紧随其后。</div>
+  <div class="article-meta">
+    <span>👁 35</span>
+    <span class="tag tag-model">AI 评测</span>
+  </div>
+</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/12020737624" target="_blank">"干中学" 之用 AI 做数据分析的一点经验</a></div>
+  <div class="article-abstract">分享 AI 数据分析经验，介绍 AntDataHive 通过资产治理将个人经验转化为团队可信数据能力，实现高效、准确的自动化分析。</div>
+  <div class="article-meta">
+    <span>👁 33</span><span>📌 3</span>
+    <span class="tag tag-model">AI 应用</span>
+  </div>
+</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/11020737623" target="_blank">AI 硬件技术入门</a></div>
+  <div class="article-abstract">解析 AI 硬件演进，阐述 GPU 并行架构、内存与互联瓶颈，对比 TPU/Groq 等替代方案，并简述推理流程及安全挑战。</div>
+  <div class="article-meta">
+    <span>👁 29</span><span>👍 4</span><span>📌 1</span>
+    <span class="tag tag-model">AI 基础设施</span>
+  </div>
+</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/11020736832" target="_blank">通过 AIStudio 在华为 910C 上拉起 deepseek-v4-flash</a></div>
+  <div class="article-abstract">介绍在华为 910C 上部署 DeepSeek-V4-Flash 的方案，通过配置 vLLM 镜像、环境变量及 K8s 部署文件实现服务拉起。</div>
+  <div class="article-meta">
+    <span>👁 25</span>
+    <span class="tag tag-model">AI 部署</span>
+  </div>
+</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/12020738425" target="_blank">Agentic Benchmark 之 GAIA2</a></div>
+  <div class="article-abstract">GAIA2 提出异步动态评测框架 ARE，填补时间推理等空白，提供密集 RLVR 奖励信号，揭示强推理模型在时效任务中的性能倒退。</div>
+  <div class="article-meta">
+    <span>👁 13</span>
+    <span class="tag tag-model">AI 评测</span>
+  </div>
+</div>
+
+<!-- ============ Section 4: 设计与 AI 结合 ============ -->
+<div class="section-title">🎨 设计与 AI 结合</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/11020736831" target="_blank">AI 生成图像瑕疵检测 · 让每一张 AI 商品图都值得信赖</a></div>
+  <div class="article-abstract">基于领域知识驱动 VLM 的 AI 商品图质量审核系统，一次推理完成图文一致性与异常检测双任务，实现自动化、可解释的质量审核，保障 AI 生图在营销场景的可用性。</div>
+  <div class="article-meta">
+    <span>👁 58</span><span>👍 2</span><span>📌 3</span>
+    <span class="tag tag-design">设计 + AI</span>
+  </div>
+</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/11020736038" target="_blank">【AI 热点论文周刊】2026.08 第 1 期：视频生成怎么做 Caption 和 PE</a></div>
+  <div class="article-abstract">该论文提出结构化提示词以提升文本条件信息量，验证其与训练损失的稳定关系，并构建 LLM 提示器系统，显著优化了视频生成的 Caption 质量和最终效果。</div>
+  <div class="article-meta">
+    <span>👁 6</span><span>👍 3</span><span>📌 1</span>
+    <span class="tag tag-design">AI 生成</span>
+  </div>
+</div>
+
+<!-- ============ Section 5: AI 业界动态 ============ -->
+<div class="section-title">📰 AI 业界动态</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/11020739217" target="_blank">AI 日报 · 2026 年 08 月 05 日 | SWE-bench 全榜厂商动态：闭源审查与开放权重竞速并行</a></div>
+  <div class="article-abstract">美拟审查闭源模型，阿里发 Qwen3.8-Max 并承诺开源；SWE-bench 榜 Claude 领跑，中美 AI 竞争转向发布制度与生态。</div>
+  <div class="article-meta">
+    <span>👁 43</span>
+    <span class="tag tag-industry">业界动态</span>
+  </div>
+</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/11020739221" target="_blank">GitHub Trending 日报 · 2026 年 08 月 05 日 | 今日 Top10：TencentDB-Agent-Memory 登顶，Agent 记忆与安全工具链升温</a></div>
+  <div class="article-abstract">GitHub 趋势榜显示 AI Agent 记忆与安全工具链成焦点，TencentDB-Agent-Memory 登顶，PDF 解析及低显存推理亦受关注。</div>
+  <div class="article-meta">
+    <span>👁 32</span><span>👍 1</span>
+    <span class="tag tag-industry">业界动态</span>
+  </div>
+</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/11020737226" target="_blank">Anthropic 签百亿算力合同，苹果诉 OpenAI 窃密，本地大模型推理门槛持续突破</a></div>
+  <div class="article-abstract">Anthropic 签百亿算力合同，苹果诉 OpenAI 窃密，阿里发 2.4 万亿参数模型，AI Agent 现安全逃逸，行业聚焦算力锁定、法律纠纷及安全治理。</div>
+  <div class="article-meta">
+    <span>👁 113</span><span>👍 1</span>
+    <span class="tag tag-industry">业界动态</span>
+  </div>
+</div>
+
+<hr style="border: none; border-top: 1px solid #e8e8e8; margin: 40px 0;">
+
+<!-- ============ 其他值得关注 ============ -->
+<div class="section-title">📋 更多推荐</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/11020738830" target="_blank">AI-KIT - 团队 AI Coding 脚手架</a></div>
+  <div class="article-abstract">AI-Coding 脚手架 AI-KIT，帮助团队快速搭建 AI 编码基础设施。</div>
+  <div class="article-meta">
+    <span>👁 26</span>
+    <span class="tag tag-tool">AI 工具</span>
+  </div>
+</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/11020737627" target="_blank">SkillOpt：面向自我进化智能体技能的执行策略</a></div>
+  <div class="article-abstract">SkillOpt 首创文本空间智能体技能优化器，通过类深度学习机制可控优化技能文档，在 52 个评估单元中全面领先基线。</div>
+  <div class="article-meta">
+    <span>👁 22</span><span>👍 1</span>
+    <span class="tag tag-engineering">Agent</span>
+  </div>
+</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/12020736828" target="_blank">把 Agent 从"会聊天"做到"可交付"：我的星青年工程实践</a></div>
+  <div class="article-abstract">强调 Agent 应从聊天 Demo 转向可信组件，通过受控编排、清晰状态划分及可观测体系，以工程方法驾驭 AI 不确定性。</div>
+  <div class="article-meta">
+    <span>👁 19</span>
+    <span class="tag tag-engineering">Agent</span>
+  </div>
+</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/11020736830" target="_blank">飞猪火车票 AI 测试的两次实践与闭环演进</a></div>
+  <div class="article-abstract">飞猪火车票通过两次 AI 测试实践，验证了从 Demo 到复杂需求的闭环能力，确立了以知识、规则和工具驱动的质量保障新模式。</div>
+  <div class="article-meta">
+    <span>👁 18</span>
+    <span class="tag tag-engineering">AI 测试</span>
+  </div>
+</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/11020737228" target="_blank">AI-Native 运维数据湖：为运维 Agent 造一座「即取即用」的数据底座</a></div>
+  <div class="article-abstract">AI-Native 运维数据湖通过日志模板化、基线化等预加工，为受限环境下的运维 Agent 提供低 Token 消耗的结构化数据底座。</div>
+  <div class="article-meta">
+    <span>👁 13</span><span>👍 1</span><span>📌 1</span>
+    <span class="tag tag-engineering">AI 运维</span>
+  </div>
+</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/11020738424" target="_blank">Building an LLM Security Layer with Alibaba Cloud AI Gateway</a></div>
+  <div class="article-abstract">基于阿里云 AI 网关构建 LLM 安全层的完整实践：通过消费者认证、AI Guardrails 内容护栏与 PII 脱敏插件，实现提示词注入拦截和个人信息掩码。</div>
+  <div class="article-meta">
+    <span>👁 12</span>
+    <span class="tag tag-engineering">AI 安全</span>
+  </div>
+</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/11020737622" target="_blank">FSR-Bench 前沿科学推理榜单发布：GPT-5.5 居首，"会推理"未必"能答对"</a></div>
+  <div class="article-abstract">晓天衡宇最新发布 FSR-Bench 评测集，GPT-5.5 表现暂居首位，大模型科学推理中过程分高于结果分、工具增益差异显著及多模态处理仍是短板。</div>
+  <div class="article-meta">
+    <span>👁 7</span>
+    <span class="tag tag-model">AI 评测</span>
+  </div>
+</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/11020739224" target="_blank">利用模块化提示转译构建可扩展的 AI Agent：从提示词到可验证的软件工件</a></div>
+  <div class="article-abstract">主张将 AI 提示词模块化并引入软件构建流程，通过依赖图、CI/CD 及人工治理实现确定性验证与版本控制。</div>
+  <div class="article-meta">
+    <span>👁 7</span>
+    <span class="tag tag-engineering">Agent</span>
+  </div>
+</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/11020738834" target="_blank">【Apsara Copilot 运营数字人】深度洞察专家介绍</a></div>
+  <div class="article-abstract">通过多 Agent 编排、三层记忆及容错体系，解决长链路误差，实现从自然语言到商业报告的智能转化。</div>
+  <div class="article-meta">
+    <span>👁 11</span>
+    <span class="tag tag-engineering">Agent</span>
+  </div>
+</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/11020736829" target="_blank">OPD(On-Policy Distillation) 初调研</a></div>
+  <div class="article-abstract">OPD 作为 LLM 后训练关键技术，通过学生自生成轨迹接受教师密集监督，有效合并专家能力并消除分布偏移，常与 RL 互补以提升模型性能。</div>
+  <div class="article-meta">
+    <span>👁 14</span>
+    <span class="tag tag-model">AI 训练</span>
+  </div>
+</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/11020736032" target="_blank">养老陪伴机器人：整体软硬件架构详细设计文档</a></div>
+  <div class="article-abstract">详述养老陪伴机器人软硬架构，采用本体-边缘-云三级部署及控制、安全、健康三平面隔离设计，通过 LLM 协调与多层安全兜底保障实时交互与功能安全。</div>
+  <div class="article-meta">
+    <span>👁 25</span>
+    <span class="tag tag-engineering">AI 应用</span>
+  </div>
+</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/11020739223" target="_blank">鏖战一月，交付实施记录分享 —— 通义灵码首次适配昇腾 910 系列</a></div>
+  <div class="article-abstract">详述通义灵码在昇腾 910B 环境从 2.1 升级至 3.2 的全过程，涵盖数据迁移、模型适配、数据库国产化及定制化配置。</div>
+  <div class="article-meta">
+    <span>👁 23</span>
+    <span class="tag tag-engineering">AI 部署</span>
+  </div>
+</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/11020738833" target="_blank">从 1080p 模糊到 Retina：用 BetterDisplay 改善 Mac mini 远程桌面，并让 Agent 完成配置闭环</a></div>
+  <div class="article-abstract">利用 BetterDisplay 为 Mac mini 创建 HiDPI 虚拟屏以解决远程桌面模糊，并构建 Agent 配置闭环，强调以系统状态验真作为任务完成标准。</div>
+  <div class="article-meta">
+    <span>👁 18</span><span>👍 2</span><span>💬 1</span><span>📌 1</span>
+    <span class="tag tag-engineering">Agent</span>
+  </div>
+</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/11020736424" target="_blank">阿里妈妈联盟 - 数据 AI Agent 「UFO」在业务项目中的应用全链路分享</a></div>
+  <div class="article-abstract">阿里妈妈推出数据 AI Agent「UFO」，通过自然语言交互自动完成取数、验证及修正，高效解决联盟业务中复杂的数据获取与分析难题。</div>
+  <div class="article-meta">
+    <span>👁 14</span><span>👍 1</span>
+    <span class="tag tag-engineering">Agent</span>
+  </div>
+</div>
+
+<div class="article-card">
+  <div class="article-title"><a href="https://ata.atatech.org/articles/11020737227" target="_blank">Agentic Coding 范式分享：基于 HBF Attention 卸载原型 POC 的开发实践</a></div>
+  <div class="article-abstract">Agentic Coding 应摒弃复杂编排，通过树形文档渐进加载专属上下文，坚持小步迭代与人类品味评审，让项目环境成为最佳 Harness。</div>
+  <div class="article-meta">
+    <span>👁 18</span>
+    <span class="tag tag-engineering">Agent</span>
+  </div>
+</div>
+
+</div><!-- container -->
+
+<div class="footer">
+  <p>📄 报告文件：Reports/ATA/ATA-260805.html</p>
+  <p>🤖 由 ATC Desktop AI 助手自动生成 · 数据来源：ATA 平台</p>
+</div>
+
+</body>
+</html>
