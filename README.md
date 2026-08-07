@@ -2,12 +2,14 @@
 
 从全球渠道（Product Hunt / Hacker News / ideaSearch / MarketGapAI / GapHunt / Reddit / 科技媒体等）采集每日热点趋势、用户痛点、创意信号，按详细标准生成分析报告。
 
-## 目录结构
+## 📋 报告索引（最新在前）
 
-```
-机会挖掘/
-  daily-report-YYYY-MM-DD.md    # 每日日报
-```
+| 日期 | 报告 | 关键主题 |
+|------|------|---------|
+| 2026-08-07 | [查看](机会挖掘/daily-report-2026-08-07.md) | 最新日报 |
+| 2026-07-13 | [查看](机会挖掘/daily-report-2026-07-13.md) | Meta 降价 75% / Osaurus 本地 Agent / Agent 商业化基础设施 |
+| 2026-07-12 | [查看](机会挖掘/daily-report-2026-07-12.md) | Agent 基础设施爆发 / AI 价格战前夜 / Apple Siri AI |
+| 2026-07-11 | [查看](机会挖掘/daily-report-2026-07-11.md) | Lyzr Agent $100M 融资 / Sora 关停 / 36Kr 创业风向转变 |
 
 ## 报告内容
 
@@ -19,7 +21,7 @@
 
 ## 自动生成
 
-报告由 AI 每日 9:00 CST 自动采集生成，双通道 cron 保障送达。
+报告由 AI 每日 9:00 CST 自动采集生成，双通道 cron 保障，自动推送到本仓库。
 
 ---
 
