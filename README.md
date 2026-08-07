@@ -19,9 +19,18 @@
 - 🚀 潜在创业切入点（含市场规模、验证路径、风险评估）
 - 📌 采集链路状态
 
+## 📰 ATA 设计 & AI 日报
+
+每日 08:00 自动抓取 ATA 平台新发布的设计和 AI 方向文章，生成可视化 HTML 报告。
+
+👉 **浏览入口：** [mihaideyu.github.io/Trend_Opportunity](https://mihaideyu.github.io/Trend_Opportunity/)
+
 ## 自动生成
 
-报告由 AI 每日 9:00 CST 自动采集生成，双通道 cron 保障，自动推送到本仓库。
+报告由 AI 每日自动采集生成，自动推送到本仓库。
+
+- 🕐 **08:00** — ATA 设计 & AI 日报
+- 🕐 **09:00** — 创业机会情报
 
 ---
 
