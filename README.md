@@ -2,6 +2,12 @@
 
 从全球渠道（Product Hunt / Hacker News / ideaSearch / MarketGapAI / GapHunt / Reddit / 科技媒体等）采集每日热点趋势、用户痛点、创意信号，按详细标准生成分析报告。
 
+## 📰 ATA 设计 & AI 日报
+
+每日 08:00 自动抓取 ATA 平台新发布的设计和 AI 方向文章，生成可视化 HTML 报告。
+
+👉 **浏览入口：** [mihaideyu.github.io/Trend_Opportunity](https://mihaideyu.github.io/Trend_Opportunity/)
+
 ## 📋 报告索引（最新在前）
 
 | 日期 | 报告 | 关键主题 |
@@ -18,12 +24,6 @@
 - 💡 脑洞 & 创意信号（含冷启动建议）
 - 🚀 潜在创业切入点（含市场规模、验证路径、风险评估）
 - 📌 采集链路状态
-
-## 📰 ATA 设计 & AI 日报
-
-每日 08:00 自动抓取 ATA 平台新发布的设计和 AI 方向文章，生成可视化 HTML 报告。
-
-👉 **浏览入口：** [mihaideyu.github.io/Trend_Opportunity](https://mihaideyu.github.io/Trend_Opportunity/)
 
 ## 自动生成
 
