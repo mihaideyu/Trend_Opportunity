@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ATA-260811 | 设计 × AI 日报</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f0f2f5;
+    color: #1a1a2e;
+    line-height: 1.65;
+}
+.header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: white;
+    padding: 48px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(102,126,234,0.15) 0%, transparent 60%);
+}
+.header h1 {
+    font-size: 2.4em;
+    font-weight: 700;
+    letter-spacing: 2px;
+    position: relative;
+}
+.header .subtitle {
+    font-size: 1.1em;
+    opacity: 0.8;
+    margin-top: 8px;
+    position: relative;
+}
+.header .count-badge {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 6px 20px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 20px;
+    font-size: 0.9em;
+    position: relative;
+}
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 24px 16px;
+}
+.summary-card {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.summary-card h2 {
+    font-size: 1.2em;
+    margin-bottom: 12px;
+    color: #0f3460;
+}
+.cat-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+.cat-tag {
+    padding: 4px 14px;
+    border-radius: 16px;
+    font-size: 0.85em;
+    background: #e8f0fe;
+    color: #0f3460;
+}
+.article-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    border-left: 3px solid transparent;
+    transition: all 0.2s;
+}
+.article-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    border-left-color: #667eea;
+}
+.article-card h3 {
+    margin-bottom: 6px;
+    font-size: 1.02em;
+}
+.article-card h3 a {
+    color: #1a1a2e;
+    text-decoration: none;
+}
+.article-card h3 a:hover {
+    color: #667eea;
+}
+.meta-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.82em;
+    color: #888;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+.badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: 500;
+}
+.badge-ai { background: #fef3e2; color: #b45309; }
+.badge-cat { background: #e8f0fe; color: #0f3460; }
+.abstract {
+    color: #555;
+    font-size: 0.92em;
+    line-height: 1.6;
+}
+.stats {
+    font-size: 0.78em;
+    color: #bbb;
+    margin-top: 8px;
+    display: flex;
+    gap: 14px;
+}
+.stats span { display: flex; align-items: center; gap: 3px; }
+.section-header {
+    font-size: 1.15em;
+    font-weight: 600;
+    color: #0f3460;
+    margin: 24px 0 12px 0;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e8f0fe;
+}
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: #aaa;
+    font-size: 0.82em;
+    margin-top: 20px;
+}
+@media (max-width: 640px) {
+    .header h1 { font-size: 1.6em; }
+    .article-card { padding: 14px 16px; }
+}
+</style>
+</head>
+<body>
+<div id="pages-banner" style="display:none; background:#fff3cd; color:#856404; padding:12px 20px; text-align:center; font-size:14px; border-bottom:2px solid #ffc107;">
+  📖 正在查看源代码，<a href="https://mihaideyu.github.io/Trend_Opportunity/ATA/ATA-260811.html" style="color:#0f3460; font-weight:600;" target="_blank">点击查看渲染版本 →</a>
+</div>
+<script>
+if (location.hostname !== 'mihaideyu.github.io') {
+  document.getElementById('pages-banner').style.display = 'block';
+}
+</script>
+
+<div class="header">
+    <h1>📰 ATA-260811</h1>
+    <div class="subtitle">设计 × 人工智能 方向日报</div>
+    <div class="subtitle" style="font-size:0.9em;">2026 年 8 月 11 日发布</div>
+    <div class="count-badge">📄 共收录 43 篇文章</div>
+</div>
+
+<div class="container">
+<div class="summary-card">
+    <h2>📊 分类统计</h2>
+    <div class="cat-tags">
+        <span class="cat-tag">🤖 AI 工程化：17 篇</span>
+        <span class="cat-tag">📐 AI 观测评估：8 篇</span>
+        <span class="cat-tag">🎨 设计与 AI 结合：7 篇</span>
+        <span class="cat-tag">🧪 模型技术：6 篇</span>
+        <span class="cat-tag">🔒 安全与治理：3 篇</span>
+        <span class="cat-tag">📊 行业动态：2 篇</span>
+    </div>
+</div>
+
+<div class="section-header">🤖 AI 工程化</div>
+
+<div class="article-card">
+    <h3><a href="https://ata.atatech.org/articles/11020747208?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">Agent 评估实践：从"改了不敢发"到"发布有据可依"</a></h3>
+    <div class="meta-row">
+        <span class="badge badge-ai">🤖 AI辅助 10%</span>
+        <span>✍️ 晓沐</span>
+        <span>🏢 国际数字商业集团</span>
+        <span>🕐 2026-08-11 11:12</span>
+    </div>
+    <div class="abstract">文章分享Agent评估实践，通过构建分层指标体系与发布卡口，解决人工评估痛点，并总结抽样、数据校验及统计误差三大坑，实现发布有据可依。</div>
+    <div class="stats">
+        <span>👁 223 阅读</span>
+        <span>👍 27 点赞</span>
+        <span>🔖 10 收藏</span>
+        <span>💬 5 评论</span>
+    </div>
+</div>
+
+<div class="article-card">
+    <h3><a href="https://ata.atatech.org/articles/11020747607?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">【高德商业智能】翻译及智能：万字长文解析 Data Agent 实践全景</a></h3>
+    <div class="meta-row">
+        <span class="badge badge-ai">🤖 AI辅助 10%</span>
+        <span>✍️ 葵新</span>
+        <span>🏢 高德</span>
+        <span>🕐 2026-08-11 13:39</span>
+    </div>
+    <div class="abstract">高德团队提出Data Agent"六步×CFHL"框架，通过补知识、能力、校验及兜底机制，解决分析链路可靠性难题，实现从业务问题到actionable建议的精准翻译。</div>
+    <div class="stats">
+        <span>👁 711 阅读</span>
+        <span>👍 38 点赞</span>
+        <span>🔖 26 收藏</span>
+        <span>💬 2 评论</span>
+    </div>
+</div>
+
+<div class="article-card">
+    <h3><a href="https://ata.atatech.org/articles/12020750804?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">Agent Harness太多不知道选哪个？Agent Harness 框架横向对比：DeepAgents、Hermes、OpenClaw、OpenCode、Pi、Prime Agent、QwenPaw</a></h3>
+    <div class="meta-row">
+        <span class="badge badge-ai">🤖 AI辅助 70%</span>
+        <span>✍️ 洛璟</span>
+        <span>🏢 蚂蚁集团</span>
+        <span>🕐 2026-08-11 16:05</span>
+    </div>
+    <div class="abstract">本文深度对比DeepAgents等7大Agent Harness框架，从架构、安全及生态维度剖析差异，并提供基于场景与技术栈的选型指南。</div>
+    <div class="stats">
+        <span>👁 101 阅读</span>
+        <span>👍 0 点赞</span>
+        <span>🔖 1 收藏</span>
+        <span>💬 1 评论</span>
+    </div>
+</div>
+
+<div class="article-card">
+    <h3><a href="https://ata.atatech.org/articles/11020749207?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">Agent 终章（Harness 成本篇）：一次百炼账单降低 88% 实战</a></h3>
+    <div class="meta-row">
+        <span class="badge badge-ai">🤖 AI辅助 30%</span>
+        <span>✍️ 亣釗</span>
+        <span>🏢 中国电商事业群-淘宝闪购</span>
+        <span>🕐 2026-08-11 16:55</span>
+    </div>
+    <div class="abstract">本文通过精简输入、优化缓存、控制推理、隔离子智能体及模型分流等七项Harness实战策略，成功将Agent账单降低88%。</div>
+    <div class="stats">
+        <span>👁 121 阅读</span>
+        <span>👍 8 点赞</span>
+        <span>🔖 5 收藏</span>
+    </div>
+</div>
+
+<div class="article-card">
+    <h3><a href="https://ata.atatech.org/articles/11020750406?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">AlgoForge：淘宝闪购商业化算法自迭代Agent——LLM 长流程、高可靠性执行的Harness方案</a></h3>
+    <div class="meta-row">
+        <span class="badge badge-ai">🤖 AI辅助 30%</span>
+        <span>✍️ 禾丘</span>
+        <span>🏢 中国电商事业群-淘宝闪购</span>
+        <span>🕐 2026-08-11 16:54</span>
+    </div>
+    <div class="abstract">AlgoForge通过双盲验证等机制解决LLM长流程缺陷，实现建模12倍提速及模型指标显著提升。</div>
+    <div class="stats">
+        <span>👁 66 阅读</span>
+        <span>👍 5 点赞</span>
+        <span>🔖 1 收藏</span>
+    </div>
+</div>
+
+<div class="article-card">
+    <h3><a href="https://ata.atatech.org/articles/11020748807?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">生成页面只是冰山一角：标注模板 Agent 的工程取舍与实践</a></h3>
+    <div class="meta-row">
+        <span class="badge badge-ai">🤖 AI辅助 30%</span>
+        <span>✍️ 硕存</span>
+        <span>🏢 ATH事业群-千问事业部</span>
+        <span>🕐 2026-08-11 14:24</span>
+    </div>
+    <div class="abstract">文章介绍标注模板Agent通过冻结结果契约、独立构建门禁及版本化管理，平衡页面生成灵活性与数据一致性，实现特化交互分钟级交付。</div>
+    <div class="stats">
+        <span>👁 26 阅读</span>
+        <span>👍 5 点赞</span>
+        <span>🔖 1 收藏</span>
+        <span>💬 1 评论</span>
+    </div>
+</div>
+
+<div class="article-card">
+    <h3><a href="https://ata.atatech.org/articles/11020747608?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">QCA × Open Code Review：把代码评审接入云端 Agent</a></h3>
+    <div class="meta-row">
+        <span class="badge badge-ai">🤖 AI辅助 100%</span>
+        <span>✍️ 安辰</span>
+        <span>🏢 ATH事业群-AI创新事业部</span>
+        <span>🕐 2026-08-11 14:33</span>
+    </div>
+    <div class="abstract">QCA与OpenCodeReview通过Delegation协议接入，由OCR提供确定性数据、QCA宿主模型负责判断，实现安全高效的云端只读代码评审。</div>
+    <div class="stats">
+        <span>👁 52 阅读</span>
+        <span>👍 6 点赞</span>
+        <span>🔖 1 收藏</span>
+    </div>
+</div>
+
+<div class="article-card">
+    <h3><a href="https://ata.atatech.org/articles/11020749202?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">从 0 到 74 条规则：用 AI Agent 构建自进化的 Code Review 体系</a></h3>
+    <div class="meta-row">
+        <span class="badge badge-ai">🤖 AI辅助 70%</span>
+        <span>✍️ 千郎</span>
+        <span>🏢 虎鲸文娱集团</span>
+        <span>🕐 2026-08-11 10:17</span>
+    </div>
+    <div class="abstract">文章介绍通过AI蒸馏真实Bug生成规则、集中管理并确定性执行的自进化CodeReview体系，解决规范落地难问题，实现低成本、可追溯的持续优化。</div>
+    <div class="stats">
+        <span>👁 40 阅读</span>
+        <span>👍 5 点赞</span>
+        <span>🔖 2 收藏</span>
+    </div>
+</div>
+
+<div class="article-card">
+    <h3><a href="https://ata.atatech.org/articles/11020749607?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">Loom：从 Devix 里"长"出来的 AI Native 研测系统——由来与架构</a></h3>
+    <div class="meta-row">
+        <span class="badge badge-ai">🤖 AI辅助 30%</span>
+        <span>✍️ 秋哲</span>
+        <span>🏢 国际数字商业集团</span>
+        <span>🕐 2026-08-11 14:13</span>
+    </div>
+    <div class="abstract">Loom利用AI代码低成本优势，通过Agent编排与确定性门禁，将零散自测工具整合为24小时待命的自动化研测系统，实现高效质量闭环。</div>
+    <div class="stats">
+        <span>👁 40 阅读</span>
+        <span>👍 1 点赞</span>
+    </div>
+</div>
+
+<div class="article-card">
+    <h3><a href="https://ata.atatech.org/articles/11020750802?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">让四个 Agent 运行时共享一份长期记忆：Hindsight 接入实践（MCP → REST API 直连）</a></h3>
+    <div class="meta-row">
+        <span class="badge badge-ai">🤖 AI辅助 50%</span>
+        <span>✍️ 泉二</span>
+        <span>🏢 云智能集团</span>
+        <span>🕐 2026-08-11 15:46</span>
+    </div>
+    <div class="abstract">本文介绍通过REST API直连替代MCP，实现四Agent共享Hindsight长期记忆，确保读写确定性并提供可复用脚本。</div>
+    <div class="stats">
+        <span>👁 27 阅读</span>
+        <span>👍 1 点赞</span>
+        <span>💬 1 评论</span>
+    </div>
+</div>
+
+<div class="article-card">
+    <h3><a href="https://ata.atatech.org/articles/11020749210?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">别再搬文档了：用 kbase + aone-km MCP 搭一个最简单的答疑 Agent</a></h3>
+    <div class="meta-row">
+        <span class="badge badge-ai">🤖 AI辅助 70%</span>
+        <span>✍️ 若徐</span>
+        <span>🏢 国际数字商业集团</span>
+        <span>🕐 2026-08-11 19:59</span>
+    </div>
+    <div class="abstract">通过kbase同步语雀知识库并结合aone-km MCP接入AI Studio Agent，实现知识自动更新与检索，消除手动搬运成本，高效构建低维护的答疑Agent。</div>
+    <div class="stats">
+        <span>👁 35 阅读</span>
+    </div>
+</div>
+
+<div class="article-card">
+    <h3><a href="https://ata.atatech.org/articles/11020748406?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">Record &amp; Replay：别再给 AI 写大段操作说明，演示一遍就够了</a></h3>
+    <div class="meta-row">
+        <span class="badge badge-ai">🤖 AI辅助 50%</span>
+        <span>✍️ 莫温</span>
+        <span>🏢 ATH事业群-千问事业部</span>
+        <span>🕐 2026-08-11 13:55</span>
+    </div>
+    <div class="abstract">Record & Replay通过录制操作演示生成可复用Skill，将隐性经验转化为标准化流程，支持跨平台迁移，高效解决复杂重复任务并提升团队自动化效率。</div>
+    <div class="stats">
+        <span>👁 31 阅读</span>
+    </div>
+</div>
+
+<div class="article-card">
+    <h3><a href="https://ata.atatech.org/articles/11020747211?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">response-guard：给 AI Coding Agent 装一个"别问废话"的纠察器</a></h3>
+    <div class="meta-row">
+        <span class="badge badge-ai">🤖 AI辅助 0%</span>
+        <span>✍️ 春秋</span>
+        <span>🏢 中国电商事业群-淘天集团</span>
+        <span>🕐 2026-08-11 18:04</span>
+    </div>
+    <div class="abstract">response-guard插件通过启发式检测AI编程助手的低价值确认问句，引导其默认执行而非反复询问，从而提升交互效率。</div>
+    <div class="stats">
+        <span>👁 13 阅读</span>
+        <span>👍 2 点赞</span>
+        <span>💬 1 评论</span>
+    </div>
+</div>
+
+<div class="article-card">
+    <h3><a href="https://ata.atatech.org/articles/11020750808?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">从一句话到端到端交付：我的 AI Native 实践</a></h3>
+    <div class="meta-row">
+        <span class="badge badge-ai">🤖 AI辅助 0%</span>
+        <span>✍️ 巍阙</span>
+        <span>🏢 云智能集团</span>
+        <span>🕐 2026-08-11 18:06</span>
+    </div>
+    <div class="abstract">作者通过构建连接器与全局Skill，实现AI跨系统端到端交付，减少人工接力，让人回归目标确认与责任把控。</div>
+    <div class="stats">
+        <span>👁 40 阅读</span>
+        <span>👍 1 点赞</span>
+        <span>🔖 1 收藏</span>
+    </div>
+</div>
+
+<div class="article-card">
+    <h3><a href="https://ata.atatech.org/articles/11020749206?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">一句功能点跑通全链路：AI Native 在保险辅营礼包采购域的落地实践</a></h3>
+    <div class="meta-row">
+        <span class="badge badge-ai">🤖 AI辅助 30%</span>
+        <span>✍️ 安仙</span>
+        <span>🏢 中国电商事业群-飞猪</span>
+        <span>🕐 2026-08-11 15:51</span>
+    </div>
+    <div class="abstract">本文介绍AI Native在保险采购域的落地，通过五步闭环与四层架构，实现自然语言驱动全链路自动化测试及报告输出，提升回归效率。</div>
+    <div class="stats">
+        <span>👁 14 阅读</span>
+    </div>
+</div>
+
+<div class="article-card">
+    <h3><a href="https://ata.atatech.org/articles/11020748806?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">Prime Agent 开源代码仓库深度分析报告</a></h3>
+    <div class="meta-row">
+        <span class="badge badge-ai">🤖 AI辅助 100%</span>
+        <span>✍️ 诸星</span>
+        <span>🏢 云智能集团</span>
+        <span>🕐 2026-08-11 12:51</span>
+    </div>
+    <div class="abstract">Prime Agent是开源自进化AI编程Agent，凭借RLM递归模型、IPython执行环境及持续进化系统，实现多模型支持与自主协同，成为GitHub增长最快的AI项目之一。</div>
+    <div class="stats">
+        <span>👁 17 阅读</span>
+    </div>
+</div>
+
+<div class="article-card">
+    <h3><a href="https://ata.atatech.org/articles/11020750008?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">AI提效—从会话到知识库的全自动化体系</a></h3>
+    <div class="meta-row">
+        <span class="badge badge-ai">🤖 AI辅助 0%</span>
+        <span>✍️ 雪鸢</span>
+        <span>🏢 中国电商事业群-淘天集团</span>
+        <span>🕐 2026-08-11 18:34</span>
+    </div>
+    <div class="abstract">该团队构建基于Qoder Skill+Agent+MCP的全自动化知识体系，通过实时与离线双轨生产、多重信任验证及消费反馈闭环，实现研发会话到知识库的零人工干预自动沉淀。</div>
+    <div class="stats">
+        <span>👁 34 阅读</span>
+        <span>👍 3 点赞</span>
+        <span>🔖 2 收藏</span>
+    </div>
+</div>
+
+<div class="section-header">📐 AI 观测评估</div>
+
+<div class="article-card">
+    <h3><a href="https://ata.atatech.org/articles/11020746802?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">通用智能体评测体系技术综述（预发测试文章）</a></h3>
+    <div class="meta-row">
+        <span class="badge badge-ai">🤖 AI辅助 100%</span>
+        <span>✍️ 舒友</span>
+        <span>🏢 阿里控股</span>
+        <span>🕐 2026-08-11 14:32</span>
+    </div>
+    <div class="abstract">本文综述通用智能体评测体系，通过规则指标、LLM-as-Judge及运行证据组合，从能力、工程与评测质量多维评估，强调可复现证据链以支持系统优化。</div>
+    <div class="stats">
+        <span>👁 34 阅读</span>
+    </div>
+</div>
+
+<div class="article-card">
+    <h3><a href="https://ata.atatech.org/articles/11020749604?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">后人类训练：模型自进化之自我编辑、自省、自博弈与自验证</a></h3>
+    <div class="meta-row">
+        <span class="badge badge-ai">🤖 AI辅助 70%</span>
+        <span>✍️ 颢文</span>
+        <span>🏢 国际数字商业集团</span>
+        <span>🕐 2026-08-11 10:32</span>
+    </div>
+    <div class="abstract">文章阐述后人类训练范式，梳理自编辑、自省、自博弈与自验证四条模型权重自进化路线，并指出评估闭环是核心瓶颈。</div>
+    <div class="stats">
+        <span>👁 55 阅读</span>
+        <span>👍 14 点赞</span>
+        <span>💬 1 评论</span>
+    </div>
+</div>
+
+<div class="article-card">
+    <h3><a href="https://ata.atatech.org/articles/11020747214?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">Semantic ID 碰撞损失的精确刻画：多 Agent 对抗的理论证明实践</a></h3>
+    <div class="meta-row">
+        <span class="badge badge-ai">🤖 AI辅助 70%</span>
+        <span>✍️ 李哲</span>
+        <span>🏢 中国电商事业群-淘宝闪购</span>
+        <span>🕐 2026-08-11 21:26</span>
+    </div>
+    <div class="abstract">文章通过DPS多Agent对抗框架，精确证明6%语义ID碰撞导致等量召回损失，并揭示LLM擅长框架内推理但缺乏溯因能力的局限。</div>
+    <div class="stats">
+        <span>👁 45 阅读</span>
+        <span>👍 11 点赞</span>
+        <span>🔖 3 收藏</span>
+    </div>
+</div>
+
+<div class="article-card">
+    <h3><a href="https://ata.atatech.org/articles/11020750810?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">CST L3 通过复盘：从真实问题&amp;实践经验出发</a></h3>
+    <div class="meta-row">
+        <span class="badge badge-ai">🤖 AI辅助 30%</span>
+        <span>✍️ 昀森</span>
+        <span>🏢 高德</span>
+        <span>🕐 2026-08-11 21:25</span>
+    </div>
+    <div class="abstract">作者通过CST L3认证，分享基于114个真实会话构建的AI-Native预发研发闭环，强调以真实数据证伪、工程约束及经验沉淀确保AI解决真问题。</div>
+    <div class="stats">
+        <span>👁 10 阅读</span>
+    </div>
+</div>
+
+<div class="article-card">
+    <h3><a href="https://ata.atatech.org/articles/11020748011?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">L3认证到底怎么过？从"差一点点"到最终通过的复盘与方法论</a></h3>
+    <div class="meta-row">
+        <span class="badge badge-ai">🤖 AI辅助 30%</span>
+        <span>✍️ 秦迪</span>
+        <span>🏢 高德</span>
+        <span>🕐 2026-08-11 19:45</span>
+    </div>
+    <div class="abstract">作者复盘CST L3认证六次提交经历，总结"AI对抗迭代、数据治理提效、Harness强互证"的方法论，助读者突破瓶颈顺利通关。</div>
+    <div class="stats">
+        <span>👁 161 阅读</span>
+        <span>👍 9 点赞</span>
+        <span>🔖 5 收藏</span>
+    </div>
+</div>
+
+<div class="article-card">
+    <h3><a href="https://ata.atatech.org/articles/11020750006?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">当 AI 开始接管 Oncall：Kubernetes 容器 RCA 的现状、路线与问题</a></h3>
+    <div class="meta-row">
+        <span class="badge badge-ai">🤖 AI辅助 70%</span>
+        <span>✍️ 光磊</span>
+        <span>🏢 云智能集团</span>
+        <span>🕐 2026-08-11 13:40</span>
+    </div>
+    <div class="abstract">文章剖析K8s容器RCA现状，指出场景特殊、自主与确定平衡难及评测缺失三大瓶颈，对比三条技术路线，分析它们各自的优缺点。</div>
+    <div class="stats">
+        <span>👁 25 阅读</span>
+        <span>👍 9 点赞</span>
+    </div>
+</div>
+
+<div class="article-card">
+    <h3><a href="https://ata.atatech.org/articles/11020747605?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">智能体时代的数据收录新形态：千问高考RA材料实战</a></h3>
+    <div class="meta-row">
+        <span class="badge badge-ai">🤖 AI辅助 10%</span>
+        <span>✍️ 五弦</span>
+        <span>🏢 ATH事业群-千问事业部</span>
+        <span>🕐 2026-08-11 10:44</span>
+    </div>
+    <div class="abstract">以高考业务为例，介绍智能体时代数据收录实战经验和技术变迁。</div>
+    <div class="stats">
+        <span>👁 36 阅读</span>
+        <span>👍 25 点赞</span>
+        <span>💬 3 评论</span>
+    </div>
+</div>
+
+<div class="article-card">
+    <h3><a href="https://ata.atatech.org/articles/11020749208?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">事件报告自动生成：从手动翻阅群聊到对话即出报告，提效超 80%</a></h3>
+    <div class="meta-row">
+        <span class="badge badge-ai">🤖 AI辅助 0%</span>
+        <span>✍️ 将锦</span>
+        <span>🏢 云智能集团</span>
+        <span>🕐 2026-08-11 17:45</span>
+    </div>
+    <div class="abstract">阿里云TAM通过事件报告生成器实现对话即出报告，将耗时从1-2小时缩至15分钟，提效超80%，并确保内容规范完整。</div>
+    <div class="stats">
+        <span>👁 6 阅读</span>
+    </div>
+</div>
+
+<div class="section-header">🎨 设计与 AI 结合</div>
+
+<div class="article-card">
+    <h3><a href="https://ata.atatech.org/articles/12020748810?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">RealTime 多模态时代来了：支付宝 AI 交互实践给出的答案</a></h3>
+    <div class="meta-row">
+        <span class="badge badge-ai">🤖 AI辅助 30%</span>
+        <span>✍️ 颜冉</span>
+        <span>🏢 蚂蚁集团</span>
+        <span>🕐 2026-08-11 20:01</span>
+    </div>
+    <div class="abstract">支付宝基于RealTime框架与MoQ协议，构建低延迟多模态实时交互链路，成功支撑AI面试与蚁小保场景，实现端云协同及能力复用。</div>
+    <div class="stats">
+        <span>👁 45 阅读</span>
+        <span>👍 13 点赞</span>
+        <span>🔖 4 收藏</span>
+        <span>💬 3 评论</span>
+    </div>
+</div>
+
+<div class="article-card">
+    <h3><a href="https://ata.atatech.org/articles/11020748809?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">把「像素级还原」变成可量化的工程问题</a></h3>
+    <div class="meta-row">
+        <span class="badge badge-ai">🤖 AI辅助 70%</span>
+        <span>✍️ 赤贝</span>
+        <span>🏢 虎鲸文娱集团</span>
+        <span>🕐 2026-08-11 19:58</span>
+    </div>
+    <div class="abstract">本文介绍基于MCP的视觉还原工具，通过连接本地Chrome对比Figma与页面，量化CSS差异并生成报告，实现自动化验收。</div>
+    <div class="stats">
+        <span>👁 11 阅读</span>
+        <span>👍 3 点赞</span>
+    </div>
+</div>
+
+<div class="article-card">
+    <h3><a href="https://ata.atatech.org/articles/11020747210?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">文档之死</a></h3>
+    <div class="meta-row">
+        <span class="badge badge-ai">🤖 AI辅助 0%</span>
+        <span>✍️ 参省</span>
+        <span>🏢 ATH事业群-千问办公</span>
+        <span>🕐 2026-08-11 14:10</span>
+    </div>
+    <div class="abstract">文章探讨AI时代文档演变，提出"文档增强型Agent"新形态，通过OT技术实现人机安全协同，推动文档从传统媒介向AI共生新生。</div>
+    <div class="stats">
+        <span>👁 71 阅读</span>
+        <span>👍 7 点赞</span>
+        <span>🔖 2 收藏</span>
+    </div>
+</div>
+
+<div class="article-card">
+    <h3><a href="https://ata.atatech.org/articles/11020749608?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">当 AI 开始察言观色：Context Engine 如何让 Agent 主动服务</a></h3>
+    <div class="meta-row">
+        <span class="badge badge-ai">🤖 AI辅助 70%</span>
+        <span>✍️ 章南</span>
+        <span>🏢 云智能集团</span>
+        <span>🕐 2026-08-11 18:50</span>
+    </div>
+    <div class="abstract">Context Engine通过整合多源信号构建情境意识，使Agent在理解用户意图后，基于风险与打扰成本判断介入时机，实现懂得分寸的主动服务。</div>
+    <div class="stats">
+        <span>👁 21 阅读</span>
+        <span>👍 1 点赞</span>
+    </div>
+</div>
+
+<div class="article-card">
+    <h3><a href="https://ata.atatech.org/articles/11020748009?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">AI Native 质量保障全链路 · 业财域 QA 实践</a></h3>
+    <div class="meta-row">
+        <span class="badge badge-ai">🤖 AI辅助 0%</span>
+        <span>✍️ 眠眠</span>
+        <span>🏢 中国电商事业群-飞猪</span>
+        <span>🕐 2026-08-11 17:38</span>
+    </div>
+    <div class="abstract">该实践以AI Agent为中枢，通过五层架构与多系统交叉验证，实现业财结算测试从PRD解析到报告产出的自动化闭环，显著提升效率并支持规模化复制。</div>
+    <div class="stats">
+        <span>👁 21 阅读</span>
+        <span>👍 1 点赞</span>
+    </div>
+</div>
+
+<div class="article-card">
+    <h3><a href="https://ata.atatech.org/articles/11020750809?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">Hackathon，我们用 48 小时做了一个 【物流决策搭子】</a></h3>
+    <div class="meta-row">
+        <span class="badge badge-ai">🤖 AI辅助 0%</span>
+        <span>✍️ 迦欣</span>
+        <span>🏢 国际数字商业集团</span>
+        <span>🕐 2026-08-11 18:23</span>
+    </div>
+    <div class="abstract">淘海外基础链路团队48小时开发"物流决策搭子"，通过对话查询与结构化变更流程，结合AI与现有工具，降低运营配置成本并提升决策效率。</div>
+    <div class="stats">
+        <span>👁 29 阅读</span>
+        <span>👍 6 点赞</span>
+    </div>
+</div>
+
+<div class="article-card">
+    <h3><a href="https://ata.atatech.org/articles/11020748010?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">用Qoder总结腾讯WorkBuddy的技术文章——腾讯WorkBuddy实践：如何把Agent做成可用产品</a></h3>
+    <div class="meta-row">
+        <span class="badge badge-ai">🤖 AI辅助 0%</span>
+        <span>✍️ 紫筝</span>
+        <span>🏢 云智能集团</span>
+        <span>🕐 2026-08-11 17:40</span>
+    </div>
+    <div class="abstract">作者借助Qoder总结腾讯WorkBuddy技术文章，虽初版生图不佳，但经引导后生成优质HTML思维导图，验证了AI提升产品经理工作效率的价值。</div>
+    <div class="stats">
+        <span>👁 65 阅读</span>
+        <span>👍 5 点赞</span>
+    </div>
+</div>
+
+<div class="section-header">🧪 模型技术</div>
+
+<div class="article-card">
+    <h3><a href="https://ata.atatech.org/articles/11020749204?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">Qwen3.8-Max、Kimi-K3、GLM-5.2、DeepSeek-V4-Flash-0731模型测试分享</a></h3>
+    <div class="meta-row">
+        <span class="badge badge-ai">🤖 AI辅助 70%</span>
+        <span>✍️ 包青天</span>
+        <span>🏢 云智能集团</span>
+        <span>🕐 2026-08-11 14:19</span>
+    </div>
+    <div class="abstract">评测四款模型显示：Kimi-K3综合最优且代码稳健；Qwen3.8-max设计精细但偶有崩溃；GLM5.2逻辑强却易因预算机制交白卷；DeepSeek-V4-Flash-0731极速但深度不足且存在事实错误。</div>
+    <div class="stats">
+        <span>👁 192 阅读</span>
+        <span>👍 4 点赞</span>
+        <span>🔖 3 收藏</span>
+        <span>💬 3 评论</span>
+    </div>
+</div>
+
+<div class="article-card">
+    <h3><a href="https://ata.atatech.org/articles/11020748007?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">Kimi-K3技术报告解析</a></h3>
+    <div class="meta-row">
+        <span class="badge badge-ai">🤖 AI辅助 50%</span>
+        <span>✍️ 包青天</span>
+        <span>🏢 云智能集团</span>
+        <span>🕐 2026-08-11 14:09</span>
+    </div>
+    <div class="abstract">Kimi-K3凭借混合注意力与原生多模态架构登顶开源榜首，但高部署门槛、昂贵定价及51%幻觉率引发争议，综合表现虽强于GLM-5.2却不及顶级闭源模型。</div>
+    <div class="stats">
+        <span>👁 102 阅读</span>
+        <span>👍 2 点赞</span>
+        <span>🔖 2 收藏</span>
+    </div>
+</div>
+
+<div class="article-card">
+    <h3><a href="https://ata.atatech.org/articles/11020750402?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">GLM-5.2模型能力创新概览</a></h3>
+    <div class="meta-row">
+        <span class="badge badge-ai">🤖 AI辅助 30%</span>
+        <span>✍️ 仲得</span>
+        <span>🏢 云智能集团</span>
+        <span>🕐 2026-08-11 11:42</span>
+    </div>
+    <div class="abstract">GLM-5.2凭借1M上下文、稀疏注意力及Agentic RL优化，成为长程编码与智能体任务的第一梯队开源模型，虽部署门槛高且输出冗长，但性价比显著，能力逼近顶级闭源模型。</div>
+    <div class="stats">
+        <span>👁 59 阅读</span>
+        <span>👍 2 点赞</span>
+    </div>
+</div>
+
+<div class="article-card">
+    <h3><a href="https://ata.atatech.org/articles/11020748003?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">大语言模型 8 月榜单更新：Claude Opus 5 登顶</a></h3>
+    <div class="meta-row">
+        <span class="badge badge-ai">🤖 AI辅助 10%</span>
+        <span>✍️ 微露</span>
+        <span>🏢 阿里控股</span>
+        <span>🕐 2026-08-11 09:50</span>
+    </div>
+    <div class="abstract">晓天衡宇8月大语言模型榜单更新，三款新模型入榜：Claude Opus 5登顶，Gemini 3.6-Flash与DeepSeek-V4 Flash整体位居中部，在速度和成本上各具优势。</div>
+    <div class="stats">
+        <span>👁 93 阅读</span>
+    </div>
+</div>
+
+<div class="article-card">
+    <h3><a href="https://ata.atatech.org/articles/11020749209?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">Yuvion LLM-伏渊御风大模型：对抗即智能，如何在安全领域8B/32B跨尺寸超越闭源旗舰？</a></h3>
+    <div class="meta-row">
+        <span class="badge badge-ai">🤖 AI辅助 0%</span>
+        <span>✍️ 赋海</span>
+        <span>🏢 阿里控股</span>
+        <span>🕐 2026-08-11 17:53</span>
+    </div>
+    <div class="abstract">阿里发布Yuvion大模型，以"对抗即智能"为核心，通过三阶段训练在安全领域实现8B/32B跨尺寸超越闭源旗舰，并已在多业务场景落地。</div>
+    <div class="stats">
+        <span>👁 56 阅读</span>
+        <span>👍 18 点赞</span>
+        <span>💬 2 评论</span>
+    </div>
+</div>
+
+<div class="article-card">
+    <h3><a href="https://ata.atatech.org/articles/11020748408?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">国产 GPU + DeepSeek + Higress：高校 AI 场景下的大模型网关服务化实战</a></h3>
+    <div class="meta-row">
+        <span class="badge badge-ai">🤖 AI辅助 30%</span>
+        <span>✍️ 苏赛</span>
+        <span>🏢 云智能集团</span>
+        <span>🕐 2026-08-11 19:10</span>
+    </div>
+    <div class="abstract">本文介绍在4台沐曦国产GPU上，采用Prefill/Decode分离架构部署DeepSeek，并通过Higress网关提供统一AI服务的高校实战方案。</div>
+    <div class="stats">
+        <span>👁 32 阅读</span>
+        <span>👍 1 点赞</span>
+        <span>💬 1 评论</span>
+    </div>
+</div>
+
+<div class="section-header">🔒 安全与治理</div>
+
+<div class="article-card">
+    <h3><a href="https://ata.atatech.org/articles/11020752001?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">【用商家分析Agent讲透AI基础概念｜幻觉与安全】Hallucination、Prompt注入与防护</a></h3>
+    <div class="meta-row">
+        <span class="badge badge-ai">🤖 AI辅助 10%</span>
+        <span>✍️ 夕亭</span>
+        <span>🏢 中国电商事业群-淘天集团</span>
+        <span>🕐 2026-08-11 22:39</span>
+    </div>
+    <div class="abstract">本文以商家分析Agent为例，解析AI幻觉成因及防护、Prompt注入攻击与三层防御体系，助产品运营掌握AI落地安全策略。</div>
+    <div class="stats">
+        <span>👁 20 阅读</span>
+    </div>
+</div>
+
+<div class="article-card">
+    <h3><a href="https://ata.atatech.org/articles/11020748405?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">把安全从"生成后扫描"前移到 AI Coding 生命周期（Secure SDLC Plugin/Qoder Security/Open Code Review/Codex Security）</a></h3>
+    <div class="meta-row">
+        <span class="badge badge-ai">🤖 AI辅助 30%</span>
+        <span>✍️ 坎耶</span>
+        <span>🏢 中国电商事业群-淘宝闪购</span>
+        <span>🕐 2026-08-11 11:47</span>
+    </div>
+    <div class="abstract">SecureSDLC Plugin通过生成前约束与生成后审查，将安全嵌入AI编程全生命周期，显著提升产物安全性并降低误报。</div>
+    <div class="stats">
+        <span>👁 39 阅读</span>
+        <span>👍 6 点赞</span>
+        <span>💬 1 评论</span>
+    </div>
+</div>
+
+<div class="article-card">
+    <h3><a href="https://ata.atatech.org/articles/11020749602?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">ida-pro-mcp 的安装与使用：更好的用大模型做程序逆向</a></h3>
+    <div class="meta-row">
+        <span class="badge badge-ai">🤖 AI辅助 30%</span>
+        <span>✍️ 承择</span>
+        <span>🏢 云智能集团</span>
+        <span>🕐 2026-08-11 09:22</span>
+    </div>
+    <div class="abstract">ida-pro-mcp通过MCP协议连接IDA Pro与大模型，自动化执行查询与分析任务，显著降低逆向门槛，但需人工验证以确保结论准确。</div>
+    <div class="stats">
+        <span>👁 21 阅读</span>
+        <span>💬 1 评论</span>
+    </div>
+</div>
+
+<div class="section-header">📊 行业动态</div>
+
+<div class="article-card">
+    <h3><a href="https://ata.atatech.org/articles/11020748804?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">AI日报 · 2026年08月11日 | SWE-bench全榜厂商动态：自动授权与开放权重成焦点</a></h3>
+    <div class="meta-row">
+        <span class="badge badge-ai">🤖 AI辅助 100%</span>
+        <span>✍️ 沐淋</span>
+        <span>🏢 高德</span>
+        <span>🕐 2026-08-11 11:18</span>
+    </div>
+    <div class="abstract">AI竞赛聚焦Agent自动授权与开放权重，Anthropic默认自动模式，Meta推MuseGlimmer，中美在地缘政治下加速技术博弈。</div>
+    <div class="stats">
+        <span>👁 17 阅读</span>
+    </div>
+</div>
+
+<div class="article-card">
+    <h3><a href="https://ata.atatech.org/articles/11020751602?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">【持续更新】2026 AI 大模型黑话大全 Top 100</a></h3>
+    <div class="meta-row">
+        <span class="badge badge-ai">🤖 AI辅助 0%</span>
+        <span>✍️ 柏锦</span>
+        <span>🏢 中国电商事业群-淘天集团</span>
+        <span>🕐 2026-08-11 23:52</span>
+    </div>
+    <div class="abstract">本文总结大模型高频说的各种小众类非人车轱辘话（但凡各种文本里说了下面的关键词，那基本就是AI）。</div>
+    <div class="stats">
+        <span>👁 75 阅读</span>
+        <span>👍 6 点赞</span>
+        <span>💬 1 评论</span>
+    </div>
+</div>
+
+</div>
+
+<div class="footer">
+    <p>由 ATC Desktop AI 助手自动生成 · 数据来源：ATA (ata.atatech.org)</p>
+    <p>Powered by GitHub Pages</p>
+</div>
+
+</body>
+</html>
