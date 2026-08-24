@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATA-260823 | 设计与AI方向文章日报</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.8;
+        }
+        .container { max-width: 960px; margin: 0 auto; padding: 24px 20px; }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            padding: 40px 30px;
+            border-radius: 12px;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+        .header .subtitle { font-size: 15px; opacity: 0.9; }
+        .header .meta { font-size: 13px; opacity: 0.8; margin-top: 12px; }
+        .stats {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+        .stat-card {
+            background: #fff;
+            border-radius: 8px;
+            padding: 16px 20px;
+            flex: 1;
+            min-width: 140px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            text-align: center;
+        }
+        .stat-card .num { font-size: 28px; font-weight: 700; color: #667eea; }
+        .stat-card .label { font-size: 13px; color: #888; margin-top: 4px; }
+        .category {
+            margin-bottom: 36px;
+        }
+        .category-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #333;
+            padding-left: 12px;
+            border-left: 4px solid #667eea;
+            margin-bottom: 20px;
+        }
+        .article-card {
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: box-shadow 0.2s;
+        }
+        .article-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+        .article-title {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .article-title a {
+            color: #2c3e50;
+            text-decoration: none;
+            border-bottom: 1px dashed transparent;
+            transition: all 0.2s;
+        }
+        .article-title a:hover { color: #667eea; border-bottom-color: #667eea; }
+        .article-abstract {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+        .article-meta {
+            font-size: 12px;
+            color: #999;
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .article-meta .tag {
+            background: #f0f2ff;
+            color: #667eea;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+        }
+        .article-meta .author { color: #555; font-weight: 500; }
+        .article-meta .dept { color: #888; }
+        .article-meta .time { color: #aaa; }
+        .footer {
+            text-align: center;
+            padding: 24px 0;
+            color: #aaa;
+            font-size: 13px;
+            border-top: 1px solid #eee;
+            margin-top: 40px;
+        }
+        .footer a { color: #667eea; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>ATA-260823 | 设计与AI方向文章日报</h1>
+            <div class="subtitle">设计实践总结 / 设计与AI结合 / AI工程化 / AI观测评估</div>
+            <div class="meta">发布日期：2026-08-24 | 来源：ATA 内部技术文章平台 | 文章覆盖日期：2026-08-23</div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="num">21</div>
+                <div class="label">文章总数</div>
+            </div>
+            <div class="stat-card">
+                <div class="num">4</div>
+                <div class="label">分类方向</div>
+            </div>
+            <div class="stat-card">
+                <div class="num">8</div>
+                <div class="label">BU 覆盖</div>
+            </div>
+        </div>
+
+        <!-- AI工程化 -->
+        <div class="category">
+            <div class="category-title">AI 工程化</div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020767267?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank">不花1分钱，MAC本地跑通GRPO意图分类实践</a></div>
+                <div class="article-abstract">本文介绍在Mac本地利用MLX框架零成本跑通GRPO意图分类实践，验证其提升模型泛化性及处理未知意图的能力。</div>
+                <div class="article-meta">
+                    <span class="author">拳拳（朱琦）</span>
+                    <span class="dept">中国电商事业群-淘天集团</span>
+                    <span class="time">2026-08-23 23:06</span>
+                    <span class="tag">模型训练</span>
+                    <span class="tag">意图分类</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/12020769651?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank">Ocean-专为Coding-Agent构建的资产管理应用</a></div>
+                <div class="article-abstract">Ocean是一款桌面端应用，通过可视化集中管理Coding-Agent资产、支持工作流绘制与智能优化，解决多资产管理痛点。</div>
+                <div class="article-meta">
+                    <span class="author">桀风（张扬）</span>
+                    <span class="dept">数字马力</span>
+                    <span class="time">2026-08-23 20:42</span>
+                    <span class="tag">Agent工具</span>
+                    <span class="tag">资产管理</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/12020766854?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank">深入 Pi Harness Tool 上下文零损失裁剪设计</a></div>
+                <div class="article-abstract">Pi框架通过Append-Only机制维护前缀缓存，结合工具结果分级裁剪与磁盘溢出策略，有效降低Agent上下文成本并提升推理效率。</div>
+                <div class="article-meta">
+                    <span class="author">研墨（陶伟）</span>
+                    <span class="dept">蚂蚁集团</span>
+                    <span class="time">2026-08-23 20:32</span>
+                    <span class="tag">上下文工程</span>
+                    <span class="tag">Harness</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/12020767651?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank">DeepSeek Harness 插件系统的时空可组合性原理</a></div>
+                <div class="article-abstract">DeepSeekHarness插件系统基于"插件即轻量级进程"，通过Scope实现空间隔离，利用Fiber状态机与依赖注入管理时间编排，达成时空可组合性。</div>
+                <div class="article-meta">
+                    <span class="author">文同（魏亚文）</span>
+                    <span class="dept">蚂蚁数字科技</span>
+                    <span class="time">2026-08-23 17:14</span>
+                    <span class="tag">Harness</span>
+                    <span class="tag">插件系统</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020767266?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank">Deepseek-harness架构解读</a></div>
+                <div class="article-abstract">Deepseek-harness采用无特权内核的插件化架构，通过声明式依赖、能力Seam及事件域实现模块化协作，凭借持久化日志确保状态可恢复与强可观测性。</div>
+                <div class="article-meta">
+                    <span class="author">叶俊孟（叶俊孟）</span>
+                    <span class="dept">国际数字商业集团</span>
+                    <span class="time">2026-08-23 16:30</span>
+                    <span class="tag">Harness</span>
+                    <span class="tag">插件化架构</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020766853?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank">AI 时代的 FDE：为什么会出现，如何成为</a></div>
+                <div class="article-abstract">文章指出AI落地瓶颈在非技术因素，引出FDE角色，通过六份契约与本体论构建生产责任闭环，实现从工具到组织资产的跨越。</div>
+                <div class="article-meta">
+                    <span class="author">叶俊孟（叶俊孟）</span>
+                    <span class="dept">国际数字商业集团</span>
+                    <span class="time">2026-08-23 16:19</span>
+                    <span class="tag">AI工程化</span>
+                    <span class="tag">FDE</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020768049?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank">FiaOS 的编程语言版图：从 16.4 万行源码看平台职责分层</a></div>
+                <div class="article-abstract">FiaOS通过TypeScript、C++等语言分层实现AIRuntime、BrowserKernel及构建交付，源码占比映射平台职责边界。</div>
+                <div class="article-meta">
+                    <span class="author">紫升（杨俊宁）</span>
+                    <span class="dept">中国电商事业群-飞猪</span>
+                    <span class="time">2026-08-23 15:49</span>
+                    <span class="tag">Agent OS</span>
+                    <span class="tag">平台架构</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020767265?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank">DeepSeek Harness 是如何运行的：Cordis 插件树与 Agent 主链路</a></div>
+                <div class="article-abstract">DeepSeek Harness基于Cordis插件树组装能力，以Session追加事件账本为事实源，通过明确的事件与Seam边界驱动Agent运行、记录及扩展。</div>
+                <div class="article-meta">
+                    <span class="author">磅蟹（郑吉奇）</span>
+                    <span class="dept">中国电商事业群-淘天集团</span>
+                    <span class="time">2026-08-23 15:49</span>
+                    <span class="tag">Harness</span>
+                    <span class="tag">Agent架构</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020766448?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank">DeepSeek Harness 核心技术剖析和Agent OS进行时</a></div>
+                <div class="article-abstract">DeepSeek开源Harness，以Cordis插件化架构实现Agent运行时动态编排与安全治理，旨在构建可进化的AgentOS生态。</div>
+                <div class="article-meta">
+                    <span class="author">骨来（李历岷）</span>
+                    <span class="dept">中国电商事业群-淘天集团</span>
+                    <span class="time">2026-08-23 13:18</span>
+                    <span class="tag">Harness</span>
+                    <span class="tag">Agent OS</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020766852?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank">当编码不再是主要瓶颈：Anthropic 如何定义 AI Native SDLC</a></div>
+                <div class="article-abstract">Anthropic提出AI原生SDLC，以intent.md为核心重构软件生命周期，将瓶颈从编码转移至意图澄清与治理，实现从线性流程到持续闭环的转变。</div>
+                <div class="article-meta">
+                    <span class="author">元乙（张城）</span>
+                    <span class="dept">云智能集团</span>
+                    <span class="time">2026-08-23 12:17</span>
+                    <span class="tag">SDLC</span>
+                    <span class="tag">AI工程化</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020768448?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank">改变世界前先认识世界:Ontology决策结构化实践</a></div>
+                <div class="article-abstract">商家财务团队通过构建结构化决策函数与本体知识库，实现Agent动态生成工作流，完成从流程自动化到涵盖120+任务的工作全托管实践。</div>
+                <div class="article-meta">
+                    <span class="author">汀叶（吕若凡）</span>
+                    <span class="dept">中国电商事业群-淘天集团</span>
+                    <span class="time">2026-08-23 00:50</span>
+                    <span class="tag">Ontology</span>
+                    <span class="tag">Agent工作流</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020766447?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank">KVCacheStore 全新发布 | 大模型推理 KV Cache 存储加速引擎，产品能力全面解析</a></div>
+                <div class="article-abstract">阿里云发布全球首发 G3.5 层 KVCacheStore 高性能推理存储，支持 KV 接口、高性能、弹性扩展加速大模型推理，显著提升缓存命中率与吞吐。</div>
+                <div class="article-meta">
+                    <span class="author">孟威（孟威）</span>
+                    <span class="dept">云智能集团</span>
+                    <span class="time">2026-08-23 00:40</span>
+                    <span class="tag">推理加速</span>
+                    <span class="tag">KV Cache</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI评测与观测 -->
+        <div class="category">
+            <div class="category-title">AI 评测与观测</div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020765653?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank">厂商token 价格PK-同样的钱，谁能让你烧掉最多的 token？</a></div>
+                <div class="article-abstract">调研显示火山轻量档、智谱旗舰档性价比最高。</div>
+                <div class="article-meta">
+                    <span class="author">左原（张凯）</span>
+                    <span class="dept">云智能集团</span>
+                    <span class="time">2026-08-23 22:23</span>
+                    <span class="tag">成本评测</span>
+                    <span class="tag">Token</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/12020770049?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank">Scale AI: Agent 失败了，到底该修模型还是 Harness？</a></div>
+                <div class="article-abstract">Scale AI论文提出以交互为中心的Agent故障分类法，通过定位首个未恢复故障的组件边界与责任侧，解决"修复分配"难题，指导精准工程优化。</div>
+                <div class="article-meta">
+                    <span class="author">研墨（陶伟）</span>
+                    <span class="dept">蚂蚁集团</span>
+                    <span class="time">2026-08-23 20:30</span>
+                    <span class="tag">Agent评测</span>
+                    <span class="tag">故障定位</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020767650?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank">世界模型下数据与标注质量优化解析</a></div>
+                <div class="article-abstract">TuringViT提出VISTA-Curation框架，利用LLM多角色协作及相对打分机制优化图文视频数据质量，以高质量数据策划替代规模堆叠提升模型性能。</div>
+                <div class="article-meta">
+                    <span class="author">冬夜（张炜毅）</span>
+                    <span class="dept">云智能集团</span>
+                    <span class="time">2026-08-23 15:32</span>
+                    <span class="tag">数据质量</span>
+                    <span class="tag">评测优化</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020765651?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank">从大模型到 Agent：拆解工作原理，看清评测该怎么做</a></div>
+                <div class="article-abstract">本文解析Agent"感知-思考-行动"循环原理，指出评测应从单点打分转向覆盖规划、记忆及工具的轨迹级自动化评估，使其成为研发闭环的基础设施。</div>
+                <div class="article-meta">
+                    <span class="author">兰皋（刘江川）</span>
+                    <span class="dept">中国电商事业群-淘宝闪购</span>
+                    <span class="time">2026-08-23 14:04</span>
+                    <span class="tag">Agent评测</span>
+                    <span class="tag">评估体系</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI应用落地 -->
+        <div class="category">
+            <div class="category-title">AI 应用落地</div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020769251?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank">技术分享 — 以图识货：电商智能交易数字人的实现之道</a></div>
+                <div class="article-abstract">本文分享电商智能交易数字人实现，通过对象库与多模态模型融合解决以图识货难题，并借助AgentTeams闭环流程保障高质量交付。</div>
+                <div class="article-meta">
+                    <span class="author">陆绎（李会东）</span>
+                    <span class="dept">云智能集团</span>
+                    <span class="time">2026-08-23 22:38</span>
+                    <span class="tag">多模态</span>
+                    <span class="tag">数字人</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020765652?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank">从"生产提效"到"全链路协同"—猫超供应链数据的AI演进之路</a></div>
+                <div class="article-abstract">猫超供应链通过构建AI研发、AI分析及Agent协同三阶段体系，将隐性知识资产化，实现从数据生产提效到全链路业务动作自动闭环的演进。</div>
+                <div class="article-meta">
+                    <span class="author">玥婵（孙慧琴）</span>
+                    <span class="dept">中国电商事业群-淘天集团</span>
+                    <span class="time">2026-08-23 19:26</span>
+                    <span class="tag">AI应用</span>
+                    <span class="tag">供应链</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI趋势观察 -->
+        <div class="category">
+            <div class="category-title">AI 趋势观察</div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/12020767652?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank">AI 时代的 1% 法则：Jeff Dean 谈 Agent、系统约束与工程品味</a></div>
+                <div class="article-abstract">Jeff Dean提出AI创业"1%法则"，主张避开通用模型已涉足领域，聚焦其盲区，通过系统工程、私有数据及严谨验证构建壁垒，以技术品味驱动高价值创新。</div>
+                <div class="article-meta">
+                    <span class="author">研墨（陶伟）</span>
+                    <span class="dept">蚂蚁集团</span>
+                    <span class="time">2026-08-23 20:35</span>
+                    <span class="tag">AI趋势</span>
+                    <span class="tag">工程品味</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020767649?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank">具身智能产业洞察报告（2026）：从"能跑会跳"到"能干活、能赚钱"</a></div>
+                <div class="article-abstract">报告指出具身智能正从概念走向产业落地，中国凭借供应链优势占据主导，VLA等技术推动其向工业及家庭场景规模化商用演进。</div>
+                <div class="article-meta">
+                    <span class="author">深博（贾新华）</span>
+                    <span class="dept">云智能集团</span>
+                    <span class="time">2026-08-23 14:59</span>
+                    <span class="tag">具身智能</span>
+                    <span class="tag">产业报告</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020768048?utm_source=open&utm_medium=hsf&utm_campaign=_OPEN_AONE" target="_blank">Anthropic挖角TPU之父组建芯片团队，OpenAI旗舰模型大幅降价</a></div>
+                <div class="article-abstract">AI巨头加速自研芯片与降价竞争，开源模型打破地缘壁垒，电力瓶颈凸显，Agent生态向工程化与标准化演进。</div>
+                <div class="article-meta">
+                    <span class="author">秩澄（王志承）</span>
+                    <span class="dept">中国电商事业群-淘宝闪购</span>
+                    <span class="time">2026-08-23 09:15</span>
+                    <span class="tag">业界动态</span>
+                    <span class="tag">AI趋势</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>ATA 设计与AI方向文章日报 | 发布日期：2026-08-24</p>
+            <p style="margin-top: 8px;">统一入口：<a href="https://mihaideyu.github.io/Trend_Opportunity/">https://mihaideyu.github.io/Trend_Opportunity/</a></p>
+        </div>
+    </div>
+</body>
+</html>
