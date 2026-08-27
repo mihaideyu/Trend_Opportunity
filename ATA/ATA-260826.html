@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATA-260826 | 设计与AI方向文章日报</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.8;
+        }
+        .container { max-width: 960px; margin: 0 auto; padding: 24px 20px; }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            padding: 40px 30px;
+            border-radius: 12px;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+        .header .subtitle { font-size: 15px; opacity: 0.9; }
+        .header .meta { font-size: 13px; opacity: 0.8; margin-top: 12px; }
+        .stats { display: flex; gap: 16px; margin-bottom: 32px; flex-wrap: wrap; }
+        .stat-card {
+            background: #fff; border-radius: 8px; padding: 16px 20px; flex: 1;
+            min-width: 140px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); text-align: center;
+        }
+        .stat-card .num { font-size: 28px; font-weight: 700; color: #667eea; }
+        .stat-card .label { font-size: 13px; color: #888; margin-top: 4px; }
+        .category { margin-bottom: 36px; }
+        .category-title {
+            font-size: 20px; font-weight: 700; color: #333; padding-left: 12px;
+            border-left: 4px solid #667eea; margin-bottom: 20px;
+        }
+        .article-card {
+            background: #fff; border-radius: 8px; padding: 20px 24px; margin-bottom: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: box-shadow 0.2s;
+        }
+        .article-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+        .article-title { font-size: 17px; font-weight: 600; margin-bottom: 8px; }
+        .article-title a { color: #2c3e50; text-decoration: none; border-bottom: 1px dashed transparent; transition: all 0.2s; }
+        .article-title a:hover { color: #667eea; border-bottom-color: #667eea; }
+        .article-abstract { font-size: 14px; color: #666; line-height: 1.7; margin-bottom: 10px; }
+        .article-meta {
+            font-size: 12px; color: #999; display: flex; gap: 16px; flex-wrap: wrap; align-items: center;
+        }
+        .article-meta .tag { background: #f0f2ff; color: #667eea; padding: 2px 10px; border-radius: 12px; font-size: 11px; }
+        .article-meta .author { color: #555; font-weight: 500; }
+        .article-meta .dept { color: #888; }
+        .article-meta .time { color: #aaa; }
+        .footer {
+            text-align: center; padding: 24px 0; color: #aaa; font-size: 13px;
+            border-top: 1px solid #eee; margin-top: 40px;
+        }
+        .footer a { color: #667eea; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>ATA-260826 | 设计与AI方向文章日报</h1>
+            <div class="subtitle">设计实践总结 / 设计与AI结合 / AI工程化 / AI观测评估</div>
+            <div class="meta">发布日期：2026-08-27 | 来源：ATA 内部技术文章平台 | 文章覆盖日期：2026-08-26</div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card"><div class="num">32</div><div class="label">文章总数</div></div>
+            <div class="stat-card"><div class="num">4</div><div class="label">分类方向</div></div>
+            <div class="stat-card"><div class="num">2026-08-26</div><div class="label">覆盖日期</div></div>
+        </div>
+
+        <div class="category">
+            <div class="category-title">设计与 AI 结合</div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020771212?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">把设计经验装进 AI：零基础生图 Skill 搭建指南</a></div>
+                <div class="article-abstract">本文分享零基础搭建生图Skill指南，通过拆解设计经验、沉淀提示词资产及工程化优化，将模糊需求转化为稳定可复用的AI生图能力。</div>
+                <div class="article-meta">
+                    <span class="author">秀卷（俞秀娟）</span><span class="dept">中国电商事业群-淘宝闪购</span><span class="time">2026-08-26 10:19</span><span class="tag">智能设计</span><span class="tag">生图 Skill</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020770818?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">awesome-gpt-image-2：把 AI 提示词变成&quot;代码&quot;</a></div>
+                <div class="article-abstract">awesome-gpt-image-2通过“提示词即代码”理念，将AI绘图提示词结构化为可复用资产，助力实现稳定、可控的工业级图像生成。</div>
+                <div class="article-meta">
+                    <span class="author">若徐（徐全明）</span><span class="dept">国际数字商业集团</span><span class="time">2026-08-26 21:17</span><span class="tag">提示词工程</span><span class="tag">图像生成</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020771217?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">Qwen-Image-Bench 榜单更新：19 款文生图模型同榜评测，GPT Image 2 与 Qwen Image 3 Pro 领跑前 2</a></div>
+                <div class="article-abstract">晓天衡宇 Qwen-Image-Bench 更新19款文生图模型评测，GPT Image 2与Qwen Image 3 Pro 分列前二，后者五项能力均衡。</div>
+                <div class="article-meta">
+                    <span class="author">微露（柳明皓）</span><span class="dept">阿里控股</span><span class="time">2026-08-26 15:08</span><span class="tag">文生图评测</span><span class="tag">榜单</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020774008?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">从0到1打造独属于你的3D空间</a></div>
+                <div class="article-abstract">本文详解利用3DGS技术将手机照片转化为3D空间的全流程，涵盖采集、SfM计算、训练及部署，并重点解析避坑指南与重影修复技巧。</div>
+                <div class="article-meta">
+                    <span class="author">萧柳（贾志超）</span><span class="dept">虎鲸文娱集团</span><span class="time">2026-08-26 10:22</span><span class="tag">3D 生成</span><span class="tag">3DGS</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020772015?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">P2D Agent 的架构与工程实践</a></div>
+                <div class="article-abstract">P2D平台通过AI生成结构化Spec而非代码，结合令牌约束、五层校验闭环及流式工程底座，实现高质量、可控的自然语言转业务页面自动化交付。</div>
+                <div class="article-meta">
+                    <span class="author">邬兹（刘文武）</span><span class="dept">虎鲸文娱集团</span><span class="time">2026-08-26 14:36</span><span class="tag">页面生成</span><span class="tag">设计到代码</span>
+                </div>
+            </div>
+
+        </div>
+        <div class="category">
+            <div class="category-title">Harness 与 Agent 架构</div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020770814?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">Harness Engineering：让 LLM 从“会回答”走到“能交付”</a></div>
+                <div class="article-abstract">Harness Engineering通过构建包含可读性、防御机制和反馈回路的运行控制层，将LLM从不可控的生成模型转化为可调试、安全且能交付的生产级应用。</div>
+                <div class="article-meta">
+                    <span class="author">月辰（陈安）</span><span class="dept">中国电商事业群-淘天集团</span><span class="time">2026-08-26 16:10</span><span class="tag">Harness</span><span class="tag">工程化</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020771617?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">从 AgentScope 到 Harness：如何把 Agent 做成稳定的工程系统</a></div>
+                <div class="article-abstract">本文基于广告智能体实践，详解如何结合AgentScope运行时与Harness工程层，通过分层设计、性能优化及可观测性体系，构建稳定可靠的生产级Agent系统。</div>
+                <div class="article-meta">
+                    <span class="author">牧耘（王树新）</span><span class="dept">高德</span><span class="time">2026-08-26 19:33</span><span class="tag">Harness</span><span class="tag">可观测性</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020770816?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">像搭乐高一样搭 Agent：一篇看懂 DeepSeek Harness Cordis 插件</a></div>
+                <div class="article-abstract">DeepSeekHarnessCordis以“一切皆插件”理念，通过依赖注入与生命周期管理灵活组装Agent运行时，区别于ClaudeCode的表层扩展。</div>
+                <div class="article-meta">
+                    <span class="author">宛天（赵彬）</span><span class="dept">阿里控股</span><span class="time">2026-08-26 16:57</span><span class="tag">Harness</span><span class="tag">插件化</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/12020770815?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">从官方资料和实践解读Deepseek Harness</a></div>
+                <div class="article-abstract">本文基于官方资料与源码实践，深度解析DeepSeekHarness的插件化架构、全链路可追溯性及四种运行模式，并通过实验演示其灵活扩展能力。</div>
+                <div class="article-meta">
+                    <span class="author">常春（杜功元）</span><span class="dept">蚂蚁集团</span><span class="time">2026-08-26 16:41</span><span class="tag">Harness</span><span class="tag">源码解读</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020772017?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">基于Deepseek Harness打造聊天机器人</a></div>
+                <div class="article-abstract">作者基于DeepseekHarness的插件化框架，结合自研QQ消息处理与上下文管理机制，成功打造了具备沙箱及自动化部署能力的个性化聊天机器人。</div>
+                <div class="article-meta">
+                    <span class="author">开潮（詹启河）</span><span class="dept">国际数字商业集团</span><span class="time">2026-08-26 16:50</span><span class="tag">Harness</span><span class="tag">聊天机器人</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020773214?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">用简单的方式理解 Pi Harness</a></div>
+                <div class="article-abstract">Pi Harness：让 AI 像数据库任务一样，崩溃后还能接着做</div>
+                <div class="article-meta">
+                    <span class="author">之瓷（陈洁）</span><span class="dept">ATH事业群-千问事业部</span><span class="time">2026-08-26 17:36</span><span class="tag">Harness</span><span class="tag">容错</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020771215?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">整车还是底盘：Codex Harness 与 dsh 的两种 Agent Runtime 取向</a></div>
+                <div class="article-abstract">Codex Harness与dsh分别代表“整车”与“底盘”两种Agent运行时取向，前者开箱即用但绑定模型，后者灵活可插拔但需自建稳定，选择取决于对省心或掌控的需求。</div>
+                <div class="article-meta">
+                    <span class="author">禾驰（于琦）</span><span class="dept">云智能集团</span><span class="time">2026-08-26 11:38</span><span class="tag">Runtime</span><span class="tag">架构对比</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020770811?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">长程智能体</a></div>
+                <div class="article-abstract">长程智能体能力源于模型优化与Harness工程共演化，通过循环、记忆等组件解决误差累积等问题，实现复杂长任务可靠执行。</div>
+                <div class="article-meta">
+                    <span class="author">映画（杨晓雪）</span><span class="dept">中国电商事业群-淘天集团</span><span class="time">2026-08-26 14:52</span><span class="tag">长程任务</span><span class="tag">Harness</span>
+                </div>
+            </div>
+
+        </div>
+        <div class="category">
+            <div class="category-title">AI 工程化实践</div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020770410?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">AI Agent 驱动的消息中间件 基础设施工程实践</a></div>
+                <div class="article-abstract">RocketMQ团队通过声明式版本管理与AIAgentHarness，将发布流程自动化、标准化，实现从依赖人工经验到系统能力的转变，显著提升了交付效率与质量。</div>
+                <div class="article-meta">
+                    <span class="author">斜阳（李智敏）</span><span class="dept">云智能集团</span><span class="time">2026-08-26 15:39</span><span class="tag">基础设施</span><span class="tag">Agent</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020770411?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">一句话定位 OOS 执行失败：ChatOps Agent 执行诊断技能实践</a></div>
+                <div class="article-abstract">OOS推出ChatOps诊断技能，通过自动递归下钻嵌套执行，将模糊报错转化为具体根因及修复建议，极大简化运维排查流程。</div>
+                <div class="article-meta">
+                    <span class="author">柯灵（殷容刚）</span><span class="dept">云智能集团</span><span class="time">2026-08-26 15:44</span><span class="tag">ChatOps</span><span class="tag">诊断</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020770817?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">大模型高效架构与技术进展介绍「持续更新」</a></div>
+                <div class="article-abstract">本文系统梳理大模型高效架构技术，涵盖注意力优化、线性与稀疏注意力、MoE及知识外置等方向，旨在突破算力瓶颈，实现效果与效率平衡。</div>
+                <div class="article-meta">
+                    <span class="author">茂哲（厉斌）</span><span class="dept">云智能集团</span><span class="time">2026-08-26 17:00</span><span class="tag">高效架构</span><span class="tag">MoE</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020772813?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">千问办公 Legokit 组件机制和接入思考</a></div>
+                <div class="article-abstract">Legokit通过SSOT文件解耦AI与面板，支持暴露工具或Skill两种交互模式，以零侵入方式将老系统接入千问办公，实现自然语言驱动业务操作。</div>
+                <div class="article-meta">
+                    <span class="author">渊停（陈历涛）</span><span class="dept">云智能集团</span><span class="time">2026-08-26 12:13</span><span class="tag">组件机制</span><span class="tag">接入</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020771221?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">从工业需求到可运行组态：灵小匠 AI FDE 的一次完整实践</a></div>
+                <div class="article-abstract">灵小匠AIFDE通过多模态理解、蓝图规划及技能编排，实现从工业需求到可运行组态的自动化交付与资产沉淀。</div>
+                <div class="article-meta">
+                    <span class="author">景齐（陆晓勇）</span><span class="dept">云智能集团</span><span class="time">2026-08-26 20:43</span><span class="tag">组态</span><span class="tag">多模态</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020773213?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">使用 Devix 开发提效</a></div>
+                <div class="article-abstract">Devix是以Agent为核心的AI研发平台，通过将个人经验沉淀为可复用的Skill，实现高频任务的端到端自动化闭环，从而显著提升研发效率。</div>
+                <div class="article-meta">
+                    <span class="author">才文（冯才文）</span><span class="dept">云智能集团</span><span class="time">2026-08-26 16:06</span><span class="tag">Skill</span><span class="tag">研发提效</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020771619?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">权限原地裁剪：给 Agent 一把「只减不增」的云上钥匙</a></div>
+                <div class="article-abstract">阿里云MCP 推出边界策略，通过会话策略对Agent权限进行云端强制的“原地裁剪”，实现只减不增、随配随改，避免新建Agent带来的权限管理负担。</div>
+                <div class="article-meta">
+                    <span class="author">恒兮（张瑄）</span><span class="dept">云智能集团</span><span class="time">2026-08-26 20:15</span><span class="tag">权限裁剪</span><span class="tag">MCP</span>
+                </div>
+            </div>
+
+        </div>
+        <div class="category">
+            <div class="category-title">AI 观测与评估</div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020772816?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">AgentLoop 数据飞轮实践（一）：总览 —— 让 Agent 持续调优的闭环</a></div>
+                <div class="article-abstract">AgentLoop通过数据接入、评估实验及经验库构建持续调优闭环，支持专家驱动与自动化双模式，助力Agent性能与成本优化。</div>
+                <div class="article-meta">
+                    <span class="author">马云雷（马云雷）</span><span class="dept">云智能集团</span><span class="time">2026-08-26 20:34</span><span class="tag">数据飞轮</span><span class="tag">闭环</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020773217?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">AgentLoop 数据飞轮实践（二）：数据接入 —— 四种方式把 Agent 连进 AgentLoop</a></div>
+                <div class="article-abstract">AgentLoop基于OTel协议，提供通用、框架集成、注解及eBPF四种数据接入方式，并以ClaudeCode为例演示了快速接入流程。</div>
+                <div class="article-meta">
+                    <span class="author">马云雷（马云雷）</span><span class="dept">云智能集团</span><span class="time">2026-08-26 20:35</span><span class="tag">OTel</span><span class="tag">数据接入</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020773218?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">AgentLoop 数据飞轮实践（三）：评估 —— 从黄金指标到 Rubric</a></div>
+                <div class="article-abstract">本文介绍AgentLoop评估体系，通过黄金指标与Rubric构建可量化评估器，利用采样策略执行任务，以可解释结果驱动Badcase闭环优化。</div>
+                <div class="article-meta">
+                    <span class="author">马云雷（马云雷）</span><span class="dept">云智能集团</span><span class="time">2026-08-26 20:36</span><span class="tag">Rubric</span><span class="tag">评估</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020773219?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">AgentLoop 数据飞轮实践（四）：实验 —— 回测、离线实验平台与题目级 Rubric</a></div>
+                <div class="article-abstract">AgentLoop通过实验计划、内网离线平台及题目级Rubric，实现Agent优化的量化回测与精准评估，确保迭代有效。</div>
+                <div class="article-meta">
+                    <span class="author">马云雷（马云雷）</span><span class="dept">云智能集团</span><span class="time">2026-08-26 20:36</span><span class="tag">回测</span><span class="tag">离线实验</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020772817?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">AgentLoop 数据飞轮实践（五）：经验自进化 —— 从trace自动挖掘经验资产，消融实验验证真实收益</a></div>
+                <div class="article-abstract">AgentLoop通过经验库自动挖掘历史轨迹沉淀知识，经Skill召回注入Agent上下文，并通过消融实验验证策略，显著降低耗时与成本，实现数据飞轮自动化闭环。</div>
+                <div class="article-meta">
+                    <span class="author">马云雷（马云雷）</span><span class="dept">云智能集团</span><span class="time">2026-08-26 20:37</span><span class="tag">经验挖掘</span><span class="tag">消融实验</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020773215?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">淘海外AI测试体系建设总结</a></div>
+                <div class="article-abstract">文章阐述以AI重构测试闭环，构建五项通用能力及线上巡检，明确目标水位、架构策略及当前进展与收益。</div>
+                <div class="article-meta">
+                    <span class="author">晴晚（冯竹芹）</span><span class="dept">国际数字商业集团</span><span class="time">2026-08-26 19:04</span><span class="tag">AI 测试</span><span class="tag">巡检</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020774010?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">行业测试套件测试方案的演进——Skill稳定性优化实践</a></div>
+                <div class="article-abstract">文章介绍qa-test-plan将需求转为测试资产，并通过输入澄清、执行状态管理及契约测试三项实践优化Skill稳定性</div>
+                <div class="article-meta">
+                    <span class="author">瑨云（林宜东）</span><span class="dept">中国电商事业群-淘天集团</span><span class="time">2026-08-26 16:42</span><span class="tag">测试套件</span><span class="tag">Skill 稳定性</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020771214?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">营销 AI 质量工程：研发 Graph Engineering × 测试 AgentLoop 的协同实践</a></div>
+                <div class="article-abstract">本文阐述研发GraphEngineering与测试AgentLoop协同，将经验转化为可审计证据链，实现AI质量工程从辅助提效到可信交付的升级。</div>
+                <div class="article-meta">
+                    <span class="author">平龙（龙平）</span><span class="dept">高德</span><span class="time">2026-08-26 11:17</span><span class="tag">质量工程</span><span class="tag">证据链</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020772418?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">我让 AI 帮我写测评报告，它先反过来问了我 39 次「你凭什么这么认为」</a></div>
+                <div class="article-abstract">作者复盘与AI协作完成产品测评的经历，指出最佳模式是AI担任“秘书”，其核心价值在于通过反复追问证据来源，弥补人类思维漏洞，确保报告严谨性。</div>
+                <div class="article-meta">
+                    <span class="author">程予光（程思远）</span><span class="dept">云智能集团</span><span class="time">2026-08-26 18:25</span><span class="tag">测评协作</span><span class="tag">证据</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/12020771620?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">MASA评测Harness工程实践-智能TAG挖掘和标注</a></div>
+                <div class="article-abstract">MASA通过智能TAG引擎构建标签挖掘与标注质检体系，结合确定性规则与LLM实现样本自进化，为安全AI评测提供高质量数据底座。</div>
+                <div class="article-meta">
+                    <span class="author">方修（李开亮）</span><span class="dept">蚂蚁集团</span><span class="time">2026-08-26 22:18</span><span class="tag">评测 Harness</span><span class="tag">TAG</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020773612?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">简单评估下《牛来》大模型</a></div>
+                <div class="article-abstract">作者通过制作前端页面，对比测试牛来、千问、Kimi及GLM四款国产大模型，并邀请观众评判其中表现最佳者。</div>
+                <div class="article-meta">
+                    <span class="author">何从（邱永臣）</span><span class="dept">国际数字商业集团</span><span class="time">2026-08-26 10:51</span><span class="tag">模型评估</span><span class="tag">对比</span>
+                </div>
+            </div>
+
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020772014?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">店铺装修耗时90s优化到38s：业务 Skill 端到端提速优化实践与经验沉淀</a></div>
+                <div class="article-abstract">通过建立可观测体系定位模型耗时根因，采用模型优选、DDD架构重构及并行执行等策略，将店铺装修Skill端到端耗时从90s降至38s并沉淀优化方法论。</div>
+                <div class="article-meta">
+                    <span class="author">恩比（饶思锐）</span><span class="dept">中国电商事业群-淘宝闪购</span><span class="time">2026-08-26 11:59</span><span class="tag">可观测性</span><span class="tag">性能优化</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <p>ATA 设计与AI方向文章日报 | 发布日期：2026-08-27</p>
+            <p style="margin-top: 8px;">统一入口：<a href="https://mihaideyu.github.io/Trend_Opportunity/">https://mihaideyu.github.io/Trend_Opportunity/</a></p>
+        </div>
+    </div>
+</body>
+</html>
