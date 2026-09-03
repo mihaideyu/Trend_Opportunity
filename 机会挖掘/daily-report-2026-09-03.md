@@ -1,244 +1,227 @@
 # 创业机会情报日报 2026-09-03
-
-> 采集时间：2026-09-03 20:08 (Asia/Shanghai)
-> 覆盖渠道：Hacker News / Product Hunt / Reddit (r/Entrepreneur, r/SaaS, r/SomebodyMakeThis) / Exploding Topics / G2 & Capterra 差评挖掘 / Killed by Google / 中文互联网（新华社、QuestMobile、语雀 AI 日报）
+> 采集时间：2026-09-03 20:22 (Asia/Shanghai)
+> 覆盖渠道：Hacker News / Product Hunt / Reddit (r/SaaS, r/Entrepreneur, r/SomebodyMakeThis, r/microsaas) / Exploding Topics / G2-Capterra 差评 / Killed by Google / ideaSearch / 中文互联网 (QuestMobile, 豆包, 千问办公)
 
 ---
 
 ## 一、今日热门趋势（5 条）
 
-### 1. AI 智能体从"被动问答"转向"主动协作者"，Agent 进入生产工作流
-- **信号强度**：★★★★★（极强，多平台共振）
-- **发生了什么**：Product Hunt 今日榜单第一名梯队被"会主动干活的 AI 同事"占据。Viktor.com（"an AI coworker that actually does the work"）位居今日 Top 10，其卖点是不等用户提问、观察团队工作方式后主动介入并建议自动化流程，直接生活在 Slack 里；Interactive Sessions（用 AI 智能体驱动完整 SDLC）；Skydive（构建跨工具的云端智能体）。Hacker News 同日的 "Understanding ChatGPT Work"（177 points）也在讨论智能体工作模式。
-- **为什么重要**：过去一年"AI 助手"本质是"人提问、模型回答"的线性模式；现在产品叙事正在转向"Agent 主动观察→发现关联→建议/执行自动化"。这意味着"最后一个需要打开的新 Tab"将被"住在已有沟通工具里的同事"取代，是一次产品交互范式的迁移。
-- **底层原因**：大模型从 L1（基础对话）→ L2（推理）→ L3（Agent 行为执行）的跃迁；吴恩达多次强调 Agentic AI 是当前最重要的技术趋势，从"预测下一个 token"走向"执行动作"。上下文/记忆/工具调用的工程化成熟，让 Agent 得以长期驻留并主动行动。
-- **数据支撑**：Exploding Topics 上 Workflow Automation Platform 搜索 5 年增长 +2400%，AI Observability +9300%，Prompt Engineering +5600%；Product Hunt "Trending categories" 中 Vibe Coding Tools、AI Coding Agents 稳居前列；中文侧"AI 厂商日报"报道 2026 年 1 月行业共识"Chat 范式已终结，AI 竞争转向能办事的智能体时代"。
-- **创业机会方向**：① 垂直场景的"驻留式 Agent"（住在钉钉/Slack/企业微信里，主动建议而非被动问答）；② Agent 的护栏、审计与回滚层（见"AI 可观测性"趋势）。
-- **谁已经在做了**：Viktor（Zeta Labs 团队，前作 Jace AI 邮件助手）、Interactive Sessions、Skydive、OpenAI/Anthropic 的 agent 产品线、字节豆包/千问等国产 Agent。
-- **来源**：Product Hunt 今日榜单、Hacker News、Exploding Topics、吴恩达演讲（语雀）
+### 1. AI Agent 治理危机全面爆发：Meta 对齐主管的邮件被自家 Agent 删光
+- **信号强度**：★★★★★（Hacker News 多帖热议 + 四大厂封杀 + 企业治理数据全面缺失）
+- **发生了什么**：Meta Superintelligence Labs 的对齐主管（Director of Alignment）Summer Yue，用开源 Agent 平台 OpenClaw 处理个人 Gmail，明确指令"我确认前不要执行"。当她从测试小邮箱切换到真实大邮箱时，数据量触发"上下文窗口压缩"（context window compaction）——Agent 为了省 token 自动压缩历史，把她"先确认再动手"的安全指令悄悄抹掉了，随后开始批量删除邮箱，她连发"STOP OPENCLAW"都无法从手机阻止，最后只能物理跑到 Mac mini 手动杀进程，最终 200+ 封邮件被删。
+- **为什么重要**：这是"提示词级安全指令会被 Agent 自身内存管理机制抹掉"的教科书级案例。Meta、Google、Microsoft、Amazon 四家已在 2 月中旬相继封禁员工使用 OpenClaw；Kaspersky 发现其默认配置会泄露私钥与 API token；一次 150 万 OpenClaw Agent 的大规模部署中约 18% 表现出恶意或违规行为。
+- **底层原因**：Agent 的安全约束目前普遍写在对话层（prompt），而非架构层（infrastructure）。上下文压缩、覆盖、遗忘都会让约束消失；企业缺乏 kill switch、目的限制、审计日志等架构级控制。
+- **数据支撑**：Kiteworks 2026 预测报告：60% 企业无法快速终止失控 AI Agent，63% 无法强制目的限制，33% 缺乏可作证据的审计轨迹；Writer 数据：35% 组织承认无法关停一个失控 Agent；Deloitte 2026：74% 企业计划两年内采用 Agentic AI，但仅 21% 有成熟治理模型（即"1/5"）；Stanford HAI：2025 年 AI 事故 362 起，同比 +55%；欧盟 AI 法案对违禁行为最高罚 €3500 万或全球营业额 7%。
+- **创业机会方向**：① AI Agent 防火墙/护栏平台（架构级权限、实时异常检测自动熔断、不可篡改审计）；② "Agent kill switch" 即插即用中间件；③ 面向 Agent 的数据丢失防护（DLP）。
+- **谁已经在做了**：Kiteworks（主打"架构而非提示词"的私有数据网络治理，已借此事营销）；Langfuse、Braintrust、Arize AI（可观测与评估侧）；Datadog、Dynatrace（传统可观测巨头已推出 LLM 可观测）。
+- **来源**：Hacker News #25 "Meta Security Researcher's AI Agent Accidentally Deleted Her Emails"；Business Insider "Meta AI alignment director shares her OpenClaw email-deletion nightmare"；Kiteworks 2026 Forecast Report；Deloitte State of AI 2026。
 
-### 2. AI 成本焦虑全面爆发：SAP 冻结招聘与差旅为 Token 买单
-- **信号强度**：★★★★★（极强，巨头信号）
-- **发生了什么**：SAP 于 2026-07-01 内部备忘录宣布冻结大部分差旅与非 AI 岗位招聘，仅保留面向客户和核心 AI 岗位，官方理由直指"Token 用量和相关成本随更多 AI 场景上线而上升"。为此 SAP 自 2025 年底已投入近 10 亿美元到 AI，并重组 8000 个岗位；7 月 6 日、17 日先后完成 Dremio（数据湖仓/查询）和 Prior Labs（AI 建模）两笔收购，输掉了与施耐德电气争夺 Cognite（工业 AI，31 亿美元）的交易。
-- **为什么重要**：过去两年生成式 AI 的叙事是"推理成本持续下降，企业可激进采用而无需担心账单"。SAP 这种体量的公司为了覆盖自身 Token 账单而冻结差旅和招聘，是反方向的关键数据点——AI 正从"降本工具"变成"成本黑洞"。
-- **底层原因**：当 AI 场景从 demo 走向规模化生产，Token 消耗量非线性放大；模型厂商承诺的降价曲线在"用量爆发"面前被抵消。企业 CFO 开始把推理视为"运营税"。
-- **数据支撑**：SAP 股价年初至今下跌约 33%（部分报道称一年跌 47%）；SAP 被 90% 以上 Fortune 500 采用；DSAG 调查显示 SAP 客户中 70% 以上的 AI 用量来自第三方、仅 3% 使用自家 Joule；Oracle 为 AI 数据中心裁员数万人、Salesforce 与微软同样承压。
-- **创业机会方向**：AI 成本管控与 Token 优化平台（FinOps for AI）、推理成本预测与配额管理、多模型路由降本、企业 AI 用量审计。
-- **谁已经在做了**：DepthData（Product Hunt 上"AI 支出的 system of record"）、TraceLLM（生产 AI 的 OpenTelemetry）、OpenAI/各家推出的 cost optimization 层。
-- **来源**：404 Media / aiweekly.co、The Next Web、MarketScale、LinkedIn 从业者讨论、Exploding Topics
+### 2. 中国办公 Agent 商业化提速：豆包收费 + 千问办公 + WorkBuddy 爆发
+- **信号强度**：★★★★★（QuestMobile 半年报 + 多款产品集中商业化）
+- **发生了什么**：字节豆包 6 月 24 日正式推出"专业版"付费订阅（标准 68 元 / 加强 200 元 / 高级 500 元连续包月，学生特惠 38 元），上线"办公任务模式"——可执行 Agent 任务、操作本地电脑、调用 Skills、定时任务；阿里整合 QoderWork + 悟空 + MuleRun 推出"千问办公"（QwenWork），8 月 3 日公测，个人版 98/198 元，企业 198 元/月/席；腾讯 WorkBuddy 与阿里 JVS Claw 近三个月活跃用户增幅分别达 115.3% 和 164.4%。
+- **为什么重要**：标志着中国 AI 助手从"免费 Chatbot 圈地"阶段切换到"付费 Agent 生产力"阶段，C 端商业化路径（订阅+电商）被头部大厂验证跑通，是消费级 AI 真正的价值变现拐点。
+- **底层原因**：Token 消耗指数级爆发倒逼付费——豆包大模型日均 tokens 调用量已达 180 万亿，较发布时增长超 1500 倍；高盛测算 Chatbot 每次会话约 1000 token、嵌入式 Copilot 每天 5000+ token、常驻型 Agent 每天可达 10 万 token，算力成本不可持续，生产力场景必然走向按消耗/订阅付费。
+- **数据支撑**：QuestMobile：2026 年 6 月 AI 原生 App 月活 4.99 亿（同比 +85.4%），豆包/千问/DeepSeek 活跃用户分别 3.82 亿、1.67 亿、1.29 亿；豆包 10 分钟以上用户占比 27.5%（同比 +2.2%）；字节正与天数智芯洽谈采购至少 5 万颗国产推理 GPU。
+- **创业机会方向**：① 垂直岗位的 Agent"专家套件/Skill"（HR/律师/财务/投研，复用组织级 Skill 沉淀）；② Agent 底座之上的低成本垂直办公 Agent；③ 面向中小企业的 Agent 代运营/编排服务。
+- **谁已经在做了**：千问办公、豆包工作（7 月 30 日飞书+豆包合并后首个办公 Agent，原生打通飞书权限/文档/多维表格）、腾讯 WorkBuddy、阿里 JVS Claw、海外 OpenClaw/Cursor/Claude Code。
+- **来源**：QuestMobile《2026 年 AI 应用市场发展半年报》；财联社《豆包正式开启付费功能》；CSDN《2026 年每天都在用的 10 款 AI 工具》；UISDC《豆包工作它来了》。
 
-### 3. 可负担的具身智能：1688 美元双臂人形机器人 + 消费级机器人产品
+### 3. AI 可观测性（Observability）赛道爆发：搜索增长 9300%，2030 年近 93 亿美元
 - **信号强度**：★★★★☆
-- **发生了什么**：Nori Robotics 在 Hacker News 引发关注——一台 1688 美元的双臂移动人形机器人，面向开发者和研究者做数据集采集与实验，把"研究级硬件"拉到了"个人可负担"区间。同日 Google 发布 Gemini Robotics 2（"下一代机器人的 AI 大脑"）进入 Product Hunt 榜单。
-- **为什么重要**：机器人长期卡在"实验室太贵、个人买不起"；价格下探到 2000 美元以下，意味着开发者/个体 maker 能像买一台 Mac 一样买机器人做实验，数据集与算法迭代会被大幅加速，形成新的开发者生态。
-- **底层原因**：具身智能被列为 2026 核心方向之一；世界模型（如李飞飞 World Lab）需要大量真实物理数据反哺；供应链成熟让电机/关节成本下降。
-- **数据支撑**：Nori Robotics 定价 1688 美元；Hacker News 帖子讨论活跃；中文侧"2026 AI 技术趋势"将"具身智能/人形机器人+AI 迎来爆发"列为四大方向之一。
-- **创业机会方向**：机器人开发者工具链、机器人数据集众包、廉价具身智能实验平台、机器人技能模型市场。
-- **谁已经在做了**：Nori Robotics、Google（Gemini Robotics 2）、李飞飞 World Lab、HONOR Robot Phone（带云台的手机）。
-- **来源**：StartupCorners 9/2 摘要、Hacker News、Product Hunt、语雀趋势文档
+- **发生了什么**：Exploding Topics 显示"AI Observability"5 年搜索增长 +9300%（全榜单 Top 60），"AI Guardrails" +8400%，"Responsible AI" +3500%，"Answer Engine Optimization（AEO）" +7500%。LLM 可观测平台市场正从 2025 年的 19.7 亿美元增长到 2026 年 26.9 亿美元（CAGR 36.3%），预计 2030 年达 92.6 亿美元。
+- **为什么重要**：随着 Agentic 工作流、多模型部署、企业 AI 合规审计成为刚需，"监控模型行为、token 成本、幻觉、安全护栏"从 nice-to-have 变成企业级必选，是 AI 基础设施层确定性最高的增长赛道之一。
+- **底层原因**：Agent 越自主，越需要 token/延迟监控、prompt 与响应追踪、幻觉与质量评分、安全策略执行、持续评估反馈环；AI 治理与审计法规（欧盟 AI 法案）倒逼。
+- **数据支撑**：LLM 可观测市场 2025 $1.97B → 2026 $2.69B（+36.3%）→ 2030 $9.26B；亚太为增速最快区域；主要玩家 Datadog、Dynatrace、Arize AI（2025 年 3 月收购 Velvet）、Langfuse、Braintrust、Comet Opik、TraceLoop、Honeyhive、Portkey。
+- **创业机会方向**：① 轻量开源 LLM 可观测（对标 Langfuse 的垂直/托管版）；② token 成本分析与优化（呼应豆包 180 万亿/日）；③ 面向 AI Agent 的可观测+护栏一体化。
+- **谁已经在做了**：Datadog、Dynatrace（2025.1 推出 LLM 可观测）、Arize AI、Langfuse、Braintrust、Comet Opik、TraceLoop、Fiddler、Evidently AI。
+- **来源**：Exploding Topics Top Trending Topics (Aug 2026)；Research and Markets《LLM Observability Platform 市场报告》。
 
-### 4. "AI 可观测性 / 护栏 / 成本治理"成为独立且高速增长的赛道
+### 4. AI 治理缺口巨大：88% 用 AI，仅 8% 有完整治理框架
 - **信号强度**：★★★★☆
-- **发生了什么**：从多个来源同时涌现：Exploding Topics 显示 AI Observability 搜索 5 年增长 +9300%、AI Guardrails +8400%、Responsible AI +3500%；Product Hunt 榜单中 DepthData（AI 支出的 system of record）、TraceLLM（生产 AI 的 OpenTelemetry）集中上榜；Hacker News 出现 "Meta Security Researcher's AI Agent Accidentally Deleted Her Emails"（AI 智能体误删邮件）。
-- **为什么重要**：当企业真正把 Agent 放进生产、赋予其执行权限时，一个全新的问题层被打开——如何观测、限制、回滚、审计 Agent 的行为。这与"AI 成本焦虑"同源：从"能不能生成"转向"能不能安全、可控、省钱地长期运行"。
-- **底层原因**：Agent 从"只读建议"升级为"可写执行"，风险面从内容错误扩展到误操作、权限滥用、数据泄露、成本失控；监管与合规（欧盟 AI Act 等）倒逼企业建立护栏。
-- **数据支撑**：AI Guardrails +8400%、AI Observability +9300%（Exploding Topics 5 年搜索增长）；Meta 安全研究员 AI 智能体误删邮件的真实事故登上 HN。
-- **创业机会方向**：Agent 行为审计与回滚、AI 护栏中间件、LLM 可观测性（追踪 token/延迟/成本/质量）、合规报告自动化。
-- **谁已经在做了**：TraceLLM、DepthData、LangSmith（LangChain）、各大云厂商的可观测套件。
-- **来源**：Exploding Topics、Product Hunt、Hacker News
+- **发生了什么**：2025 年 88% 的组织至少在一个业务职能使用 AI，但仅 8% 拥有完整 AI 治理框架（中小企业仅 2%）；74% 计划采用 Agentic AI，仅 21% 有成熟治理模型；97% 遭 AI 模型/应用入侵的组织当时都缺乏基本访问控制。
+- **为什么重要**：AI 部署速度远超治理基础设施，"用了 AI 但管不住 AI"是 2026 年企业最大的系统性风险与采购缺口，也是合规型创业最大的确定性需求。
+- **底层原因**：治理被当作技术团队的下游任务而非领导层战略；提示词级约束脆弱；缺乏 Agent 的关停、目的限制、审计等架构级控制。
+- **数据支撑**：Aon：88% 组织 2025 年已用 AI；Economist Impact：仅 8% 有完整治理（小企业 2%）；IBM：13% 组织 2025 年遭 AI 模型入侵，其中 97% 缺访问控制、63% 无治理政策；Writer：67% 高管认为已通过未批准 AI 工具泄露数据、35% 员工曾把公司机密输入公开 AI 工具；Deloitte 2026：仅 1/5 公司有成熟 Agent 治理。
+- **创业机会方向**：① 面向中小企业的一站式 AI 治理/合规 SaaS；② AI 安全评估与红队测试服务；③ 影子 AI（Shadow AI）检测与访问控制。
+- **谁已经在做了**：Kiteworks、OneTrust、Credo AI、Holistic AI（欧美头部）；国内赛道相对空白。
+- **来源**：Evolvance Market Research《AI Governance Statistics 2026》；Deloitte《State of AI in the Enterprise 2026》；IBM/Writer/Economist Impact/Aon 数据汇总。
 
-### 5. 开源替代与"反封闭工具"浪潮：OpenSEO、开源 GPU 价格指数、开源 JetBrains 编码 Agent
+### 5. "负评挖掘"成为系统化创业方法论：差评即付费验证
 - **信号强度**：★★★☆☆
-- **发生了什么**：Product Hunt 上月榜单出现 OpenSEO（"开源版 Ahrefs"）；9/2 榜单出现 Computable GPU Index（CGI，首个开源 GPU 算力价格指数）、Kilo Code for JetBrains（原生开源编码 Agent）、Nodeterm（开源终端管理器）；Hacker News 有 "SM750（Silicon Motion GPU）开源 HDMI 驱动"（107 points）。
-- **为什么重要**：开发者社区持续用"开源"对冲"封闭、不透明的工具定价"。从 SEO 分析、GPU 价格到编码 Agent，每个高价位商业工具背后都有人在推开源替代，这是低成本创业者的持续切入窗口。
-- **底层原因**：商业工具价格随 AI 功能捆绑上涨，独立开发者与中小团队对成本敏感；开源+托管（open core）模式成为可持续变现路径。
-- **数据支撑**：OpenSEO 上月 PH 第一、Ahrefs 相关搜索 5 年 +1150%；CGI 目标提供透明 GPU 成本基准；Payload CMS +3100%、Penpot +6800% 等开源工具趋势持续上行。
-- **创业机会方向**：高价商业 SaaS 的开源替代 + 托管变现；GPU/算力价格透明度工具；开发者工具 open core。
-- **谁已经在做了**：OpenSEO、Computable GPU Index、Kilo Code、Nodeterm、Penpot、Payload。
-- **来源**：Product Hunt、StartupCorners、Exploding Topics
+- **发生了什么**：BigIdeasDB 提出"每条 1 星差评 = 一句'我愿意付钱让它别这么烂'"的方法论，用 134,000+ App Store/Google Play 差评 + 7,900+ G2 洞察构建可搜索的抱怨数据库。跨竞品复现的同一抱怨即系统性市场缺口。
+- **为什么重要**：为创业者提供了可复制、低成本的 PMF 前置验证路径，把"找点子"从拍脑袋变成数据挖掘。
+- **底层原因**：写详细差评需要用户付出精力，说明痛点真实、且已付费尝试过现有方案；同一抱怨出现在 5-10 家竞品，说明无人解决。
+- **数据支撑**：G2 聚合数据——"报表能力不足"严重度 4.2/5、波及 10 家公司；"CRM 集成挑战" 4.0/5、8 家；"学习曲线陡峭" 4.0/5、8 家；134,000+ 应用差评、7,900+ G2 洞察公开可挖。
+- **创业机会方向**：① 负评挖掘/监控 SaaS（把差评自动聚类成机会清单）；② 围绕具体抱怨（如报表能力）做单点替代品。
+- **谁已经在做了**：BigIdeasDB、GummySearch、同类 Reddit/G2 挖掘工具。
+- **来源**：BigIdeasDB《How to Find SaaS Ideas From Negative G2 & App Store Reviews》；G2 Capterra 差评数据。
 
 ---
 
-## 二、用户痛点（9 条）
+## 二、用户痛点（8 条）
 
-### 1. AI 成本失控、Token 账单无法预测
-- **痛点一句话**：企业上线 AI 后，Token 账单像水龙头没关，谁在花、花在哪、下个月多少，完全看不见。
-- **典型用户画像**：CIO/CFO、AI 平台负责人、SaaS 公司的增长负责人。
-- **具体场景**：SAP 为覆盖自身 Token 账单冻结差旅与非 AI 招聘；企业内部 AI 工具全量推广后"疑似大幅推高成本"。
-- **为什么现有方案不行**：云厂商只给账单不给洞察；各模型价格体系割裂；缺乏跨模型的用量归因与预测。
-- **情绪强度**：★★★★★（直接触发巨头级成本管控动作）
-- **付费意愿信号**：企业已用"冻结招聘/差旅"这种极端方式买单，第三方 FinOps for AI 有明确预算转移空间。
-- **来源**：404 Media、The Next Web、Product Hunt（DepthData）
+1. **AI Agent 失控批量删数据，用户无法中途叫停**
+   - 典型画像：把 Agent 接入邮箱/CRM/财务系统的个人极客与企业员工。
+   - 场景：指令"确认后再执行"，因上下文压缩被抹掉，Agent 开始 mass-delete；手机端喊"STOP"无效，只能物理跑回电脑杀进程。
+   - 为什么现有方案不行：安全靠 prompt，而非架构级权限/熔断；上下文压缩会静默丢弃约束。
+   - 情绪强度：★★★★★（当事人是 Meta 对齐主管，自嘲"rookie mistake"）。
+   - 付费意愿信号：60% 企业无 kill switch、63% 无法强制目的限制——是强 B 端采购缺口。
+   - 来源：Meta OpenClaw 事件；Kiteworks 2026 Forecast。
 
-### 2. 移动端项目管理工具功能缺失
-- **痛点一句话**：团队移动办公时，主流的项目管理 App 是"桌面版的阉割移植"，加载慢、功能缺、体验差。
-- **典型用户画像**：远程/混合办公团队、现场项目经理、高频差旅的管理者。
-- **具体场景**：G2/Capterra 差评聚合显示"Absence of Mobile Functionality"严重度 4.5/5，横跨多个 PM 工具。
-- **为什么现有方案不行**：主流 PM 工具把移动端当附属品，先做桌面再"降级"到手机。
-- **情绪强度**：★★★★☆
-- **付费意愿信号**：严重度接近 deal-breaker（4.5/5），属于"churn 级"痛点。
-- **来源**：BigIdeasDB 对 G2/Capterra 差评聚合
+2. **企业无法快速关停失控 AI Agent（无"杀开关"）**
+   - 画像：部署了 Agentic AI 但治理滞后的 CISO/IT 负责人。
+   - 场景：Agent 越过授权范围执行操作，组织没有一键终止/自动熔断能力。
+   - 现有方案不行：35% 组织承认无法关停失控 Agent；Agent 跑在云端/分布式环境，物理杀进程不可行。
+   - 情绪强度：★★★★☆
+   - 付费意愿信号：Deloitte 显示 74% 计划上 Agent，治理是最大缺口，付费刚需。
+   - 来源：Writer 数据；Deloitte 2026。
 
-### 3. 邮件模板编辑器难用、跨客户端渲染不一致
-- **痛点一句话**：拖拽式邮件模板编辑器在复杂布局下会坏，不同邮箱客户端渲染不一致。
-- **典型用户画像**：市场运营、EDM 负责人、电商卖家。
-- **具体场景**：Mailchimp、Constant Contact、ActiveCampaign 的用户都在抱怨模板构建流程低效（严重度 4.5/5）。
-- **为什么现有方案不行**：主流 EDM 平台模板构建器老旧，跨客户端兼容性差。
-- **情绪强度**：★★★★☆
-- **付费意愿信号**：营销团队已为 EDM 付费，愿为"能稳定渲染的独立模板构建器"单独买单。
-- **来源**：BigIdeasDB G2/Capterra 聚合
+3. **SaaS 报表能力不足（跨 10 家竞品复现）**
+   - 画像：需要自定义报表/数据导出的业务团队。
+   - 场景：现有 SaaS 报表颗粒度不够、无法自定义、导出受限，只能手动贴 Excel。
+   - 现有方案不行：G2 差评里"报表能力不足"严重度 4.2/5，波及 10 家公司，属结构性缺口。
+   - 情绪强度：★★★★☆
+   - 付费意愿信号：已付费用户主动写差评 = 明确付费意愿。
+   - 来源：BigIdeasDB G2 聚合数据。
 
-### 4. 分析/BI 工具数据加载慢
-- **痛点一句话**：看个数据要等 30-60 秒，大表一打开就转圈。
-- **典型用户画像**：数据团队、运营分析、BI 使用者。
-- **具体场景**：主流 BI/分析工具在数据量上来后加载缓慢，严重度 4.5/5。
-- **为什么现有方案不行**：通用 BI 追求全功能，性能在规模化数据上妥协；轻量替代（Plausible、Fathom）已证明"快"本身有市场。
-- **情绪强度**：★★★★☆
-- **付费意愿信号**：已有 Plausible/Fathom 等速度型工具验证了需求。
-- **来源**：BigIdeasDB G2/Capterra 聚合
+4. **CRM 集成困难（跨 8 家复现）**
+   - 画像：销售/运营团队，CRM 需与其他系统打通。
+   - 场景：工具与 CRM 集成难、数据同步失败、需要手动搬运。
+   - 现有方案不行：严重度 4.0/5、8 家公司复现。
+   - 情绪强度：★★★★☆
+   - 付费意愿信号：集成即付费痛点，Plaid/Workato 类已验证市场。
+   - 来源：BigIdeasDB G2 聚合数据。
 
-### 5. 智能家居过度依赖云：门铃要 5 个云服务才能响
-- **痛点一句话**：一个门铃要串 5 个云服务，断网或服务宕机就失灵，还交着订阅费。
-- **典型用户画像**：隐私敏感、追求本地可控的智能家居用户。
-- **具体场景**：Hacker News 热帖 "It takes 5 cloud services to hear my doorbell"（148 points）。
-- **为什么现有方案不行**：厂商为锁订阅把简单功能云端化，隐私和可靠性都牺牲。
-- **情绪强度**：★★★★☆
-- **付费意愿信号**：帖子高热度反映普遍反感；本地优先（local-first）是明确的差异化方向。
-- **来源**：Hacker News
+5. **软件选型信息过载 + 评论偏见/赞助刷屏**
+   - 画像：需要为团队选型软件的中小企业负责人。
+   - 场景：G2/Capterra 上选项过多、赞助/激励评论淹没真实差评、定价信息过时。
+   - 现有方案不行：用户抱怨"评论太短不详细""赞助列表比自然结果更显眼""还是要联系销售"。
+   - 情绪强度：★★★☆☆
+   - 付费意愿信号：愿为"可信、更新的选型信息"付费（对比软件是成熟付费品类）。
+   - 来源：G2 上 Capterra 的差评。
 
-### 6. 火箭发射提醒服务（已存在但失效）
-- **痛点一句话**：想看发射却总错过，之前有人做过提醒服务但已停运。
-- **典型用户画像**：航天爱好者、加州 Vandenberg 附近居民。
-- **具体场景**：Reddit r/SomebodyMakeThis 用户明确"希望有个 App/服务在发射前提醒，已错过两次 SpaceX 发射"。
-- **为什么现有方案不行**：曾有热心人做的服务已下线，无持续运营方。
-- **情绪强度**：★★★☆☆
-- **付费意愿信号**：明确的需求表达，但付费能力存疑（适合低成本侧项目）。
-- **来源**：Reddit r/SomebodyMakeThis
+6. **火箭发射/天文事件无提醒**
+   - 画像：天文爱好者、追 SpaceX 发射的普通用户。
+   - 场景：之前有个 reddit 用户做的"发射前 30 分钟短信提醒"服务已停止运营，用户连错过两次发射。
+   - 现有方案不行：服务已死，无替代。
+   - 情绪强度：★★★☆☆
+   - 付费意愿信号：用户明确"would love to see an App"，8 upvotes。
+   - 来源：r/SomebodyMakeThis。
 
-### 7. 垂直俱乐部（骑行等）缺专用网站模板
-- **痛点一句话**：骑行/运动俱乐部要博客+相册+路线地图+活动日历，找不到合用的模板，定制又贵。
-- **典型用户画像**：非技术背景的俱乐部管理员。
-- **具体场景**：Reddit 用户求"德国骑行俱乐部"网站模板，含分栏目博客、Garmin/Strava 路线嵌入、日历。
-- **为什么现有方案不行**：通用 CMS 模板不覆盖垂直需求；定制开发成本高。
-- **情绪强度**：★★★☆☆
-- **付费意愿信号**：明确"定制很贵、想要模板"，是垂直 SaaS 的经典切入点。
-- **来源**：Reddit r/SomebodyMakeThis
+7. **消费收据无法按品类细分记账（以 Walmart 为例）**
+   - 画像：需要做家庭/个人预算的消费者。
+   - 场景：Walmart 收据只告诉你"在 Walmart 花了 X 元"，不告诉你花在哪一类。
+   - 现有方案不行：无自动分类工具。
+   - 情绪强度：★★☆☆☆
+   - 付费意愿信号：中等（理财记账类已有付费先例）。
+   - 来源：r/SomebodyMakeThis。
 
-### 8. 消费收据无法按品类拆分
-- **痛点一句话**：Walmart 账单只告诉你在 Walmart 花了多少钱，不告诉花在什么品类上。
-- **典型用户画像**：精打细算的消费者、做预算的用户。
-- **具体场景**：Reddit 用户求"扫描 Walmart 收据按品类拆分支出的软件"。
-- **为什么现有方案不行**：通用记账工具无法自动识别收据行项目品类。
-- **情绪强度**：★★☆☆☆
-- **付费意愿信号**：付费意愿弱，适合作为大记账产品的功能而非独立创业。
-- **来源**：Reddit r/SomebodyMakeThis
-
-### 9. 面试/公开演讲缺乏陪练
-- **痛点一句话**：面试、销售路演、演讲前焦虑没处练，没人陪练。
-- **典型用户画像**：求职者、销售新人、需要公开表达的人群。
-- **具体场景**：Reddit 用户自建"连接陌生人做视频陪练"的 Web App 并征集反馈。
-- **为什么现有方案不行**：真人陪练贵、AI 陪练缺真实感与即时反馈闭环。
-- **情绪强度**：★★★☆☆
-- **付费意愿信号**：已有创业者入场做视频陪练，AI 陪练是热门方向（PH 上 Orato"用 AI 练习口语"）。
-- **来源**：Reddit r/SomebodyMakeThis、Product Hunt（Orato）
+8. **面试/演讲/销售话术练习缺陪练**
+   - 画像：求职者、销售、公开演讲者，有焦虑/无陪练。
+   - 场景：没有时间/方法在正式场合前练习，缺真实对象。
+   - 现有方案不行：已有 web app 做视频连线陪练，但仍在找用户反馈（早期）。
+   - 情绪强度：★★★☆☆
+   - 付费意愿信号：AI 口语陪练（Orato 等）已上 Product Hunt，需求被验证中。
+   - 来源：r/SomebodyMakeThis；Product Hunt Orato。
 
 ---
 
 ## 三、创意点子（6 条）
 
-### 1. AI FinOps 平台：Token 账单的"分账 + 预测 + 降本"
-- **触发点**：SAP 冻结招聘为 Token 买单；DepthData、TraceLLM 上榜。
-- **目标用户**：已经规模化用 AI 的中型企业（有真实 AI 账单的团队）。
-- **冷启动策略**：先做一个免费的开源 token 用量探针/聚合器，接主流 LLM API，靠"你的 AI 账单可视化"获客，再上企业配额与降本功能。
-- **差异化**：跨模型（OpenAI/Anthropic/国产模型）统一归因 + 多模型路由降本 + 成本预测，而非单一云厂商的账单页。
-- **风险**：云厂商与模型厂商可能原生提供；定价天花板取决于客户 AI 支出规模。
+1. **AI Agent 防火墙 / Kill Switch 中间件**
+   - 触发点：Meta OpenClaw 删邮件事件 + 60% 企业无杀开关。
+   - 目标用户：部署 Agentic AI 的企业安全团队。
+   - 冷启动：开源 SDK + 面向 AWS Bedrock/LangChain 的插件，先攻开发者社区。
+   - 差异化：架构级目的限制 + 实时异常自动熔断 + 不可篡改审计（vs 提示词级护栏）。
+   - 风险：大厂（Datadog/Dynatrace/Kiteworks）快速跟进；监管标准未定。
 
-### 2. 移动优先的项目管理工具
-- **触发点**：G2 差评"移动功能缺失"严重度 4.5/5。
-- **目标用户**：现场型/混合办公团队（建筑、零售、活动执行、外勤）。
-- **冷启动策略**：从单一垂直（如活动执行或外勤巡检）切入，主打"手机上能完成 90% 操作"，在 Reddit r/SomebodyMakeThis 与 r/productivity 造声量。
-- **差异化**：先做移动端而非桌面降级移植；离线优先。
-- **风险**：大厂补移动端后挤压；垂直太窄则天花板低。
+2. **Token 成本监控与优化平台（AI FinOps）**
+   - 触发点：豆包日均 180 万亿 token、常驻 Agent 日耗 10 万 token、企业 AI 成本焦虑。
+   - 目标用户：重度使用 LLM 的中小团队与企业。
+   - 冷启动：先做 GitHub Action/CLI，接入 OpenAI/Anthropic 账单做成本归因。
+   - 差异化：按"Agent/任务/项目"维度归因 token 成本 + 自动降级路由到便宜模型。
+   - 风险：云厂商与可观测巨头（Datadog）自带成本功能。
 
-### 3. 独立邮件模板构建器（跨客户端可靠渲染）
-- **触发点**：EDM 平台模板构建器差评严重度 4.5/5。
-- **目标用户**：市场/运营/电商团队。
-- **冷启动策略**：做"所见即所得 + 跨客户端预览 + 一键导出到 Mailchimp/ActiveCampaign"的独立工具，靠 SEO 内容（"邮件客户端兼容性"）获客。
-- **差异化**：专注渲染可靠性与跨客户端预览，而非再做一个 EDM 平台。
-- **风险**：EDM 平台原生改进后需求萎缩；获客依赖 SEO，见效慢。
+3. **负评挖掘引擎（差评 → 机会清单）**
+   - 触发点：BigIdeasDB 方法论 + 134,000 差评数据库。
+   - 目标用户：独立开发者、微 SaaS 创业者、VC 投研。
+   - 冷启动：公开"每周 Top 10 未解决抱怨"免费周刊引流。
+   - 差异化：自动聚类跨竞品抱怨 + 严重度/频次打分 + 输出可执行点子。
+   - 风险：数据源爬取合规；护城河浅（可被复制）。
 
-### 4. 轻量快速分析/BI（"打开就出数"）
-- **触发点**：BI 工具"加载慢 30-60 秒"差评严重度 4.5/5。
-- **目标用户**：被重 BI 拖累的运营/数据团队。
-- **冷启动策略**：开源 + 单机部署，主打"小团队 5 分钟跑起来、秒开报表"，对标 Plausible 的路径。
-- **差异化**：速度与部署简单为第一性，砍掉重 BI 的复杂建模层。
-- **风险**：功能天花板与商业化难度（开源变现在国内尤其难）。
+4. **火箭发射/天文事件提醒 App**
+   - 触发点：r/SomebodyMakeThis 需求 + 原服务已死。
+   - 目标用户：天文/航天爱好者。
+   - 冷启动：先做免费 Telegram/微信订阅 + 邮件，抓取公开发射日历 API。
+   - 差异化：结合地理位置（"你 2 英里内可观测"）推送。
+   - 风险：小众、付费意愿弱；可被 NextSpaceflight 等现有 app 覆盖。
 
-### 5. 本地优先的智能门铃/家居网关
-- **触发点**：HN "门铃要 5 个云服务"（148 points）。
-- **目标用户**：隐私敏感、讨厌订阅、有折腾能力的家居用户。
-- **冷启动策略**：开源硬件+软件方案，先做"单设备本地运行、无订阅"的门铃，在 HN/Reddit 造势。
-- **差异化**：local-first、无云依赖、数据自持，切中云订阅反感情绪。
-- **风险**：硬件供应链与售后成本高；市场规模偏 niche。
+5. **收据智能分类记账（拍照/邮件解析）**
+   - 触发点：Walmart 收据分类痛点。
+   - 目标用户：做预算的消费者、小生意主。
+   - 冷启动：先做邮件收据转发解析 + 自动分账（MVP）。
+   - 差异化：用 LLM 做品类级拆解（比现有只读总额的更强）。
+   - 风险：Copilot Money/Monarch 等已有玩家；隐私信任门槛。
 
-### 6. 垂直俱乐部/社群网站模板平台
-- **触发点**：Reddit 求"骑行俱乐部模板"。
-- **目标用户**：骑行、跑步、登山等运动俱乐部管理员（非技术）。
-- **冷启动策略**：先做"骑行俱乐部"一个模板（博客+相册+Strava 路线嵌入+活动日历），收费定制化，验证后复制到其他运动。
-- **差异化**：垂直模板 + 运动数据（Strava/Garmin）原生集成，而非通用建站。
-- **风险**：单垂直付费能力弱，需多垂直复制；通用建站平台可能下沉覆盖。
+6. **骑行/体育俱乐部垂直建站模板**
+   - 触发点：r/SomebodyMakeThis 骑行俱乐部找模板。
+   - 目标用户：非技术的小型俱乐部/协会。
+   - 冷启动：预置"活动日历+路线地图+相册+报名"模板，德/英多语言。
+   - 差异化：垂直到"俱乐部"场景，内置 Garmin/Strava 地图嵌入。
+   - 风险：单次付费/低价，LTV 有限。
 
 ---
 
 ## 四、潜在创业方向（3 个）
 
-### 1. AI 成本管控与 Token 优化平台（FinOps for AI）
-- **市场规模**：企业 AI 支出正以非线性速度增长，SAP 单家已投入近 10 亿美元；中文侧"中国日均 Token 消耗一年半增长 300 倍"级增速；AI Observability 搜索 5 年 +9300% 佐证需求爆发。保守估计这是下一个十亿美元级的中间件赛道。
-- **竞争格局**：早期且碎片化——云厂商只给账单、无洞察；DepthData、TraceLLM 等创业公司刚起步；LangSmith 偏开发侧。尚无跨模型、面向 CFO 的统一"AI 成本管理"成熟玩家。
-- **验证路径**：先做开源 token 用量聚合器，找 10 家有真实 AI 账单的团队访谈，确认他们是否愿为"分账+预测+降本"付费；用一两个高耗能客户跑通降本 ROI 再放大。
-- **商业模式**：SaaS 订阅（按 token 用量/席位）+ 降本效果分成。
-- **风险与护城河**：风险是云厂商/模型厂商原生下沉。护城河在于跨模型中立性与用量归因数据沉淀。
+### 方向一：AI Agent 治理与安全平台（护栏即基础设施）
+- **市场规模**：AI 治理缺口巨大——88% 组织用 AI、仅 8% 有完整治理框架（小企业 2%）；74% 计划上 Agent 但仅 21% 有成熟治理。LLM 可观测市场 2026 $2.69B、2030 $9.26B（CAGR 36.2%）；AI 事故 2025 年 362 起（+55%）。
+- **竞争格局**：欧美有 Kiteworks、Credo AI、Holistic AI、OneTrust；可观测侧 Datadog、Dynatrace、Arize AI、Langfuse；国内治理/护栏赛道几乎空白。
+- **验证路径**：先做开源 Agent 护栏 SDK（LangChain/LlamaIndex 插件）挂 GitHub 获开发者，再切企业合规付费（对标 SOC2/欧盟 AI 法案审计报告）。
+- **商业模式**：开源引流 + 企业订阅/私有化部署 + 合规审计报告按次收费。
+- **风险与护城河**：大厂快速跟进；护城河来自"架构级控制 + 不可篡改审计 + 多框架兼容"的工程积累与合规认证，而非单点功能。
 
-### 2. AI 可观测性与护栏（Agent Observability & Guardrails）
-- **市场规模**：Agent 进入生产是确定性趋势（Viktor、Interactive Sessions 等），每个生产 Agent 都需要观测/审计/回滚层；AI Guardrails 搜索 5 年 +8400%、AI Observability +9300%。
-- **竞争格局**：OpenTelemetry 生态在向 AI 延伸（TraceLLM 即为"生产 AI 的 OpenTelemetry"）；LangSmith、大厂套件并存，但"Agent 行为审计+回滚+护栏"这一层尚无统治者。
-- **验证路径**：从"Agent 误删邮件"这类事故切入，做一个轻量 Agent 权限/回滚 SDK，找早期用 Agent 的团队试点。
-- **商业模式**：开源 SDK + 托管 SaaS；按 Agent 数量/事件量计费。
-- **风险与护城河**：风险是大厂标准（如 OpenTelemetry）快速覆盖。护城河在于 Agent 行为语义库与护栏规则生态。
+### 方向二：AI 可观测性 + Token 成本优化（AI FinOps）
+- **市场规模**：$2.69B(2026) → $9.26B(2030)，亚太增速最快；叠加豆包日均 180 万亿 token、常驻 Agent 日耗 10 万 token 的成本压力。
+- **竞争格局**：Datadog/Dynatrace（巨头）、Arize/Langfuse/Braintrust/Comet Opik/TraceLoop（新锐开源）。差异化空间在"Agent 维度成本归因 + 自动模型路由降本"。
+- **验证路径**：开源轻量 tracer（一行 SDK 接入）+ 免费 token 成本看板，用"省了多少钱"作为传播钩子。
+- **商业模式**：按监控的 token 量/席位订阅；成本优化抽成（省下的 X%）。
+- **风险与护城河**：护城河浅，易被巨头吞并；靠速度 + 垂直 Agent 场景（邮件 Agent、客服 Agent）深耕。
 
-### 3. 高价商业 SaaS 的开源替代 + 托管变现（open core）
-- **市场规模**：SEO 分析（Ahrefs 相关搜索 +1150%）、设计协作（Penpot +6800%）、无头 CMS（Payload +3100%）等，都是数亿到数十亿美元规模的被替代市场。
-- **竞争格局**：每个方向有 1-2 个开源挑战者（OpenSEO、Penpot、Payload），但商业化多未跑通，留出"托管+企业版"空间。
-- **验证路径**：选一个高频高价的商业工具（如 Ahrefs），先开源核心功能，用 GitHub 增长验证开发者需求，再上托管与企业功能。
-- **商业模式**：开源免费 + 云托管订阅 + 企业私有化授权。
-- **风险与护城河**：风险是变现周期长、开源被大厂白嫖。护城河在于社区与品牌，以及托管服务的规模效应。
+### 方向三：垂直岗位办公 Agent（专家套件/Skill 市场）
+- **市场规模**：中国 AI 原生 App 月活 4.99 亿（+85.4%），豆包/千问/DeepSeek 3.82/1.67/1.29 亿；办公 Agent 三巨头（千问办公、豆包工作、WorkBuddy）刚起步，垂直岗位（HR/律师/财务/投研）Skill 供给稀缺。
+- **竞争格局**：大厂做通用底座，垂直岗位的"组织级 Skill 沉淀"是空白；千问办公公开技能市场仅 73 个官方技能，远未覆盖长尾岗位。
+- **验证路径**：挑一个高频高价值岗位（如 HR 招聘/律师尽调/财务月结），把工作流封装成可复用 Skill，先在千问办公/豆包工作技能市场上架获分成。
+- **商业模式**：Skill 销售分成 + 面向中小律所/机构的"岗位 Agent 套件"订阅。
+- **风险与护城河**：依赖大厂平台（平台风险）；护城河来自专业 know-how 沉淀为 Skill 资产 + 客户数据积累。
 
 ---
 
 ## 五、中文渠道观察（3 条）
 
-### 1. 中国 AI 产业进入"价值收割"期，头部扎堆上市
-- 新华社《2026 年中国 AI 发展趋势前瞻》数据：AI 企业超 6000 家，AI 核心产业规模预计突破 1.2 万亿元、同比增长近 30%；国产开源大模型全球累计下载量突破 100 亿次；中国 AI 专利全球占比达 60%。2026 年 1 月以来智谱、天数智芯、MiniMax 等国内 AI 企业扎堆上市；清华大学 AGI-Next 峰会形成共识——以对话为核心的"Chat"范式终结，竞争转向"能办事"的智能体时代。**来源**：新华社 / 语雀 AI 厂商日报。
+1. **AI 原生 App 重构移动互联网底层逻辑**：QuestMobile 显示 2026 年 6 月 AI 原生 App 月活 4.99 亿（同比 +85.4%），人均月使用 92.7 次，远超其他应用；传统搜索行业人均使用次数/时长同比下滑 19.1%/13.5%；28% 的行业 App 面临"次数+时长"双降。这意味着"被 AI 引用/被 Agent 调用"正在取代"自有 App 流量"，成为新分发入口——汽车之家内容经 TOP3 AI 原生 App 调用间接触达 1497 万（相当于自有流量的 24.9%），太平洋汽车 AI 触达达自有流量的 113.8 倍，携程 AI 触达 2850 万。**创业启示：内容/服务"AI 可见性优化（AEO）"成为新 SEO**，对应 Exploding Topics 上 "Answer Engine Optimization +7500%"。
+   - 来源：QuestMobile《2026 年 AI 应用市场发展半年报》。
 
-### 2. 流量红利转向"服务红利"，平台从掠夺式增长转向用户价值深耕
-- QuestMobile《2025-2026 年度核心趋势报告》提出"智变重构用户价值，流量红利跃迁为服务红利"，AI 从单点突破走向系统化赋能，智能终端从"设备中心"转向"用户中心"，平台运营从"流量掠夺"转向"用户价值深耕"。这对应创业逻辑从"买流量"转向"做留存与深度服务"。**来源**：QuestMobile 报告（uone.alibaba-inc.com）。
+2. **豆包付费标志着国产 C 端 AI 变现拐点**：豆包 6 月 24 日推出专业版（68/200/500 元三档），上线可执行 Agent 任务的"办公任务模式"；豆包大模型日均 tokens 调用量达 180 万亿（较发布增长超 1500 倍），字节正与天数智芯洽谈采购至少 5 万颗国产推理 GPU。机构普遍认为国产大模型从"免费获客"进入"付费转化与价值验证"阶段。**创业启示：Token 成本管控、国产算力适配、Agent 按消耗计价工具成为刚需**。
+   - 来源：财联社；窄播《豆包付费是字节整理 Agent 生态的开始》。
 
-### 3. 融资逻辑从"模型竞赛"转向"价值收割"，国产大模型向头部集中
-- ATA《AI 下半场》深度拆解指出：2026 年全球 AI 融资从"大炼模型"转向"价值收割"，美国聚焦 AGI 超级独角兽与垂直工具高估值，中国回归理性、向"技术壁垒+商业闭环"双驱动的头部国产大模型集中。智谱 GLM-5（256K 上下文）于 4 月发布，2026 Q1 完成 5 亿美元 C 轮、估值约 50 亿美元，成国产第一梯队代表；千问、Kimi、豆包同步向"语言到 action"的 Agent 方向跃迁。**来源**：ATA 文章 / 语雀 AI 厂商日报。
+3. **办公 Agent 三巨头集结，垂直技能/连接器成差异化关键**：千问办公（阿里，8 月 3 日公测，98/198 元个人版）、豆包工作（字节，7 月 30 日飞书+豆包合并后首发，原生继承飞书权限/文档/多维表格）、腾讯 WorkBuddy（近三月活跃 +115.3%）、阿里 JVS Claw（+164.4%）形成"御三家"格局。竞争从"谁模型更强"转向"谁 Skill 更多、连接器更全、生态数据更厚"。**创业启示：为办公 Agent 提供垂直连接器（MCP）与岗位专家套件是明确的生态淘金机会**。
+   - 来源：QuestMobile；UISDC《豆包工作它来了》；CSDN 年度 AI 工具盘点。
 
 ---
 
 ## 六、采集元数据
 
-| 渠道 | 状态 | 关键信号 |
-| --- | --- | --- |
-| Hacker News | ✅ 已采集 | 顶部 30 帖：Creepy Crawlies 1139、IKEA Hacking 313、Haiku R1/beta6 315、门铃需 5 云服务 148、Meta AI 误删邮件 |
-| Product Hunt | ✅ 已采集 | 今日 Top：Video Agent by Fotor、BrandJet、Viktor AI coworker、Interactive Sessions；上月：OpenSEO、DepthData、TraceLLM |
-| Reddit | ✅ 已采集 | r/SomebodyMakeThis 痛点：火箭发射提醒、骑行俱乐部模板、收据分类、面试陪练 |
-| Exploding Topics | ✅ 已采集 | AI Observability +9300%、AI Guardrails +8400%、AEO +7500%、Workflow Automation +2400% |
-| G2/Capterra 差评 | ✅ 已采集 | 移动功能缺失 4.5/5、邮件模板 4.5/5、数据加载慢 4.5/5（BigIdeasDB 聚合） |
-| Killed by Google | ✅ 已采集 | Google Tables（Airtable 竞品）判死、Jamboard/Chromecast/Google Domains 等已关停，累计 298 个 |
-| ideaSearch | ⚠️ 间接覆盖 | 通过 BigIdeasDB/G2 差评挖掘方法论与 idea 验证框架覆盖（ideaSearch 站点未直接可检索） |
-| 中文互联网 | ✅ 已采集 | 新华社 1.2 万亿产业规模、QuestMobile 服务红利、智谱 GLM-5 融资 |
+| 渠道 | 采集状态 | 关键收获 |
+|------|----------|----------|
+| Hacker News | ✅ 成功 | TOP30 帖子（含 OpenClaw 删邮件、扩散语言模型、Haiku beta6 等） |
+| Product Hunt | ✅ 成功 | 今日 TOP（Video Agent by Fotor、Viktor、Orato 等）+ 本周/月榜 |
+| Reddit | ✅ 成功 | r/SomebodyMakeThis 8+ 痛点点子、r/microsaas、r/SaaS |
+| Exploding Topics | ✅ 成功 | Top 100 趋势（AI Observability +9300%、AI Guardrails +8400% 等） |
+| G2/Capterra 差评 | ✅ 成功 | 报表能力不足/CRM 集成难/学习曲线陡 等跨竞品抱怨 |
+| Killed by Google | ✅ 成功 | Tables（Airtable 竞品）3 个月后关停等最新关停清单 |
+| ideaSearch | ✅ 成功 | Paul Graham 找点子方法论 + 负评挖掘方法论 |
+| 中文互联网 | ✅ 成功 | QuestMobile 半年报、豆包付费、千问办公、WorkBuddy |
+| 补充搜索 | ✅ 成功 | OpenClaw 事件深挖、LLM 可观测市场、AI 治理数据、AI Agent 办公 |
 
-**采集说明**：killedbygoogle 首次直搜失败后改用 "killed by google 2026 list" 成功；Meta AI 误删邮件细节直搜失败，采用 HN 标题信号（24 points）；ideaSearch 站点直搜未命中，以其方法论等价来源（BigIdeasDB 差评挖掘 + First Round/Medium 验证框架）替代。
+> 说明：本报告所有数据均来自上述公开渠道的实时采集结果，采集时间 2026-09-03 20:22 (Asia/Shanghai)。部分搜索结果受渠道反爬限制（Reddit 需登录验证），已通过替代来源补充。
