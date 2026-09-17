@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATA-260916 | 设计与AI方向文章日报</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f7fa; color: #333; line-height: 1.8;
+        }
+        .container { max-width: 960px; margin: 0 auto; padding: 24px 20px; }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff; padding: 40px 30px; border-radius: 12px; margin-bottom: 32px; text-align: center;
+        }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+        .header .subtitle { font-size: 15px; opacity: 0.9; }
+        .header .meta { font-size: 13px; opacity: 0.8; margin-top: 12px; }
+        .stats { display: flex; gap: 16px; margin-bottom: 32px; flex-wrap: wrap; }
+        .stat-card {
+            background: #fff; border-radius: 8px; padding: 16px 20px; flex: 1;
+            min-width: 140px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); text-align: center;
+        }
+        .stat-card .num { font-size: 28px; font-weight: 700; color: #667eea; }
+        .stat-card .label { font-size: 13px; color: #888; margin-top: 4px; }
+        .category { margin-bottom: 36px; }
+        .category-title {
+            font-size: 20px; font-weight: 700; color: #333; padding-left: 12px;
+            border-left: 4px solid #667eea; margin-bottom: 20px;
+        }
+        .article-card {
+            background: #fff; border-radius: 8px; padding: 20px 24px; margin-bottom: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: box-shadow 0.2s;
+        }
+        .article-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+        .article-title { font-size: 17px; font-weight: 600; margin-bottom: 8px; }
+        .article-title a { color: #2c3e50; text-decoration: none; border-bottom: 1px dashed transparent; transition: all 0.2s; }
+        .article-title a:hover { color: #667eea; border-bottom-color: #667eea; }
+        .article-abstract { font-size: 14px; color: #666; line-height: 1.7; margin-bottom: 10px; }
+        .article-meta {
+            font-size: 12px; color: #999; display: flex; gap: 16px; flex-wrap: wrap; align-items: center;
+        }
+        .article-meta .tag { background: #f0f2ff; color: #667eea; padding: 2px 10px; border-radius: 12px; font-size: 11px; }
+        .article-meta .time { color: #aaa; }
+        .footer {
+            text-align: center; padding: 24px 0; color: #aaa; font-size: 13px;
+            border-top: 1px solid #eee; margin-top: 40px;
+        }
+        .footer a { color: #667eea; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>ATA-260916 | 设计与AI方向文章日报</h1>
+            <div class="subtitle">设计实践总结 / 设计与 AI 结合 / AI 工程化 / AI 观测与评估</div>
+            <div class="meta">发布日期：2026-09-17 | 来源：ATA 内部技术文章平台 | 文章覆盖日期：2026-09-16</div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card"><div class="num">30</div><div class="label">文章总数</div></div>
+            <div class="stat-card"><div class="num">4</div><div class="label">分类方向</div></div>
+            <div class="stat-card"><div class="num">2026-09-16</div><div class="label">覆盖日期</div></div>
+        </div>
+
+        <div class="category">
+        <div class="category-title">设计实践总结</div>
+        <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020783204?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">让走查&quot;轻&quot;下来：优酷走查工作台与轻量化投递实践</a></div>
+                <div class="article-abstract">本文介绍优酷通过dfxcli命令行采集与走查工作台，实现设计走查轻量化投递及AI预检，有效提升了测试、设计与开发的协作效率。</div>
+                <div class="article-meta">
+                    <span class="time">2026-09-16 20:49</span>
+                    <span class="tag">设计实践总结</span>
+                </div>
+            </div>
+        </div>
+        <div class="category">
+        <div class="category-title">设计与 AI 结合</div>
+        <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020784002?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">魔卡：AI 内容型视觉生成的工程化实践</a></div>
+                <div class="article-abstract">本文围绕魔卡的整体架构，重点介绍我们如何通过可控模板、低成本渲染和稳定质量闭环，构建一套面向真实业务的 AI 内容型视觉生成方案。</div>
+                <div class="article-meta">
+                    <span class="time">2026-09-16 20:21</span>
+                    <span class="tag">设计与 AI 结合</span>
+                </div>
+            </div>
+        <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020781702?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">GPT Image 2.5 来了：在用的 AI PPT 工作流，值得升级了</a></div>
+                <div class="article-abstract">GPT Image 2.5凭借提升的画质与编辑能力，显著优化了AI生成可编辑PPT工作流中的视觉还原与后期修改效率。</div>
+                <div class="article-meta">
+                    <span class="time">2026-09-16 10:06</span>
+                    <span class="tag">设计与 AI 结合</span>
+                </div>
+            </div>
+        <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020780898?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">ICBU DXMarvel = AI + DX 研发提效 &amp; 全技术栈 App D2C 套件</a></div>
+                <div class="article-abstract">DXMarvel是基于DX底座的AI+研发提效套件，通过Figma转代码、自动化测试及全栈D2C能力，实现ICBU App从设计到多端代码的高效转化。</div>
+                <div class="article-meta">
+                    <span class="time">2026-09-16 10:41</span>
+                    <span class="tag">设计与 AI 结合</span>
+                </div>
+            </div>
+        <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020783203?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">DeepSeek V4.1 Flash 三项实测：童话改写、3D 古建与新中式落地页</a></div>
+                <div class="article-abstract">晓天衡宇评测社区通过童话改写、3D古建生成与电商落地页设计三个实测任务，发现DeepSeekV4.1Flash能较好地将自然语言转化为跨类型交付物，但细节完成度仍有波动。</div>
+                <div class="article-meta">
+                    <span class="time">2026-09-16 20:09</span>
+                    <span class="tag">设计与 AI 结合</span>
+                </div>
+            </div>
+        <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020786802?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">从&quot;看图猜元素&quot;到精准定位：基于 HarnessSDK 的 UI 自动化元素增强查找实践</a></div>
+                <div class="article-abstract">本文介绍了ElementLens通过HarnessSDK注入业务语义，将UI自动化元素查找从视觉猜测升级为精准定位的实践。</div>
+                <div class="article-meta">
+                    <span class="time">2026-09-16 21:27</span>
+                    <span class="tag">设计与 AI 结合</span>
+                </div>
+            </div>
+        </div>
+        <div class="category">
+        <div class="category-title">AI 工程化</div>
+        <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020783202?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">PiAgent：可扩展的模块化 Agent Runtime</a></div>
+                <div class="article-abstract">本文介绍了开源项目PiAgent，它采用“小内核、策略外置”设计，将模型适配、Agent循环与会话管理模块化，提供可扩展的终端编程智能体框架。</div>
+                <div class="article-meta">
+                    <span class="time">2026-09-16 19:56</span>
+                    <span class="tag">AI 工程化</span>
+                </div>
+            </div>
+        <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020785201?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">Anthropic 开源电商 Agents 框架：Commerce Agents 解读</a></div>
+                <div class="article-abstract">Anthropic开源电商Agents框架，通过购物与商家双Agent及单Agent加Skills架构优化零售场景，旨在抢占市场、换取分发渠道并建立行业标准。</div>
+                <div class="article-meta">
+                    <span class="time">2026-09-16 20:00</span>
+                    <span class="tag">AI 工程化</span>
+                </div>
+            </div>
+        <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020781706?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">健康数据技术-云端中心化AI协同研发平台之灵智</a></div>
+                <div class="article-abstract">阿里健康推出灵智平台，以Issue/Aone需求为主线构建双闭环AI协同研发体系，实现需求自动化流转与知识沉淀，推动AIDev从单点智能迈向可度量、可复用的组织级智能协作。</div>
+                <div class="article-meta">
+                    <span class="time">2026-09-16 14:31</span>
+                    <span class="tag">AI 工程化</span>
+                </div>
+            </div>
+        <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020783201?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">本体论、知识管理及其在 LLM 上的应用</a></div>
+                <div class="article-abstract">本文探讨本体论从哲学到工程应用的演进，指出其为知识管理提供显性语义骨架但无法替代隐性知识，并详述其在LLM应用中如何保障业务语义一致性与执行可靠性。</div>
+                <div class="article-meta">
+                    <span class="time">2026-09-16 19:13</span>
+                    <span class="tag">AI 工程化</span>
+                </div>
+            </div>
+        <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020786003?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">为什么垂类 Agent 越做越窄：本体论可能是企业 Agent 的下一层底座</a></div>
+                <div class="article-abstract">本文指出垂类Agent因封闭而受限，主张构建本体语义底座，融合通用模型智能与业务规则，让企业Agent成为可信生产力。</div>
+                <div class="article-meta">
+                    <span class="time">2026-09-16 22:44</span>
+                    <span class="tag">AI 工程化</span>
+                </div>
+            </div>
+        <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/12020779308?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">Eddy：基于事件驱动的生产级 Agent 运行时框架</a></div>
+                <div class="article-abstract">Eddy是基于事件驱动的生产级Agent运行时框架，通过解耦执行、状态与服务化，提供高可扩展性以支撑复杂业务应用的高效构建与稳定运行。</div>
+                <div class="article-meta">
+                    <span class="time">2026-09-16 14:10</span>
+                    <span class="tag">AI 工程化</span>
+                </div>
+            </div>
+        <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020781707?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">AMP：支撑团队 Agent运行的统一基座</a></div>
+                <div class="article-abstract">AMP作为Agent统一基座，提供环境、任务及授权等全生命周期管理，支持多入口接入与高可用运行，助力团队高效构建稳定Agent服务。</div>
+                <div class="article-meta">
+                    <span class="time">2026-09-16 15:41</span>
+                    <span class="tag">AI 工程化</span>
+                </div>
+            </div>
+        <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020780114?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">镜像即审计：LoongSuite Pilot 支撑大规模 Docker 场景 AgentLoop 审计方案</a></div>
+                <div class="article-abstract">LoongSuitePilot通过容器模式集成、统一入口点及四层验收，解决Docker环境下Agent审计难题，实现“镜像即审计”。</div>
+                <div class="article-meta">
+                    <span class="time">2026-09-16 17:37</span>
+                    <span class="tag">AI 工程化</span>
+                </div>
+            </div>
+        <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020785202?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">从零到一构建一个 Python MCP Server Faas  服务</a></div>
+                <div class="article-abstract">本文介绍了如何通过FaaS与主应用双仓架构，将xxx平台功能封装为标准MCP只读工具供外部系统服务安全调用。</div>
+                <div class="article-meta">
+                    <span class="time">2026-09-16 22:12</span>
+                    <span class="tag">AI 工程化</span>
+                </div>
+            </div>
+        <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020780113?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">Xcode MCP：让 AI 接入真实的开发反馈</a></div>
+                <div class="article-abstract">Xcode MCP通过原生协议让AI直接获取编译、测试及预览等IDE上下文反馈，缩短验证路径并提升开发效率，但需结合人工判断确保交付质量。</div>
+                <div class="article-meta">
+                    <span class="time">2026-09-16 17:23</span>
+                    <span class="tag">AI 工程化</span>
+                </div>
+            </div>
+        <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020781708?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">如何让Agent Team自动修Bug？Aone CoTeam全链路闭环实践指南</a></div>
+                <div class="article-abstract">Aone CoTeam通过六节点声明式流程与两处人工门禁，实现Bug从证据收集到发布确认的全链路自动化闭环治理。</div>
+                <div class="article-meta">
+                    <span class="time">2026-09-16 15:43</span>
+                    <span class="tag">AI 工程化</span>
+                </div>
+            </div>
+        <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020781709?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">Aone Coteam实践：5分钟构建一个由阿里钉驱动的数字人</a></div>
+                <div class="article-abstract">文章介绍如何基于阿里钉与Coteam，通过安装配置、编写精细Prompt及启动定时任务，快速构建具备上下文记忆与权限控制的钉钉数字人。</div>
+                <div class="article-meta">
+                    <span class="time">2026-09-16 16:32</span>
+                    <span class="tag">AI 工程化</span>
+                </div>
+            </div>
+        <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/12020780899?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">把“请严格遵守”写成代码：我的 Skill 脚手架实践</a></div>
+                <div class="article-abstract">作者通过HTML与数据摘要案例，演示如何用决策表、校验器及Hook将规范代码化并阻断错误交付，强调明确检查边界而非依赖模型自律。</div>
+                <div class="article-meta">
+                    <span class="time">2026-09-16 11:48</span>
+                    <span class="tag">AI 工程化</span>
+                </div>
+            </div>
+        <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020781704?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">从超级个体到超级组织：1688 数据中心养数字员工实录</a></div>
+                <div class="article-abstract">1688数据中心推行“数字员工”处理高频单点任务，与负责端到端交付的“研发小队”分工协作，通过标准化饲养流程实现组织提效。</div>
+                <div class="article-meta">
+                    <span class="time">2026-09-16 11:37</span>
+                    <span class="tag">AI 工程化</span>
+                </div>
+            </div>
+        <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020780897?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">ICBU 精排模型的 Scaling 探索与实践</a></div>
+                <div class="article-abstract">ICBU精排模型通过保留事件级Token、Prefix/Suffix计算复用及引入长序列预训练与MoE结构，显著提升排序效果与服务效率。</div>
+                <div class="article-meta">
+                    <span class="time">2026-09-16 08:58</span>
+                    <span class="tag">AI 工程化</span>
+                </div>
+            </div>
+        <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020778926?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">保节奏，换音色：AI 短剧角色音色一致性修复实践</a></div>
+                <div class="article-abstract">针对AI短剧音色不一且口型错位痛点，对比TTS替换等方案，最终采用万镜一刻“保节奏换音色”技术，在保持原音素节奏同步前提下统一角色音色。</div>
+                <div class="article-meta">
+                    <span class="time">2026-09-16 15:21</span>
+                    <span class="tag">AI 工程化</span>
+                </div>
+            </div>
+        </div>
+        <div class="category">
+        <div class="category-title">AI 观测与评估</div>
+        <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/12020780905?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">HAE-GEO：一个面向 Search-Agent 的 GEO 投毒评测框架</a></div>
+                <div class="article-abstract">HAE-GEO评测框架，通过分层投毒与轨迹级评测，揭示Search-Agent在证据验证及信念修正上的缺陷，旨在构建可信决策链路。</div>
+                <div class="article-meta">
+                    <span class="time">2026-09-16 18:53</span>
+                    <span class="tag">AI 观测与评估</span>
+                </div>
+            </div>
+        <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020781308?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">让元素查找可度量：面向优酷客户端的 GUI Agent 静态 grounding 评测实践</a></div>
+                <div class="article-abstract">构建静态GUIAgent元素查找评测基准，通过解耦动态执行链路、设计真实数据集及多维指标，实现能力评估的可归因、稳定与高效。</div>
+                <div class="article-meta">
+                    <span class="time">2026-09-16 12:00</span>
+                    <span class="tag">AI 观测与评估</span>
+                </div>
+            </div>
+        <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020784402?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">让 AI 测试不飘不脆：1688 商品详情页自动化的一次实践</a></div>
+                <div class="article-abstract">本文分享了1688商品详情页AI自动化测试实践，通过数据流实证、脚本门禁与fail-closed机制消除AI幻觉，将人工经验转化为可复用的可靠测试流水线。</div>
+                <div class="article-meta">
+                    <span class="time">2026-09-16 19:50</span>
+                    <span class="tag">AI 观测与评估</span>
+                </div>
+            </div>
+        <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020779309?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">从 Badcase 到 PE 增强：HappyHorse 短剧生成效果优化实践</a></div>
+                <div class="article-abstract">HappyHorse针对短剧场景，通过拆解Badcase提炼两套PE增强规则并封装为Skill接入平台，旨在消除输入歧义，但其稳定收益仍待验证。</div>
+                <div class="article-meta">
+                    <span class="time">2026-09-16 16:34</span>
+                    <span class="tag">AI 观测与评估</span>
+                </div>
+            </div>
+        <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020779701?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">wf-ltracker-dev：把埋点验证做成可判定的 —— 一个 ground truth、三格卡口，和两条我们决定不代码化的规则</a></div>
+                <div class="article-abstract">wf-ltracker-dev通过“一个真机与需求四维归零的Ground Truth、三格卡口及两条非代码化规则”，解决埋点验证静默失败问题，实现可判定验收。</div>
+                <div class="article-meta">
+                    <span class="time">2026-09-16 17:41</span>
+                    <span class="tag">AI 观测与评估</span>
+                </div>
+            </div>
+        <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020780488?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">从 RAG 知识库到可验证、可迭代的研发知识工程</a></div>
+                <div class="article-abstract">文章提出研发知识工程应聚焦改变决策的四类关键知识，通过消融实验验证有效性，并借助打点机制持续迭代，以解决Agent方案误判问题。</div>
+                <div class="article-meta">
+                    <span class="time">2026-09-16 11:33</span>
+                    <span class="tag">AI 观测与评估</span>
+                </div>
+            </div>
+        <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/12020780904?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">AntCR系列：从多源知识蒸馏到评测数据飞轮</a></div>
+                <div class="article-abstract">本文介绍AntCR如何以风险规则树为坐标，从仓库知识、程序分析、门禁与线上反馈及DIMA高危缺陷中蒸馏出1,453条Benchmark，并建立“蒸馏—评测—反馈—优化”闭环。在覆盖70个P0规则的385条样本上，AntCR阶段性评测的召回率为81.69%、成功率为92.21%。文章还以真实故障展示规则提炼、Bench构建与人工审计过程。</div>
+                <div class="article-meta">
+                    <span class="time">2026-09-16 18:08</span>
+                    <span class="tag">AI 观测与评估</span>
+                </div>
+            </div>
+        <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020781705?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">天猫国际智能客服 VQA 的 Agentic RL 实践与自进化探索</a></div>
+                <div class="article-abstract">天猫国际智能客服通过VQA Agentic RL实践，结合数据治理、主动取证工具及自进化机制，显著降低幻觉率并提升针对性解答能力与用户体验。</div>
+                <div class="article-meta">
+                    <span class="time">2026-09-16 12:29</span>
+                    <span class="tag">AI 观测与评估</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>ATA 设计与AI方向文章日报 | 发布日期：2026-09-17</p>
+            <p style="margin-top: 8px;">统一入口：<a href="https://mihaideyu.github.io/Trend_Opportunity/">https://mihaideyu.github.io/Trend_Opportunity/</a></p>
+        </div>
+    </div>
+</body>
+</html>
