@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ATA-261012 — 设计 × AI 日报</title>
+<style>
+
+:root { --bg:#f6f7f9; --card:#ffffff; --text:#1f2329; --muted:#646a73; --line:#e5e6eb; }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; line-height:1.6; }
+.wrap { max-width: 900px; margin:0 auto; padding:32px 20px 64px; }
+header { text-align:center; padding:28px 20px; background:linear-gradient(135deg,#2b3a55,#3f51b5); color:#fff; border-radius:16px; margin-bottom:24px; }
+header h1 { margin:0 0 8px; font-size:26px; letter-spacing:.5px; }
+header .sub { opacity:.92; font-size:14px; }
+header .meta { margin-top:12px; font-size:13px; opacity:.9; }
+section.cat { margin-bottom:28px; }
+.cat-head { display:flex; align-items:center; gap:10px; margin-bottom:14px; }
+.cat-head .dot { width:10px; height:10px; border-radius:50%; flex:0 0 auto; }
+.cat-head h2 { margin:0; font-size:19px; }
+.cat-head .count { font-size:13px; color:var(--muted); margin-left:auto; }
+.article { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px 18px; margin-bottom:12px; transition:box-shadow .15s ease; }
+.article:hover { box-shadow:0 4px 14px rgba(0,0,0,.06); }
+.article a.title { color:var(--text); font-size:16px; font-weight:600; text-decoration:none; }
+.article a.title:hover { color:#3f51b5; }
+.article p.abs { margin:8px 0 0; font-size:14px; color:var(--muted); }
+footer { text-align:center; color:var(--muted); font-size:12px; margin-top:40px; }
+footer a { color:var(--muted); }
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<h1>ATA-261012 — 设计 × AI 日报</h1>
+<div class="sub">设计与人工智能方向精选文章</div>
+<div class="meta">日期：2026-10-12 ｜ 收录 30 篇</div>
+</header>
+<section class="cat">
+<div class="cat-head">
+<span class="dot" style="background:#e91e63"></span>
+<h2>设计实践总结</h2>
+<span class="count">2 篇</span>
+</div>
+<div class="article">
+<a class="title" href="https://ata.atatech.org/articles/11020812420?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">让每一次执行可见：智能体任务总览的数据模型与投影设计</a>
+<p class="abs">本文介绍了智能体任务总览的设计与实现，通过扩展数据模型、构建后端投影API及前端交互，让定时任务的执行状态、进度与结果跨Agent全局可见。</p>
+</div>
+<div class="article">
+<a class="title" href="https://ata.atatech.org/articles/12020813215?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">PUSH 文案生产统一之路（二）：统一架构设计方案</a>
+<p class="abs">本文介绍了PUSH文案生产的统一架构，通过主Agent处理材料差异、公共工作流完成审核与生文，实现创意调优和供给挖掘共用同一套模型与规范。</p>
+</div>
+</section>
+<section class="cat">
+<div class="cat-head">
+<span class="dot" style="background:#9c27b0"></span>
+<h2>设计 × AI 结合</h2>
+<span class="count">6 篇</span>
+</div>
+<div class="article">
+<a class="title" href="https://ata.atatech.org/articles/11020813212?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">从逐卡开发到界面生产：高德生成式 UI 与 AiTom Harness 实践</a>
+<p class="abs">本文介绍了高德通过AGenUI与AiTomHarness，将出行卡片从逐卡开发升级为离线生成、在线执行的声明式界面生产方式，实现了跨端高效交付。</p>
+</div>
+<div class="article">
+<a class="title" href="https://ata.atatech.org/articles/12020814805?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">从 Markdown 到 MarkdownX：智能客服场景下的生成式 UI 实践</a>
+<p class="abs">本文介绍了MarkdownX，一种基于Markdown的受限扩展语法，让大模型客服输出结构化渲染意图，在复用现有数据的同时提升回复的可读性与可操作性。</p>
+</div>
+<div class="article">
+<a class="title" href="https://ata.atatech.org/articles/11020812418?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">AI在教育行业的应用-视频答疑（上）：基于文生图模型的视频答疑</a>
+<p class="abs">本文介绍了AI视频答疑的文生图技术路线，通过逐页渲染板书、TTS配音与FFmpeg合成生成讲解视频，并详述了提示词工程优化及五维量化评测体系。</p>
+</div>
+<div class="article">
+<a class="title" href="https://ata.atatech.org/articles/11020814813?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">《AI在教育行业的应用-视频答疑（下）：从 Remotion 到 manim 的代码生成路线》</a>
+<p class="abs">本文介绍了利用大模型直接生成manim动画代码来制作数学动态讲解视频的方案，通过一次调用同步输出解题、代码与旁白，实现了音画同步与自动化渲染。</p>
+</div>
+<div class="article">
+<a class="title" href="https://ata.atatech.org/articles/11020813618?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">数字员工不是更强的脚本：AI 运维数字员工平台的演进</a>
+<p class="abs">本文阐述了AI运维数字员工平台的设计演进，其核心是将智能体从“工具”重构为具备身份、岗位、排班与边界的“组织成员”，并以共享机制取代交接来承载运维制度。</p>
+</div>
+<div class="article">
+<a class="title" href="https://ata.atatech.org/articles/11020815215?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">从 Muse 说起：Agent 除了走向办公，是否也能走向生活？</a>
+<p class="abs">本文借Meta的Muse思考，Agent在聚焦办公提效以外，未来是否将走向生活场景主动处理琐事，从工具进化为陪伴者。</p>
+</div>
+</section>
+<section class="cat">
+<div class="cat-head">
+<span class="dot" style="background:#3f51b5"></span>
+<h2>AI 工程化</h2>
+<span class="count">14 篇</span>
+</div>
+<div class="article">
+<a class="title" href="https://ata.atatech.org/articles/11020813621?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">应急等级判断智能体落地实战：从「拍脑袋定级」到生产可解释研判，我踩过的五道坎</a>
+<p class="abs">本文总结了应急等级判断智能体在大行投产的实战经验，通过确定性脚本与大模型分层协作、规则配置化及性能优化等五道关卡，实现了高效可解释的智能研判。</p>
+</div>
+<div class="article">
+<a class="title" href="https://ata.atatech.org/articles/11020814416?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">企业的通用数字员工：问题定义、交付实践与案例研究</a>
+<p class="abs">本文提出企业数字员工交付的核心在于用工程体系弥合大模型概率性与业务确定性的鸿沟，并给出三平面架构、开源选型、工程实践及落地案例。</p>
+</div>
+<div class="article">
+<a class="title" href="https://ata.atatech.org/articles/11020813216?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">面向任务执行的 Agent 知识感知引擎</a>
+<p class="abs">本文提出面向Agent的可执行知识引擎，通过三层架构与数据飞轮将知识转化为可校验、受控的动作，推动Agent从“会回答”走向“能办事”。</p>
+</div>
+<div class="article">
+<a class="title" href="https://ata.atatech.org/articles/11020811613?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">RSI还很远，自迭代已落地：客运Agent自迭代系统工程实践</a>
+<p class="abs">本文介绍了客运自迭代系统，通过构建自动化闭环与工程化架构，让AI自主发现并修复问题，有效解决了模型能力与业务落地间的落差难题。</p>
+</div>
+<div class="article">
+<a class="title" href="https://ata.atatech.org/articles/11020814815?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">应急侠：一个能碰生产数据库的智能体，是怎么被“关进笼子”的</a>
+<p class="abs">本文介绍了应急侠智能体通过多Agent协作、权限收口与告警收敛等机制，在确保安全合规的前提下实现生产故障快速定位与止血。</p>
+</div>
+<div class="article">
+<a class="title" href="https://ata.atatech.org/articles/11020812812?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">FinXScope 巡检侠落地实战: 踩过的坑与填过的坑</a>
+<p class="abs">本文总结了FinXScope巡检侠Agent从Demo到生产落地中，通过脚本化、工程化模板、浏览器桥复用登录态及并发调度机制，攻克性能、稳定、安全与并发四大难题的实战经验。</p>
+</div>
+<div class="article">
+<a class="title" href="https://ata.atatech.org/articles/11020812419?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">企业级 RAG 知识库建设方法论</a>
+<p class="abs">本文系统阐述了企业级RAG知识库建设方法论，通过拆解九大核心节点的最佳实践与避坑指南，并强调检索召回、知识治理及评估先行的三大铁律。</p>
+</div>
+<div class="article">
+<a class="title" href="https://ata.atatech.org/articles/11020812810?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">企业级数字员工解决方案：从数字员工到 AI 原生组织</a>
+<p class="abs">本文提出企业级数字员工方案，通过构建团队型AI助手汇聚经验与推进任务，将个人能力沉淀为可复用的团队资产，推动组织向AI原生演进。</p>
+</div>
+<div class="article">
+<a class="title" href="https://ata.atatech.org/articles/11020813206?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">从改 Prompt，到改 Skill，再到改 Harness：Agent 自进化的演变、难点与展望</a>
+<p class="abs">本文梳理了Agent自进化从优化Prompt、Skill到Harness的演变脉络，指出其真正难点在于归因、维护与评价，并展望了免权重进化等主流方向。</p>
+</div>
+<div class="article">
+<a class="title" href="https://ata.atatech.org/articles/12020814007?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">AntOmniEvo：你的 7×24 算法工程师，让 AI 系统自己进化</a>
+<p class="abs">AntOmniEvo是一个开源AI自动优化框架，它将系统可调部分映射为文件目录，驱动AI在“改文件→打分”循环中自主进化，其中的算法创新以更低成本超越现有方法。</p>
+</div>
+<div class="article">
+<a class="title" href="https://ata.atatech.org/articles/11020813204?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">AI 告警 SOP Skills 自进化的工程实践</a>
+<p class="abs">本文总结了AI告警SOP从0构建至98%覆盖率的工程实践，揭示了指标会自然衰减的规律，并提出需通过自动进化引擎与真值闭环来维持效果。</p>
+</div>
+<div class="article">
+<a class="title" href="https://ata.atatech.org/articles/12020812414?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">从“文档检索”到“知识编译”：LLM Wiki 在商家Agent“晓雨” 知识库中的实践</a>
+<p class="abs">本文介绍LLMWiki将传统RAG的运行时检索前移为离线知识编译，通过构建结构化百科解决商家Agent答错问题，结合Wiki与原文的混合模式显著提升了回答准确率。</p>
+</div>
+<div class="article">
+<a class="title" href="https://ata.atatech.org/articles/11020811607?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">让 Agent 学会判断：从 JEV 接入到完整 Harness 决策流程</a>
+<p class="abs">本文介绍TypeSafe的JEV模型通过AgentScope接入Agent流程，在工具选择、执行防护及回答审核等环节提供结构化判断与概率输出，辅助程序决策。</p>
+</div>
+<div class="article">
+<a class="title" href="https://ata.atatech.org/articles/11020812407?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">电商本体OntoKG实战-- AINative召回引擎的构建之路</a>
+<p class="abs">本文介绍了淘天基于电商本体构建的AI-Native召回引擎，通过混合召回架构与自进化闭环，通过可观测、可调参、可自进化的引擎系统，显著提升了多场景知识检索准确率。</p>
+</div>
+</section>
+<section class="cat">
+<div class="cat-head">
+<span class="dot" style="background:#00897b"></span>
+<h2>AI 观测评估</h2>
+<span class="count">8 篇</span>
+</div>
+<div class="article">
+<a class="title" href="https://ata.atatech.org/articles/11020814013?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">看得清，停得准：多智能体协作的观测与精确取消</a>
+<p class="abs">本文介绍了多智能体协作的观测与精确取消机制，通过事件归一化、SSE实时流实现执行过程可视化，并按触发源差异化处理子任务级联取消以保障系统可控。</p>
+</div>
+<div class="article">
+<a class="title" href="https://ata.atatech.org/articles/11020812814?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">AI的代码离直接上生产还差什么 - 一次AI代码静默错误的排查小记</a>
+<p class="abs">本文通过排查AI代码中API密钥失效却未报错的静默故障，指出AI编程在异常处理、结果校验及可观测性等非功能需求上仍不完善，离直接用于生产尚有差距。</p>
+</div>
+<div class="article">
+<a class="title" href="https://ata.atatech.org/articles/12020814406?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">推荐模型的评估指标错位：离线 GAUC 涨、在线不涨，这次用 skill 查到底</a>
+<p class="abs">本文指出推荐模型离线GAUC涨而线上无收益的根源在于评估口径错位，并提出用traceGAUC及ShadowProbe工具解决该问题。</p>
+</div>
+<div class="article">
+<a class="title" href="https://ata.atatech.org/articles/12020813608?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">高分不等于好服务：蚂蚁主站客服的 Reward 设计实践</a>
+<p class="abs">本文以客服业务为例，从奖励架构与评估方法两条主线讨论Reward系统设计：通过分层设计与漏洞修复减少错误激励，结合业务问题构造数据与rubric，利用组内比较区分主观质量，并分析其对训练收敛与稳定性的影响。</p>
+</div>
+<div class="article">
+<a class="title" href="https://ata.atatech.org/articles/12020814415?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">从真实会话到端到端研究：消费金融复杂分析型 Benchmark 的三阶段构建实践</a>
+<p class="abs">本文介绍了消费金融分析型Benchmark的三阶段构建实践：从真实会话蒸馏基线，到引入SQL真执行验证链路，最终实现端到端复杂业务分析报告评测。</p>
+</div>
+<div class="article">
+<a class="title" href="https://ata.atatech.org/articles/11020813607?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">复现 Mythos：LLM Agent 漏洞召回实验与失败案例分析</a>
+<p class="abs">本文通过复现Mythos发现的漏洞，测评多种Agent与模型组合的召回率，发现差距主要源于模型，并提出多候选排序等优化策略。</p>
+</div>
+<div class="article">
+<a class="title" href="https://ata.atatech.org/articles/12020814404?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">同模型同任务八大AICoding工具评测</a>
+<p class="abs">本文采用同模型同任务，公开评测了八款AI编程工具的代码审查能力，全程录屏可复现以确保客观公正。</p>
+</div>
+<div class="article">
+<a class="title" href="https://ata.atatech.org/articles/11020814407?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank" rel="noopener">从 Skill 路由到 Skill 本身：Jev 的两次实验</a>
+<p class="abs">本文通过实验证明，用Jev专用决策模型处理Skill路由或结合代码执行工作流，比通用大模型更快、更准且成本更低。</p>
+</div>
+</section>
+<footer>
+本报告由 ATA 文章自动抓取生成，文章链接均为 ATA 原始地址。
+</footer>
+</div>
+</body>
+</html>
