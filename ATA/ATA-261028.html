@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATA-261028 | 设计与AI方向文章日报</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.8;
+        }
+        .container { max-width: 960px; margin: 0 auto; padding: 24px 20px; }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            padding: 40px 30px;
+            border-radius: 12px;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+        .header .subtitle { font-size: 15px; opacity: 0.9; }
+        .header .meta { font-size: 13px; opacity: 0.8; margin-top: 12px; }
+        .stats { display: flex; gap: 16px; margin-bottom: 32px; flex-wrap: wrap; }
+        .stat-card {
+            background: #fff; border-radius: 8px; padding: 16px 20px; flex: 1;
+            min-width: 140px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); text-align: center;
+        }
+        .stat-card .num { font-size: 28px; font-weight: 700; color: #667eea; }
+        .stat-card .label { font-size: 13px; color: #888; margin-top: 4px; }
+        .category { margin-bottom: 36px; }
+        .category-title {
+            font-size: 20px; font-weight: 700; color: #333; padding-left: 12px;
+            border-left: 4px solid #667eea; margin-bottom: 20px;
+        }
+        .article-card {
+            background: #fff; border-radius: 8px; padding: 20px 24px; margin-bottom: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: box-shadow 0.2s;
+        }
+        .article-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+        .article-title { font-size: 17px; font-weight: 600; margin-bottom: 8px; }
+        .article-title a { color: #2c3e50; text-decoration: none; border-bottom: 1px dashed transparent; transition: all 0.2s; }
+        .article-title a:hover { color: #667eea; border-bottom-color: #667eea; }
+        .article-abstract { font-size: 14px; color: #666; line-height: 1.7; margin-bottom: 10px; }
+        .article-meta {
+            font-size: 12px; color: #999; display: flex; gap: 16px; flex-wrap: wrap; align-items: center;
+        }
+        .article-meta .tag { background: #f0f2ff; color: #667eea; padding: 2px 10px; border-radius: 12px; font-size: 11px; }
+        .article-meta .author { color: #555; font-weight: 500; }
+        .article-meta .dept { color: #888; }
+        .article-meta .time { color: #aaa; }
+        .footer {
+            text-align: center; padding: 24px 0; color: #aaa; font-size: 13px;
+            border-top: 1px solid #eee; margin-top: 40px;
+        }
+        .footer a { color: #667eea; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>ATA-261028 | 设计与AI方向文章日报</h1>
+            <div class="subtitle">设计实践总结 / 设计与 AI 结合 / AI 工程化 / AI 观测评估</div>
+            <div class="meta">发布日期：2026-10-29 | 来源：ATA 内部技术文章平台 | 文章覆盖日期：2026-10-28</div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="num">18</div>
+                <div class="label">文章总数</div>
+            </div>
+            <div class="stat-card">
+                <div class="num">4</div>
+                <div class="label">分类方向</div>
+            </div>
+            <div class="stat-card">
+                <div class="num">9</div>
+                <div class="label">BU 覆盖</div>
+            </div>
+        </div>
+
+        <!-- 设计实践总结 -->
+<div class="category">
+<div class="category-title">设计实践总结</div>
+<div class="article-card">
+<div class="article-title"><a href="https://ata.atatech.org/articles/12020828045?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">如何用逻辑学的方法理解用户，并构建用户理解资产</a></div>
+<div class="article-abstract">本文探讨了如何运用逻辑学的命题、论据和论证方法，结合用户行为与场景分析其偏好和需求，并将验证后的结果沉淀为可复用的用户理解资产。</div>
+<div class="article-meta"><span class="author">显桢（毛岭）</span><span class="dept">蚂蚁集团</span><span class="time">2026-10-28 17:57</span><span class="tag">设计实践总结</span></div>
+</div>
+<div class="article-card">
+<div class="article-title"><a href="https://ata.atatech.org/articles/11020829253?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">新版账单V2-万亿费用账单，如何让客户看得懂、对得清、算得准</a></div>
+<div class="article-abstract">本文复盘了阿里云新版账单V2的全链路重构，通过统一数据模型与湖仓架构，解决了万亿级账单看不懂、对不清的痛点。</div>
+<div class="article-meta"><span class="author">宇尽（赵森）</span><span class="dept">云智能集团</span><span class="time">2026-10-28 13:48</span><span class="tag">设计实践总结</span></div>
+</div>
+</div>
+<!-- 设计与 AI 结合 -->
+<div class="category">
+<div class="category-title">设计与 AI 结合</div>
+<div class="article-card">
+<div class="article-title"><a href="https://ata.atatech.org/articles/11020827253?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">【达摩盘AI管家架构设计 01】AI Agent架构拆解：营销数据分析智能体的设计与落地</a></div>
+<div class="article-abstract">本文拆解了达摩盘AI管家的Agent架构，详述其核心循环、业务能力及四层架构的设计与落地实践。</div>
+<div class="article-meta"><span class="author">莱塔（曾林漪）</span><span class="dept">中国电商事业群-淘天集团</span><span class="time">2026-10-28 14:29</span><span class="tag">设计与 AI 结合</span></div>
+</div>
+<div class="article-card">
+<div class="article-title"><a href="https://ata.atatech.org/articles/11020827251?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">把大模型戴进耳朵：2026 AI 耳机全景与工程拆解</a></div>
+<div class="article-abstract">本文全景拆解2026年AI耳机市场，指出耳机正从音频设备演变为大模型Agent入口，并深入剖析了端云架构、交互设计与场景落地路径。</div>
+<div class="article-meta"><span class="author">若徐（徐全明）</span><span class="dept">国际数字商业集团</span><span class="time">2026-10-28 13:56</span><span class="tag">设计与 AI 结合</span></div>
+</div>
+<div class="article-card">
+<div class="article-title"><a href="https://ata.atatech.org/articles/11020827250?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">游戏后训练方案：解决 UX 元素量化提取效果</a></div>
+<div class="article-abstract">本文总结了通过多模型协同构建数据与LoRA SFT微调，解决游戏UI解析中元素遗漏、层级不稳及bbox偏移问题，使各项指标实现跨越式提升的方案。</div>
+<div class="article-meta"><span class="author">韩笠（张医博）</span><span class="dept">云智能集团</span><span class="time">2026-10-28 13:18</span><span class="tag">设计与 AI 结合</span></div>
+</div>
+<div class="article-card">
+<div class="article-title"><a href="https://ata.atatech.org/articles/11020826449?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">大模型命名学：GPT、Claude、Gemini、Qwen……名字里到底藏了什么？</a></div>
+<div class="article-abstract">本文解析了主流大模型的命名结构与五大流派，指出模型名称浓缩了各家公司的技术路线、产品定位与品牌哲学。</div>
+<div class="article-meta"><span class="author">若徐（徐全明）</span><span class="dept">国际数字商业集团</span><span class="time">2026-10-28 11:42</span><span class="tag">设计与 AI 结合</span></div>
+</div>
+</div>
+<!-- AI 工程化 -->
+<div class="category">
+<div class="category-title">AI 工程化</div>
+<div class="article-card">
+<div class="article-title"><a href="https://ata.atatech.org/articles/12020828845?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">用 Manus 改造 Manus，AI Native 组织改造的实践和思考《转载》</a></div>
+<div class="article-abstract">本文分享了Manus团队用自家AI工具重塑研发、产品与市场流程的实践，探索了AI Native组织中人机协作的新模式。</div>
+<div class="article-meta"><span class="author">得楷（陈德凯）</span><span class="dept">蚂蚁国际</span><span class="time">2026-10-28 23:36</span><span class="tag">AI 工程化</span></div>
+</div>
+<div class="article-card">
+<div class="article-title"><a href="https://ata.atatech.org/articles/11020829652?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">飞猪交付大脑：用超级流程重构需求交付</a></div>
+<div class="article-abstract">AI 提升了个人效率，团队交付却仍受限于环节间的信息差与协作成本。本文介绍飞猪交付大脑如何通过上下文共享、流程设计和云端执行，串联需求澄清、开发部署与测试修复，并分享跨仓协作、设计稿还原和长任务处理中的实践与思考，探索由 Agent 推进执行、人把关关键决策的协作方式，将个人 AI 能力转化为团队交付能力。</div>
+<div class="article-meta"><span class="author">南麓（王浩男）</span><span class="dept">中国电商事业群-飞猪</span><span class="time">2026-10-28 21:48</span><span class="tag">AI 工程化</span></div>
+</div>
+<div class="article-card">
+<div class="article-title"><a href="https://ata.atatech.org/articles/11020826454?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">飞猪帮帮的 AI Native 实践：让 AI 接住一个完整需求</a></div>
+<div class="article-abstract">本文介绍了飞猪帮帮的AINative实践，通过让AI围绕完整需求串联前后端跨仓实现、审查与验证，并以共同契约和证据验收保障交付质量。</div>
+<div class="article-meta"><span class="author">云芃（代兆胜）</span><span class="dept">中国电商事业群-飞猪</span><span class="time">2026-10-28 18:12</span><span class="tag">AI 工程化</span></div>
+</div>
+<div class="article-card">
+<div class="article-title"><a href="https://ata.atatech.org/articles/11020826050?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">从操作软件到委托目标：为什么 Agent Harness 可能是下一代软件工程形态</a></div>
+<div class="article-abstract">Agent有机会接走跨应用任务的协调工作，Harness则管理状态、权限、恢复与验收。本文讨论“通用Agent+Harness+领域能力”为何可能成为新的工程单元，以及这一判断的适用边界和验证条件。</div>
+<div class="article-meta"><span class="author">岐安（梁伟祺）</span><span class="dept">云智能集团</span><span class="time">2026-10-28 10:43</span><span class="tag">AI 工程化</span></div>
+</div>
+<div class="article-card">
+<div class="article-title"><a href="https://ata.atatech.org/articles/11020828451?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">FlyBrowser 开源：从 Chromium 到本地 Agent，构建自己的 AI 浏览器</a></div>
+<div class="article-abstract">FlyBrowser是阿里内部开源的AI浏览器框架，通过复用Chromium内核、本地Agent运行时及构建工具，帮助团队快速打造融合本地Agent能力的定制化浏览器产品。</div>
+<div class="article-meta"><span class="author">紫升（杨俊宁）</span><span class="dept">中国电商事业群-飞猪</span><span class="time">2026-10-28 03:20</span><span class="tag">AI 工程化</span></div>
+</div>
+<div class="article-card">
+<div class="article-title"><a href="https://ata.atatech.org/articles/11020827248?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">营销 Agent 自进化：经营效果驱动的自进化架构设计与实践</a></div>
+<div class="article-abstract">本文介绍了淘宝闪购营销托管Agent自进化系统，通过议题发现、候选生成、准入验证与效果回收四节点闭环及AB实验，实现营销策略的持续自动改进。</div>
+<div class="article-meta"><span class="author">朗舟（顾东洲）</span><span class="dept">中国电商事业群-淘宝闪购</span><span class="time">2026-10-28 00:38</span><span class="tag">AI 工程化</span></div>
+</div>
+</div>
+<!-- AI 观测评估 -->
+<div class="category">
+<div class="category-title">AI 观测评估</div>
+<div class="article-card">
+<div class="article-title"><a href="https://ata.atatech.org/articles/11020827655?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">Kimi K3.1 Pro 来了，我们用 8 道题给它上点难度</a></div>
+<div class="article-abstract">晓天衡宇通过 8 项复杂任务评测 Kimi K3.1 Pro，发现其多模块整合与主体交付能力突出，但在公式重算、排版细节及约束严谨性上仍有不足。</div>
+<div class="article-meta"><span class="author">微露（柳明皓）</span><span class="dept">阿里控股</span><span class="time">2026-10-28 20:20</span><span class="tag">AI 观测评估</span></div>
+</div>
+<div class="article-card">
+<div class="article-title"><a href="https://ata.atatech.org/articles/11020828844?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">单看上班这件事，Kimi K3.1 Pro 行不行？</a></div>
+<div class="article-abstract">Kimi K3.1 Pro 在 WorkEval 评测中综合表现位居国产模型前列，其进步主要源于不当交付损失减少，但仍未完整通过任何任务且各职业表现差异显著。</div>
+<div class="article-meta"><span class="author">微露（柳明皓）</span><span class="dept">阿里控股</span><span class="time">2026-10-28 20:07</span><span class="tag">AI 观测评估</span></div>
+</div>
+<div class="article-card">
+<div class="article-title"><a href="https://ata.atatech.org/articles/11020828459?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">DataMate数据分析评测架构演进—从Hook方式到自定义评测Agent</a></div>
+<div class="article-abstract">本文介绍了数据分析评测Agent从Hook自动评测、专用Agent复核到用户自定义评测的三阶段演进，最终形成统一入口按需评测架构，实现业务方法灵活扩展与结果持续验证。</div>
+<div class="article-meta"><span class="author">空易（潘义文）</span><span class="dept">阿里控股</span><span class="time">2026-10-28 19:12</span><span class="tag">AI 观测评估</span></div>
+</div>
+<div class="article-card">
+<div class="article-title"><a href="https://ata.atatech.org/articles/11020829254?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">【达摩盘AI管家研发实践 06】Agent评测怎么做：用数据飞轮驱动质量进化</a></div>
+<div class="article-abstract">本文介绍了达摩盘Agent通过构建“数据飞轮”机制，实现从问题发现、核实、分发到修复验证的全链路自动化评测与质量迭代体系。</div>
+<div class="article-meta"><span class="author">孟筠（熊梦军）</span><span class="dept">中国电商事业群-淘天集团</span><span class="time">2026-10-28 14:39</span><span class="tag">AI 观测评估</span></div>
+</div>
+<div class="article-card">
+<div class="article-title"><a href="https://ata.atatech.org/articles/11020827649?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">人工智能分析指数（Artificial Analysis Intelligence Index）v5 版本更新</a></div>
+<div class="article-abstract">人工智能分析指数v5版本首次以私有数据集为主构建，新增并升级了多项基准测试，结果显示Claude Opus 5.5居首且前五均为Anthropic与OpenAI模型。</div>
+<div class="article-meta"><span class="author">博新（杨博宇）</span><span class="dept">阿里控股</span><span class="time">2026-10-28 12:02</span><span class="tag">AI 观测评估</span></div>
+</div>
+<div class="article-card">
+<div class="article-title"><a href="https://ata.atatech.org/articles/11020828042?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">「协同进化陷阱」，高分智能体反而更脆弱？</a></div>
+<div class="article-abstract">智能体&quot;技能-模型协同进化&quot;存在“陷阱”，即高分表现过度依赖特定技能库，当实际部署中技能变化时性能显著下降，新的CODA评测协议可以用来衡量模型的可靠性。</div>
+<div class="article-meta"><span class="author">轩颉（王潇斌）</span><span class="dept">ATH事业群-Token Foundry</span><span class="time">2026-10-28 11:43</span><span class="tag">AI 观测评估</span></div>
+</div>
+</div>
+
+        <div class="footer">
+            <p>ATA 设计与AI方向文章日报 | 发布日期：2026-10-29</p>
+            <p style="margin-top: 8px;">统一入口：<a href="https://mihaideyu.github.io/Trend_Opportunity/">https://mihaideyu.github.io/Trend_Opportunity/</a></p>
+        </div>
+    </div>
+</body>
+</html>
