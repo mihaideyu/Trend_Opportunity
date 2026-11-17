@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATA-261116 | 设计与AI方向文章日报</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.8;
+        }
+        .container { max-width: 960px; margin: 0 auto; padding: 24px 20px; }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            padding: 40px 30px;
+            border-radius: 12px;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+        .header .subtitle { font-size: 15px; opacity: 0.9; }
+        .header .meta { font-size: 13px; opacity: 0.8; margin-top: 12px; }
+        .stats { display: flex; gap: 16px; margin-bottom: 32px; flex-wrap: wrap; }
+        .stat-card {
+            background: #fff; border-radius: 8px; padding: 16px 20px; flex: 1;
+            min-width: 140px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); text-align: center;
+        }
+        .stat-card .num { font-size: 28px; font-weight: 700; color: #667eea; }
+        .stat-card .label { font-size: 13px; color: #888; margin-top: 4px; }
+        .category { margin-bottom: 36px; }
+        .category-title {
+            font-size: 20px; font-weight: 700; color: #333; padding-left: 12px;
+            border-left: 4px solid #667eea; margin-bottom: 20px;
+        }
+        .article-card {
+            background: #fff; border-radius: 8px; padding: 20px 24px; margin-bottom: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: box-shadow 0.2s;
+        }
+        .article-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+        .article-title { font-size: 17px; font-weight: 600; margin-bottom: 8px; }
+        .article-title a { color: #2c3e50; text-decoration: none; border-bottom: 1px dashed transparent; transition: all 0.2s; }
+        .article-title a:hover { color: #667eea; border-bottom-color: #667eea; }
+        .article-abstract { font-size: 14px; color: #666; line-height: 1.7; margin-bottom: 10px; }
+        .article-meta {
+            font-size: 12px; color: #999; display: flex; gap: 16px; flex-wrap: wrap; align-items: center;
+        }
+        .article-meta .tag { background: #f0f2ff; color: #667eea; padding: 2px 10px; border-radius: 12px; font-size: 11px; }
+        .article-meta .author { color: #555; font-weight: 500; }
+        .article-meta .dept { color: #888; }
+        .article-meta .time { color: #aaa; }
+        .footer {
+            text-align: center; padding: 24px 0; color: #aaa; font-size: 13px;
+            border-top: 1px solid #eee; margin-top: 40px;
+        }
+        .footer a { color: #667eea; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>ATA-261116 | 设计与AI方向文章日报</h1>
+            <div class="subtitle">🎨 设计与 AI 结合 / 🤖 AI 工程化 / 📐 AI 观测评估 / 🌍 AI 趋势与动态</div>
+            <div class="meta">发布日期：2026-11-17 | 来源：ATA 内部技术文章平台 | 文章覆盖日期：2026-11-16</div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="num">66</div>
+                <div class="label">文章总数</div>
+            </div>
+            <div class="stat-card">
+                <div class="num">4</div>
+                <div class="label">分类方向</div>
+            </div>
+            <div class="stat-card">
+                <div class="num">12</div>
+                <div class="label">BU 覆盖</div>
+            </div>
+        </div>
+
+        <!-- 设计与 AI 结合 -->
+        <div class="category">
+            <div class="category-title">设计与 AI 结合</div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/12020841253?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">A2UI：让 AI Agent 学会"说界面的语言"</a></div>
+                <div class="article-abstract">A2UI是Google开源的声明式UI协议，让AI Agent通过结构化JSON安全生成富交互界面。协议采用Catalog白名单与渲染权反转机制，Agent仅输出组件描述而不执行代码，支持跨框架多端原生渲染、流式渐显及双向函数调用，已在支付宝、高德等场景落地。</div>
+                <div class="article-meta"><span class="author">卫捷（李东阳）</span><span class="dept">蚂蚁集团</span><span class="time">2026-11-16 17:17</span><span class="tag">设计与 AI 结合</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/12020839646?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">【Tech风向标】从对话到在场：蚁小保 VUI 的探索与实践</a></div>
+                <div class="article-abstract">蚁小保VUI通过实时语音与通话小窗，让用户在投保页边办边问，无需反复跳转IM。文章详述前后台Agent架构、Native与H5卡片复用、页面DOM感知及PageWiki上下文构建等关键技术实践。</div>
+                <div class="article-meta"><span class="author">潇深（张磊）</span><span class="dept">蚂蚁集团</span><span class="time">2026-11-16 16:51</span><span class="tag">设计与 AI 结合</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020843236?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">亚马逊专利：没图的商品先画一张，再去对面认亲</a></div>
+                <div class="article-abstract">亚马逊专利US12711168B1提出跨语言商品目录比对方案，对无图商品用图像生成模型现场画图再做视觉匹配。该方案通过品牌过滤、单向翻译、向量检索与词块相似度逐级收窄候选，最后以生成图与真图的嵌入余弦相似度完成多模态判定，免微调即可处理百万级缺图目录。</div>
+                <div class="article-meta"><span class="author">炼城（谭磊）</span><span class="dept">中国电商事业群-淘天集团</span><span class="time">2026-11-16 15:55</span><span class="tag">设计与 AI 结合</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020843233?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">IPC 视频自动高光混剪的实践方案</a></div>
+                <div class="article-abstract">IPC监控视频自动高光混剪方案，通过本地算法粗筛与视觉模型精判结合生成2分钟集锦。该五阶段流水线利用PySceneDetect和OpenCVMOG2排除空镜头，仅对候选片段调用qwen3.8-flash，将分析耗时缩短6.4倍，单次处理成本降至0.157元。</div>
+                <div class="article-meta"><span class="author">清鉴（黄伟光）</span><span class="dept">云智能集团</span><span class="time">2026-11-16 10:55</span><span class="tag">设计与 AI 结合</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020842841?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">大麦绘座 AI 质检：上千座位逐条人工核对，现在10秒出报告</a></div>
+                <div class="article-abstract">大麦绘座用大模型解析非结构化座位表，结合确定性集合运算完成质检，5分钟内输出差异报告。该复盘拆解了AI仅负责语义理解、比对交由纯函数的架构分层，以及自然键归一化、预处理消除歧义等Prompt工程实战经验。</div>
+                <div class="article-meta"><span class="author">珞煜（罗旋）</span><span class="dept">虎鲸文娱集团</span><span class="time">2026-11-16 10:38</span><span class="tag">设计与 AI 结合</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/12020843231?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">AI 时代，前端、客户端职位会消失吗？</a></div>
+                <div class="article-abstract">蚂蚁财保技术将前端与后端团队按业务战场融合，推进AI全栈组织升级。文章详解了调整方案、过渡安排及绩效晋升机制，并分享了对AI时代前后端全栈化趋势的思考。</div>
+                <div class="article-meta"><span class="author">舒文（舒文亮）</span><span class="dept">蚂蚁集团</span><span class="time">2026-11-16 08:58</span><span class="tag">设计与 AI 结合</span></div>
+            </div>
+        </div>
+        <!-- AI 工程化 -->
+        <div class="category">
+            <div class="category-title">AI 工程化</div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020843242?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">AgentCore 销售赋能数字员工落地实践</a></div>
+                <div class="article-abstract">基于AgentCore构建销售锁单数字员工，将资深销售经验沉淀为可复现技能。通过三力评分协议与企微两段式交付，端到端延时由10分钟降至约1分钟。</div>
+                <div class="article-meta"><span class="author">牛盾（牛远卓）</span><span class="dept">云智能集团</span><span class="time">2026-11-16 23:11</span><span class="tag">AI 工程化</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020840449?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">千问 App 的半值守 AI 发版实践</a></div>
+                <div class="article-abstract">千问App发版Agent「千问宝子」接管了等构建、查状态、对提交等值守工作，实现半值守AI发版。该Agent通过定时轮询检查双端提交触发构建，结合gitlog定位失败归属，并在发布后采集线上Crash数据跟催确认与评估放量建议。</div>
+                <div class="article-meta"><span class="author">叶蕴（邵培根）</span><span class="dept">ATH事业群-千问事业部</span><span class="time">2026-11-16 21:52</span><span class="tag">AI 工程化</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020840848?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">Agent运行时的虚拟线程实践</a></div>
+                <div class="article-abstract">本文介绍了Agent运行时引入JDK21虚拟线程的实践，通过模型调用、上下文准备和工具沙箱三个场景降低阻塞等待的线程成本，并总结了内存泄漏、取消传递及Pinning等问题的排查与修复经验。</div>
+                <div class="article-meta"><span class="author">北桓（兰宇翔）</span><span class="dept">中国电商事业群-淘天集团</span><span class="time">2026-11-16 21:51</span><span class="tag">AI 工程化</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020839650?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">TAM 的 AI Coach 实战：报价审批来了位数字员工</a></div>
+                <div class="article-abstract">报价审批场景落地数字员工，通过多Agent协作与技能治理自动生成审批简报。文章复盘TAM团队以AICoach模式陪跑客户，基于AgentCore平台构建四Agent架构，实现信息归集、文件解析、简报生成与自检回炉的完整业务闭环。</div>
+                <div class="article-meta"><span class="author">墨月（姚皓）</span><span class="dept">云智能集团</span><span class="time">2026-11-16 21:38</span><span class="tag">AI 工程化</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020840448?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">用 Cloudflare 给云主机上的 QoderWake 加上域名和邮箱验证</a></div>
+                <div class="article-abstract">在个人云主机上部署QoderWake时，通过Cloudflare Tunnel与Access实现域名绑定和邮箱验证码鉴权。方案利用Nginx改写Host和Origin请求头绕过来源校验，结合cloudflared内网穿透完成安全访问配置。</div>
+                <div class="article-meta"><span class="author">麦久（杨磊）</span><span class="dept">中国电商事业群-淘天集团</span><span class="time">2026-11-16 21:28</span><span class="tag">AI 工程化</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020840447?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">当 AI 融入企业核心业务，权限如何跟上？——面向AI场景的ReBAC权限管控方案</a></div>
+                <div class="article-abstract">面向AI场景的ReBAC权限管控方案，基于OpenFGA实现多Agent协作与工具调用的细粒度授权。文章介绍AI-IAM平台如何通过权限规则模型、关系授权数据与验权三环节，解决RAG检索、知识库协作及动态访问约束等复杂授权问题。</div>
+                <div class="article-meta"><span class="author">宇川（王伟）</span><span class="dept">阿里控股</span><span class="time">2026-11-16 21:08</span><span class="tag">AI 工程化</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020842436?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">Agent 落地的最后一公里 — 无影云电脑开放 MCP 接入</a></div>
+                <div class="article-abstract">无影云电脑通过MCP协议开放观察与操作能力，为Agent提供7x24小时在线的云端执行环境。方案按运行环境、工具执行、任务委托三层架构交付，支持混合执行路径与人机同场交接，并复用企业镜像、网络与审计底座实现统一管理。</div>
+                <div class="article-meta"><span class="author">发芽（王煜倩）</span><span class="dept">云智能集团</span><span class="time">2026-11-16 20:47</span><span class="tag">AI 工程化</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020840446?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">AgentLoop × Qoder：采集自动装，审计直接问</a></div>
+                <div class="article-abstract">AgentLoop插件上架Qoder插件市场，用自然语言即可完成AI Agent审计采集器部署、用量查询与风险排查。方案通过企业专属市场静默下发LoongSuitePilot采集器，自动发现二十余种AICoding Agent并统一上报至AgentSpace，管理员在对话中即可生成Token报表和审计报告。</div>
+                <div class="article-meta"><span class="author">诺槿（熊芸）</span><span class="dept">云智能集团</span><span class="time">2026-11-16 20:40</span><span class="tag">AI 工程化</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020840845?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">基于 AI 表格的 Agent 任务管理系统</a></div>
+                <div class="article-abstract">基于钉钉AI表格与DWS搭建轻量级Agent任务管理系统，实现任务下发、状态监控与失败接管。系统通过定时轮询同步表格任务并调度Coding Agent执行，利用Hook回调更新状态，支持工作流触发完成通知。</div>
+                <div class="article-meta"><span class="author">无二（杨凌锋）</span><span class="dept">中国电商事业群-淘天集团</span><span class="time">2026-11-16 20:31</span><span class="tag">AI 工程化</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020842435?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">AI “杀死”了性能优化这个游戏</a></div>
+                <div class="article-abstract">AI Agent自主完成RAM鉴权SDK性能优化，6天连跑20+轮A/B测试使Go侧吞吐提升187%。文章总结Agent闭环流程、裁判权外置与噪声地板等任务设计方法，论证可验证反馈是自主优化的前提。</div>
+                <div class="article-meta"><span class="author">正礼（姚泽亮）</span><span class="dept">云智能集团</span><span class="time">2026-11-16 20:17</span><span class="tag">AI 工程化</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/12020841631?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">基于用户动线的AI推荐增长策略：洞察、假设与实验闭环</a></div>
+                <div class="article-abstract">基于用户动线分析构建AI推荐增长策略，利用大模型与多Agent架构实现洞察到实验的闭环。文章以支付宝首页混合货架为例，设计任务规划、离线洞察、边界隔离等多Agent协同系统，输出结构化策略假设卡片并经A/B验证回流修正基线。</div>
+                <div class="article-meta"><span class="author">清华（张建）</span><span class="dept">蚂蚁集团</span><span class="time">2026-11-16 20:04</span><span class="tag">AI 工程化</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/12020839648?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">AI 导购 Agent 的统一架构与实践</a></div>
+                <div class="article-abstract">统一导购Agent架构通过多轮对话、记忆自更新与ReAct工具编排，解决电商复杂选购场景下的模糊需求。框架复用上下文处理与任务调度能力，支持Tool、Skill和MCP接入，业务方通过插件适配商品供给与规则实现快速落地。</div>
+                <div class="article-meta"><span class="author">风谣（黄彦博）</span><span class="dept">蚂蚁集团</span><span class="time">2026-11-16 19:36</span><span class="tag">AI 工程化</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020842048?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">AI钉分身的设计与实现 让钉钉请求进入可控研发流程</a></div>
+                <div class="article-abstract">介绍 AI钉分身如何将钉钉研发请求转成可控任务，覆盖代码查询、权限收集、MR 审查和需求实现。通过规则与模型分工、源码证据校验、会话隔离、人工接管和操作回执管理执行边界，并说明安装使用方法与当前限制。</div>
+                <div class="article-meta"><span class="author">绫隆（王玮琦）</span><span class="dept">ATH事业群-千问事业部</span><span class="time">2026-11-16 19:28</span><span class="tag">AI 工程化</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020842849?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">《致广尽微：面向混合粒度相关性建模的主搜语义召回实践》</a></div>
+                <div class="article-abstract">淘宝主搜将语义召回拆分为Item-Retriever与SKU-Ranker混合粒度架构，解决百亿SKU底池下的覆盖与规格匹配难题。文章详述LLM原生召回探索、轻量化交互Ranker蒸馏及Qwen3.5-4B基座选型过程，全量上线后长尾GoodRate提升超1pt。</div>
+                <div class="article-meta"><span class="author">曙阳（文涛）</span><span class="dept">中国电商事业群-淘天集团</span><span class="time">2026-11-16 19:22</span><span class="tag">AI 工程化</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020842047?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">我们用 AI 给 AgentLoop 手搓了一套海底世界探秘游戏，并开源了</a></div>
+                <div class="article-abstract">借助AI编程工具，团队用Three.js为AgentLoop制作了一款海底探秘HTML5游戏并开源。文章复盘了从平面到3D关卡的开发过程，总结了高质量参考、MVP小样验证与渲染优化等AI辅助游戏开发经验。</div>
+                <div class="article-meta"><span class="author">望宸（王晨）</span><span class="dept">云智能集团</span><span class="time">2026-11-16 19:15</span><span class="tag">AI 工程化</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020843240?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">闪购购后 Feeds：从跨域召回到生成式召回的候选生成演进</a></div>
+                <div class="article-abstract">闪购购后Feeds落地跨域SID2I、LLM兴趣识别与OneModel三路召回，全引导成交UV分别提升1.07%、1.58%和3.39%。候选生成从语义ID聚合查共现，演进到大模型生成兴趣词检索，再到OneModel自回归生成商品编码，部分解决了跨域推荐难题。</div>
+                <div class="article-meta"><span class="author">溢森（蒋丰泽）</span><span class="dept">中国电商事业群-淘天集团</span><span class="time">2026-11-16 19:10</span><span class="tag">AI 工程化</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020840842?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">给数仓 Agent 建口径知识库：核心链路与要点</a></div>
+                <div class="article-abstract">菜鸟APP数据域为Agent构建口径知识库，通过自动层与人工层双层架构管理数万张知识卡片。核心链路从源数据到知识卡全量生成，结合置信度分层、倒排索引与eval闭环保障检索精度与口径正确性。</div>
+                <div class="article-meta"><span class="author">谦望（黄江炎）</span><span class="dept">菜鸟集团</span><span class="time">2026-11-16 18:29</span><span class="tag">AI 工程化</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020842847?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">7 天，我用ContextDB 养出一个越用越懂团队的数字员工</a></div>
+                <div class="article-abstract">团队用7天基于ContextDB搭建数字员工小T，实现群聊答疑、持续学习与多群协作。小T以Codex为执行循环、DeepSeekV4.1Flash为底座，通过记忆晋升和Skill评估机制从日常交流中自进化产品知识与做事方法。</div>
+                <div class="article-meta"><span class="author">久弦（温昊达）</span><span class="dept">云智能集团</span><span class="time">2026-11-16 18:28</span><span class="tag">AI 工程化</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020840036?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">120k token 的样本，16 张 96 GB 卡也装不下：国产加速卡上 14B SFT 的显存账与实测</a></div>
+                <div class="article-abstract">在国产PPU上用Pai-Megatron-Patch跑Qwen2.5-14B SFT冒烟，仅改6个文件即稳定达到9.76s/step。文章详解超长样本显存瓶颈、transformers5兼容问题及TP限制等踩坑经验。</div>
+                <div class="article-meta"><span class="author">赵昭</span><span class="dept">云智能集团</span><span class="time">2026-11-16 17:33</span><span class="tag">AI 工程化</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020843239?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">拾级而上：面向复杂长尾查询的主搜语义向量召回实践</a></div>
+                <div class="article-abstract">淘宝主搜语义召回在面向复杂长尾查询的相关实践。</div>
+                <div class="article-meta"><span class="author">枫眠（刘兴贤）</span><span class="dept">中国电商事业群-淘天集团</span><span class="time">2026-11-16 17:12</span><span class="tag">AI 工程化</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020841628?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">【淘宝闪购语义平台】语义模型实践：语义层的骨架及AI取数的基石</a></div>
+                <div class="article-abstract">本文系统阐述淘宝闪购语义平台中语义层的建模实践，介绍了语义层如何解决AI取数场景中常见的口径漂移、术语歧义、不可解释、不可验证等取数准确性的问题。通过语义层的建设，淘宝闪购语义平台为AI提供了可推理的上下文，支撑了面向商家、内部小二、城市经营者等多场景的自然语言取数，简化了数据分析门槛，释放AI生产力；当前日均支撑60万次的自然语言取数，取数准确率超过99.9%。</div>
+                <div class="article-meta"><span class="author">临清（王强）</span><span class="dept">中国电商事业群-淘宝闪购</span><span class="time">2026-11-16 17:11</span><span class="tag">AI 工程化</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/12020842846?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">AutoResearch：3.7倍算法迭代效率提升能力的产品化实践</a></div>
+                <div class="article-abstract">AutoResearch将算法经验沉淀为Skills并结合云端Agent环境，使搜推模型迭代效率提升3.7倍。该平台集成ClaudeCode等后端支持月级持续运行，通过结构化知识库与分层工作台已在保险等业务取得1897次有效迭代和43次线上推全。</div>
+                <div class="article-meta"><span class="author">罗义（卢伟勤）</span><span class="dept">蚂蚁集团</span><span class="time">2026-11-16 16:52</span><span class="tag">AI 工程化</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020841626?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">AI算力运营体系化思考系列（篇五）：以 TPM利用率为北极星智算运营体系</a></div>
+                <div class="article-abstract">以TPM利用率为北极星指标，构建智算运营体系。文章提出通过压测建立容量基线，将TPM利用率拆解为供给、需求、效率、稳定四个面的过程指标，结合TensorCoreActive四象限诊断矩阵指导扩容与调优决策，并给出长请求治理方案。</div>
+                <div class="article-meta"><span class="author">珺惕（徐鸯）</span><span class="dept">云智能集团</span><span class="time">2026-11-16 16:44</span><span class="tag">AI 工程化</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020841252?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">Agent 运行时框架：让 Agent 专注思考，把运行交给框架</a></div>
+                <div class="article-abstract">Agent运行时框架将调度、沙箱、流式等运行能力沉淀为公共底座，让Agent专注智能逻辑。框架沿任务生命周期提供DAG编排、常驻沙箱、双层流式通道与会话文件延续等六大能力。</div>
+                <div class="article-meta"><span class="author">天驷（吴翔）</span><span class="dept">阿里控股</span><span class="time">2026-11-16 16:42</span><span class="tag">AI 工程化</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/12020843237?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">安智——工单解决率88%的数字员工</a></div>
+                <div class="article-abstract">安智是基于dws与poolab搭建的钉钉商家答疑数字员工，工单解决率达87.8%。通过守护进程、文件队列、三路证据链与知识自进化机制，实现秒级响应与多群并发答疑，并提供个人工作助手的复用路径。</div>
+                <div class="article-meta"><span class="author">家伟（王佳伟）</span><span class="dept">蚂蚁集团</span><span class="time">2026-11-16 16:01</span><span class="tag">AI 工程化</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/12020840444?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">Jev 原生与同类决策模型：模型机理、技术路线、公开结果与业务适用性</a></div>
+                <div class="article-abstract">Jev 类模型实现了读一段内容后做一个有限选择，或者提取有效信息，无需自然语言生成。文章对比了StartLux、Kev、Laya等十余个项目的架构机理、训练过程。</div>
+                <div class="article-meta"><span class="author">天榆（胡思捷）</span><span class="dept">蚂蚁集团</span><span class="time">2026-11-16 15:08</span><span class="tag">AI 工程化</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020843235?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">Agent 已经能操作生产发布了，下一步还需要什么？</a></div>
+                <div class="article-abstract">OpenGuardrail为Agent执行生产发布恢复操作提供可追溯的门控检查机制。通过GuardrailSpec定义规则、ChangeSet固化上下文、Submission提交证据，确保Agent在高危操作前完成逐项核查并留存判断依据。</div>
+                <div class="article-meta"><span class="author">临遥（安佳明）</span><span class="dept">阿里控股</span><span class="time">2026-11-16 14:41</span><span class="tag">AI 工程化</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020839644?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">Jev 模型与具身数据打标（含 20 个样本实测）</a></div>
+                <div class="article-abstract">Jev模型通过类型安全的结构化输出与概率校准，适用于具身智能数据打标中的闭集校验场景。基于阿里云百炼decision-model-preview的20样本实测显示，将后处理步骤交由Jev判断可使切点F1提升0.0107，其核心机制是选择性否决合并以保住切点。</div>
+                <div class="article-meta"><span class="author">央迈勇（陈言蹊）</span><span class="dept">云智能集团</span><span class="time">2026-11-16 12:20</span><span class="tag">AI 工程化</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020840441?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">脑手分离，Harness 交给平台，Sandbox 自己选</a></div>
+                <div class="article-abstract">BYOC 把会话编排与工具执行拆开。平台托管 Harness，企业自选 Sandbox 执行工具。本文以 Qoder Cloud Agents × 阿里云 Agent Sandbox 极速版为例，跑通报表分析 Agent，展示「脑手分离」如何落地。Anthropic 在 Managed Agents 中采用类似拆分后，首 Token 延迟 P50 下降约 60%，P95 下降超过 90%。</div>
+                <div class="article-meta"><span class="author">墨飏（洪晓龙）</span><span class="dept">云智能集团</span><span class="time">2026-11-16 11:46</span><span class="tag">AI 工程化</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020842039?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">PPU部署Qwen3多模态模型 video_url请求报 ValidatorIterator 400</a></div>
+                <div class="article-abstract">在PPU上用vLLM部署Qwen3-Omni多模态模型时，video_url请求因Pydantic验证失败报400错误。根因是Union类型匹配顺序导致窄类型优先命中且未回退，可通过升级pydantic或调换ChatCompletionMessageParam的Union顺序解决。</div>
+                <div class="article-meta"><span class="author">峪森（母鑫）</span><span class="dept">云智能集团</span><span class="time">2026-11-16 11:45</span><span class="tag">AI 工程化</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/12020842037?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">从工具到数字同事-关于数字员工的探索</a></div>
+                <div class="article-abstract">团队将AI从工具升级为拥有钉钉身份和云机的数字员工，探索个人助理、告警值班与小需求交付场景。基于Multica多智能体协作平台与MCP协议构建研发小队，实现跨天任务自主推进，并总结了知识库建设与九类工程踩坑经验。</div>
+                <div class="article-meta"><span class="author">傳灯（魏清）</span><span class="dept">蚂蚁国际</span><span class="time">2026-11-16 10:52</span><span class="tag">AI 工程化</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020839642?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">打通 X-Agent 智能体的“最后一公里”</a></div>
+                <div class="article-abstract">基于开源框架LangBot二次开发，为X-Agent智能体构建多IM渠道接入层。通过Dify会话一致性、多平台协议适配与全链路可观测改造，实现钉钉、飞书、企微统一接入。</div>
+                <div class="article-meta"><span class="author">霄翎（李苏民）</span><span class="dept">云智能集团</span><span class="time">2026-11-16 10:44</span><span class="tag">AI 工程化</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/12020840032?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">【Tech风向标】ResRank-Chunk：面向多主题长文本的 Hashtag 相关性排序</a></div>
+                <div class="article-abstract">ResRank-Chunk将长文分块与候选标签压缩为densetokens联合建模，解决多主题文章排序效率瓶颈。该模型结合ListwiseKL与TopPushMarginLoss优化四档相关性分布，端到端评测中标签准确率达92.4%，核心主题召回率从30.8%升至75.9%。</div>
+                <div class="article-meta"><span class="author">江喆（施炎江）</span><span class="dept">蚂蚁集团</span><span class="time">2026-11-16 10:40</span><span class="tag">AI 工程化</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020843232?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">智能体交付系列（一）：把大模型装进业务系统的分工实践</a></div>
+                <div class="article-abstract">通过保险投保场景，介绍智能体与程序分工协作实现合规与体验兼顾的思路。智能体负责意图理解与任务拆解，程序侧以禁区配置拦截高风险操作并执行确定性逻辑，敏感环节设置人工确认闸门。</div>
+                <div class="article-meta"><span class="author">邱宸（张秋臣）</span><span class="dept">云智能集团</span><span class="time">2026-11-16 10:27</span><span class="tag">AI 工程化</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/12020839641?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">端侧大模型推理引擎剖析（一）｜推理流程总览</a></div>
+                <div class="article-abstract">llama.cpp v1.0.0端侧推理引擎的推理流程总览，梳理前向计算与生成循环的关键阶段。以Qwen3-4B在Mac和Jetson上实验，建立时间、空间、质量评估基线，为后续剖析模型加载与图执行提供框架。</div>
+                <div class="article-meta"><span class="author">濯染（李卓然）</span><span class="dept">蚂蚁集团</span><span class="time">2026-11-16 10:11</span><span class="tag">AI 工程化</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020840031?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">AI Native 工作空间：目录范式、worktree 组织与使用实践梳理</a></div>
+                <div class="article-abstract">为个人Agent设计了一套工作空间目录范式，解决多仓并行开发与上下文管理问题。该方案参考PARA方法，通过AGENTS.md约定、git worktree隔离代码、分层Skill指引与任务归档机制，让Agent在共享记忆的同时聚焦特定类型工作，实现排查与开发流程的自进化维护。</div>
+                <div class="article-meta"><span class="author">尘漾（杨亮）</span><span class="dept">阿里控股</span><span class="time">2026-11-16 10:10</span><span class="tag">AI 工程化</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020841246?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">【探索】业务 Agent 提示词自动优化框架</a></div>
+                <div class="article-abstract">构建业务Agent执行审核、训练Agent改写提示词、评测反馈择优的自动优化闭环框架。实验基于HRPO与DataBackAgent在电商类目属性配置审核场景探索SystemPrompt自动迭代，分析宽松F1等指标及提示词演进轨迹与局限。</div>
+                <div class="article-meta"><span class="author">陶侃（王君有）</span><span class="dept">中国电商事业群-淘天集团</span><span class="time">2026-11-16 00:17</span><span class="tag">AI 工程化</span></div>
+            </div>
+        </div>
+        <!-- AI 观测评估 -->
+        <div class="category">
+            <div class="category-title">AI 观测评估</div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020839651?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">千问高考志愿报告如何自动评测：Agent as Judge实践</a></div>
+                <div class="article-abstract">千问高考志愿报告引入Agent as Judge自动评测，用大模型替代人工逐项判定推荐质量。通过规则与大模型协同评分、顾问样本训练及人机差异分析，将18人天的评测压缩至AI约1小时加1人复核，同分率近八成。</div>
+                <div class="article-meta"><span class="author">习乎（林伟）</span><span class="dept">ATH事业群-千问事业部</span><span class="time">2026-11-16 22:14</span><span class="tag">AI 观测评估</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020842438?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">语音产品的 AI 测试实践：音频自动化、评测与需求测新</a></div>
+                <div class="article-abstract">语音产品测试通过AI补齐音频注入与保存能力，实现ASR/TTS自动化回归、性能评测与需求测新。Agent结合PRD生成用例并控制执行，利用OpenCV和RMS脚本自动标注响应耗时，通过ASR转写比对筛查播报内容问题，形成可复用的测试基础能力。</div>
+                <div class="article-meta"><span class="author">习乎（林伟）</span><span class="dept">ATH事业群-千问事业部</span><span class="time">2026-11-16 21:52</span><span class="tag">AI 观测评估</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020840844?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">增长业务的 AI 测试实践</a></div>
+                <div class="article-abstract">用户增长业务基于AI智能体构建自动化测试体系，解决高频变更下复杂链路的测试难题。通过CoCo工作流编排、kbase知识库与Skill分发机制，RTA参竞和布网归因回传链路实现全自动化执行率超77%，需求吞吐从1.9提升至10.1个/天。</div>
+                <div class="article-meta"><span class="author">楚漫（罗芬）</span><span class="dept">ATH事业群-千问事业部</span><span class="time">2026-11-16 20:26</span><span class="tag">AI 观测评估</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020840843?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">淘宝终端全域问题诊断 Agent｜「稳哥」的双 11 实践</a></div>
+                <div class="article-abstract">稳哥是面向手淘终端的全域问题诊断Agent，覆盖客户端、端容器和业务前端。双11期间，稳哥完成9,000余次平台诊断。经人工复核，20余起真实线上问题的诊断准确率达80%。本文以AI购物助手黑屏为例，复盘稳哥交叉核对用户动线、日志和生效代码，定位连续侧滑引发的转场回调竞态，与研发在真机复现，给出长短期方案。文中还介绍稳哥的诊断Skill、Agent运行架构和钉钉群协作方式。</div>
+                <div class="article-meta"><span class="author">向屿（莫绪旻）</span><span class="dept">中国电商事业群-淘天集团</span><span class="time">2026-11-16 20:04</span><span class="tag">AI 观测评估</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020840037?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">从人工判帧到 Agent 编排：千问回复体感性能评测实践</a></div>
+                <div class="article-abstract">千问体感性能评测从人工判帧升级为Agent编排，通过区域OCR与相邻帧证据实现自动化竞品对比。文章详述首交互耗时、首字耗时和bigJank等指标的测量规则，以及Agent接管真机执行、分帧核验与评测集持续更新的工程实践。</div>
+                <div class="article-meta"><span class="author">瑞豹（雷健聪）</span><span class="dept">ATH事业群-千问事业部</span><span class="time">2026-11-16 19:29</span><span class="tag">AI 观测评估</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020839647?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">真机算法执行与效果评测的工程实践</a></div>
+                <div class="article-abstract">扫描王真机算法回归体系通过自动化执行与AI评测，每周节约约3PD人力。该体系以人工基线为参照，将效果拆分为可检查标准，结合Checklist逐项确认与批量Query自动筛查实现分层回归。</div>
+                <div class="article-meta"><span class="author">宥宸（张小峰）</span><span class="dept">ATH事业群-千问事业部</span><span class="time">2026-11-16 19:22</span><span class="tag">AI 观测评估</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020842848?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">基于 Coding Agent + Skill 的用例生成以及更新 + 在线协同</a></div>
+                <div class="article-abstract">基于CodingAgent与Skill构建分层管线，在云端QAgent平台实现测试用例自动生成、更新与在线协同。运行8个月覆盖230+迭代，累计生成约1.5万条用例，质量口径平均采纳率达88.76%。</div>
+                <div class="article-meta"><span class="author">璃颖（张媛）</span><span class="dept">ATH事业群-千问事业部</span><span class="time">2026-11-16 19:03</span><span class="tag">AI 观测评估</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/12020840035?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">使用AI高效自动化分析并解决湖仓向量化引擎线上失败任务</a></div>
+                <div class="article-abstract">湖仓向量化引擎团队利用AI自动化分析每日上千失败任务，将定位时间从小时级缩短至分钟级。通过异常聚类与本地知识库构建Pipeline，结合主Agent调度、子Agent分析的多智能体架构，实现90%以上异常覆盖度，大幅提升线上成功率问题排查效率。</div>
+                <div class="article-meta"><span class="author">沐棠（袁聪思）</span><span class="dept">蚂蚁集团</span><span class="time">2026-11-16 16:29</span><span class="tag">AI 观测评估</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020839643?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">AI Agent 重塑测试左移：CodeHunter 多端多仓代码级验收架构深度解析</a></div>
+                <div class="article-abstract">CodeHunter将AI Agent引入代码级验收，在提测前完成多端多仓新功能全量检查。该平台接入四类材料来源，依托CodeGraph本地图谱与证据链约束机制适配Android、iOS、Flutter等工程形态，落地后提测前问题发现率提升30%以上。</div>
+                <div class="article-meta"><span class="author">无轩（刘春勇）</span><span class="dept">ATH事业群-千问事业部</span><span class="time">2026-11-16 11:29</span><span class="tag">AI 观测评估</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/12020842842?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">Jev在蚂蚁客诉故障场景的技术探索与应用实践</a></div>
+                <div class="article-abstract">蚂蚁客诉故障感知系统引入Jev模型做前置判别，通过两阶段打分降低误杀率。该方案用StartLux27BInstant输出连续分数并结合RAG案例与长对话联合过滤，实测误杀率降至21.43%，每万条处理成本约37.5元。</div>
+                <div class="article-meta"><span class="author">槐竹（黄洋）</span><span class="dept">蚂蚁集团</span><span class="time">2026-11-16 11:01</span><span class="tag">AI 观测评估</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020841247?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">移动端 AI 测新的工程实践：如何把 Agent、业务工具与真机执行连起来</a></div>
+                <div class="article-abstract">Q·Agent将AIAgent、业务工具与真机执行连接，构建移动端新需求自动化测试体系。平台通过任务上下文编排CLI/MCP能力入口，结合UIAutomator2、WDA及OCR感知完成跨系统状态准备、设备操作与多层业务验证。</div>
+                <div class="article-meta"><span class="author">元二（段宏伟）</span><span class="dept">ATH事业群-千问事业部</span><span class="time">2026-11-16 10:59</span><span class="tag">AI 观测评估</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/12020842038?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">AI 写的代码，让 AI 来自测：预发接口测试的自动化与可信化</a></div>
+                <div class="article-abstract">基于Skill构建预发接口自测闭环，将人工耗时从半天压缩至1～2小时。通过test-report-generator与test-system-interface两个Skill实现用例生成与执行，并借助脚本落盘、日志断言解决模型幻觉问题。</div>
+                <div class="article-meta"><span class="author">纸乐（周海华）</span><span class="dept">蚂蚁集团</span><span class="time">2026-11-16 10:53</span><span class="tag">AI 观测评估</span></div>
+            </div>
+        </div>
+        <!-- AI 趋势与动态 -->
+        <div class="category">
+            <div class="category-title">AI 趋势与动态</div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020840040?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">曾鸣-看十年：AI 时代的商业和经济</a></div>
+                <div class="article-abstract">曾鸣公开课系统阐述AI时代的商业演进、Agent发展路径与组织变革。文章提出智能复利概念，认为未来三年是AI原生应用爆发期，组织将从岗位制转向任务驱动的智能体协同网络。</div>
+                <div class="article-meta"><span class="author">荆坷（高旭阁）</span><span class="dept">电商事业群</span><span class="time">2026-11-16 21:47</span><span class="tag">AI 趋势与动态</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020839649?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">Anthropic 路演材料笔记</a></div>
+                <div class="article-abstract">整理Anthropic路演材料，涵盖模型能力、多芯片算力策略、Agent演进及财务数据。文章披露Opus系列在编程与智能榜单领先，超90%内部代码由Claude编写，并展示具身智能与行业落地进展。</div>
+                <div class="article-meta"><span class="author">马一（裴真）</span><span class="dept">国际数字商业集团</span><span class="time">2026-11-16 20:45</span><span class="tag">AI 趋势与动态</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020841254?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">姚顺雨的“下半场”：方法已经赢了，接下来是任务</a></div>
+                <div class="article-abstract">OpenAI研究员姚顺雨提出AI进入下半场，方法已收敛，重心转向任务与环境定义。访谈梳理Agent三波演进、代码作为数字环境价值、奖励设计及记忆层级等核心观点。</div>
+                <div class="article-meta"><span class="author">荆坷（高旭阁）</span><span class="dept">电商事业群</span><span class="time">2026-11-16 18:05</span><span class="tag">AI 趋势与动态</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020841627?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">曾鸣的产业史观：公司会消亡，模型只是电厂</a></div>
+                <div class="article-abstract">曾鸣提出通用技术三阶段框架，认为AI已进入以智能体为核心的第二阶段。他将大模型比作电厂，推演Agent时代的入口、平台与组织形态将发生根本性变革。</div>
+                <div class="article-meta"><span class="author">荆坷（高旭阁）</span><span class="dept">电商事业群</span><span class="time">2026-11-16 17:06</span><span class="tag">AI 趋势与动态</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020840445?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">Manus 售出前的最后一场长谈</a></div>
+                <div class="article-abstract">Manus联合创始人季逸超回顾三次创业，分享通用Agent架构设计与模型训练外包策略。文章详述Manus基于Firecracker虚拟机的沙盒架构、上下文工程方法论及对主流大模型厂商的技术判断。</div>
+                <div class="article-meta"><span class="author">荆坷（高旭阁）</span><span class="dept">电商事业群</span><span class="time">2026-11-16 16:47</span><span class="tag">AI 趋势与动态</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020840839?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">EMNLP 2026 会议核心内容总结</a></div>
+                <div class="article-abstract">EMNLP2026主会录用2719篇论文，研究重心从模型能力转向Agent工程化、推理效率与评测方法学。会议围绕低推理成本、长链路Agent稳定性与可信评测三大议题，梳理了CCQ线性注意力、MCPProxy权限控制等代表性工作及产业落地趋势。</div>
+                <div class="article-meta"><span class="author">渊川（马昕宏）</span><span class="dept">ATH事业群-千问事业部</span><span class="time">2026-11-16 15:36</span><span class="tag">AI 趋势与动态</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020842044?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">【集团AI顶会系列】阿里巴巴两篇论文获 ATC 2026 最佳论文奖</a></div>
+                <div class="article-abstract">阿里巴巴两篇论文获ACMSIGOPSATC2026最佳论文奖，聚焦大模型推理基础设施与云存储网络优化。平台技术团队基于xMaaS十万卡集群揭示显存与调度问题，阿里云团队通过Lean系统利用SRv6将OSS网络总成本降低55.6%。</div>
+                <div class="article-meta"><span class="author">集团高校合作</span><span class="dept">阿里控股</span><span class="time">2026-11-16 15:11</span><span class="tag">AI 趋势与动态</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020842042?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">小型核能发电（SMR 与微型反应堆）：一场被判过两次死刑的技术，如何在数据中心时代复活</a></div>
+                <div class="article-abstract">小型核能发电正从技术验证转向资产重新定价，数据中心需求成为本轮复活的核心驱动力。报告梳理全球127个SMR设计、六大堆型与中美厂商格局，指出HALEU燃料产能、重件制造瓶颈及不可撤销PPA签约层级才是决定商业化成败的关键变量。</div>
+                <div class="article-meta"><span class="author">雄威（王雄威）</span><span class="dept">云智能集团</span><span class="time">2026-11-16 14:34</span><span class="tag">AI 趋势与动态</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020842041?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">【集团AI顶会系列】下一代 AI 如何全栈协同？Alibaba Hong Kong 技术对话</a></div>
+                <div class="article-abstract">阿里集团高校合作在ATC2026期间于香港举办全栈协同设计论坛，聚焦AI基础设施、系统与模型数据的协同优化。多位学者与业务专家围绕RSI框架、Agent并发控制、MoE训练推理及大模型评测等议题展开深度对话。</div>
+                <div class="article-meta"><span class="author">集团高校合作</span><span class="dept">阿里控股</span><span class="time">2026-11-16 14:18</span><span class="tag">AI 趋势与动态</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020841248?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">AI日报 · 2026年11月16日 | SWE-bench全榜厂商动态：Qwen4-Max 上架，OpenAI 开设科学博客</a></div>
+                <div class="article-abstract">本期关注 Qwen4-Max 上架、OpenAI 科学研究及 DeepSeek 应用 API 等进展；SWE-bench 官方新增条目本轮未能核实。</div>
+                <div class="article-meta"><span class="author">沐淋（韩坤）</span><span class="dept">高德</span><span class="time">2026-11-16 10:59</span><span class="tag">AI 趋势与动态</span></div>
+            </div>
+            <div class="article-card">
+                <div class="article-title"><a href="https://ata.atatech.org/articles/11020839640?utm_source=open&amp;utm_medium=hsf&amp;utm_campaign=_OPEN_AONE" target="_blank">美商务部长被曝推动放宽芯片管制，英伟达开源技能评估器，智能体逆向三十年老车ECU</a></div>
+                <div class="article-abstract">AI技术日报汇总AG-UI协议、英伟达SkillEvaluator及智能体记忆、多模态位置编码等前沿论文与产品动态。内容涵盖Agent交互标准化、技能评估框架、长程任务记忆蒸馏及开源版权等议题。</div>
+                <div class="article-meta"><span class="author">秩澄（王志承）</span><span class="dept">中国电商事业群-淘宝闪购</span><span class="time">2026-11-16 09:21</span><span class="tag">AI 趋势与动态</span></div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>ATA 设计与AI方向文章日报 | 发布日期：2026-11-17</p>
+            <p style="margin-top: 8px;">统一入口：<a href="https://mihaideyu.github.io/Trend_Opportunity/">https://mihaideyu.github.io/Trend_Opportunity/</a></p>
+        </div>
+    </div>
+</body>
+</html>
